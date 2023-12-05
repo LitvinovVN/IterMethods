@@ -4,8 +4,11 @@
 #include <thread>
 #include <vector>
 
-const unsigned numThreads{2};
-const unsigned numSteps{15};
+using namespace std::literals;
+
+const unsigned numThreads{4};
+const unsigned Nbx{10};// Количество блоков сетки по Ох
+const unsigned numSteps{Nbx+numThreads};
 
 // global semaphore instances
 // object counts are set to zero
@@ -14,7 +17,7 @@ std::counting_semaphore<numThreads>
     smphSignalMainToThread{0},
     smphSignalThreadToMain{0};
  
-void ThreadProc()
+void ThreadProc(int thread_id)
 {
     for(int i=0; i<numSteps;i++)
     {
@@ -24,14 +27,20 @@ void ThreadProc()
      
         // this call blocks until the semaphore's count
         // is increased from the main proc
-     
-        std::cout << "[thread] Calculation starting...\n"; // response message
-     
-        // wait to imitate some work
-        using namespace std::literals;
-        std::this_thread::sleep_for(100ms);
-     
-        std::cout << "[thread] Calulation completed!\n"; // message
+        if(i-thread_id>=0 && i-thread_id<=Nbx)
+        {
+            //printf("[thread %d] %i Calculation starting... i-thread_id = %d\n", thread_id, i, i-thread_id); // response message
+         
+            // wait to imitate some work
+            std::this_thread::sleep_for(10ms);
+         
+            printf("[thread %d] %i Calculation Completed! i-thread_id = %d\n", thread_id, i, i-thread_id); // response message
+        }
+        else
+        {
+            //printf("[thread %d] %i waiting... i-thread_id = %d\n", thread_id, i, i-thread_id); // response message
+            std::this_thread::sleep_for(1ms);
+        }
      
         // signal the main proc back
         smphSignalThreadToMain.release();
@@ -61,7 +70,7 @@ int main()
     threads.reserve(numThreads);
  
     for (auto id{0U}; id != numThreads; ++id)
-        threads.push_back(std::jthread(ThreadProc));
+        threads.push_back(std::jthread(ThreadProc, id));
     
     
     for(int s = 0; s < numSteps; s++)
