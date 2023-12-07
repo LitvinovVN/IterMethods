@@ -7,7 +7,7 @@
 #include <atomic>
 
 const unsigned numWorkerThreads = 4;
-const unsigned numSteps = 2;
+const unsigned numSteps = 10;
 
 std::mutex mutex;
 bool startWorking = false;
