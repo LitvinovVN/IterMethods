@@ -7,6 +7,7 @@
 #include <atomic>
 
 const unsigned numWorkerThreads = 4;
+const unsigned numSteps = 2;
 
 std::mutex mutex;
 bool startWorking = false;
@@ -82,20 +83,25 @@ void workerFunc(int tid)
     setIsWorkerReady(tid, true);
     printf("[worker %d] Started and ready!\n", tid);
 
+    int cur_s;
+    do
+    {
+        waitingStartWorkingCommand();
+        // Если текущее значение s=0 или s <= значению обработанного s текущим потоком (workersCurrentS), то ждём
+        waitingWorkersCurrentS(tid);    
+        setIsWorkerReady(tid, false);
+        cur_s = s.load();
+        calculationFunc(tid, cur_s);
+        mutex.lock();
+            workersCurrentS[tid]=cur_s;
+            printf("[worker %d] workersCurrentS[%d]=cur_s=%d\n", tid, tid, workersCurrentS[tid]);
+            mutex.unlock();    
+        setIsWorkerReady(tid, true);
+    } while (cur_s < numSteps);
+    
+    
 
-    waitingStartWorkingCommand();
-    // Если текущее значение s=0 или s <= значению обработанного s текущим потоком (workersCurrentS), то ждём
-    waitingWorkersCurrentS(tid);    
-    setIsWorkerReady(tid, false);
-    int cur_s = s.load();
-    calculationFunc(tid, cur_s);
-    mutex.lock();
-        workersCurrentS[tid]=cur_s;
-        printf("[worker %d] workersCurrentS[%d]=cur_s=%d\n", tid, tid, workersCurrentS[tid]);
-        mutex.unlock();    
-    setIsWorkerReady(tid, true);
-
-    waitingStartWorkingCommand();
+    /*waitingStartWorkingCommand();
     // Если текущее значение s=0 или s <= значению обработанного s текущим потоком (workersCurrentS), то ждём
     waitingWorkersCurrentS(tid);    
     setIsWorkerReady(tid, false);
@@ -105,7 +111,7 @@ void workerFunc(int tid)
         workersCurrentS[tid]=cur_s;
         printf("[worker %d] workersCurrentS[%d]=cur_s=%d\n", tid, tid, workersCurrentS[tid]);
         mutex.unlock();    
-    setIsWorkerReady(tid, true);
+    setIsWorkerReady(tid, true);*/
 
     
     printf("[worker %d] Ended\n", tid);
@@ -144,22 +150,16 @@ void managerFunc()
     printIsWorkersReady();
 
     s++;
-    printf("[manager] Step %d starting...\n", s.load());
-    setIsWorkerReadyAll(false); printIsWorkersReady();    
-    setStartWorking(true);
-    waitingAllWorkersReady(); printIsWorkersReady();    
-    setStartWorking(false);
-    printf("[manager] Step %d completed!\n", s.load());
-    
-
-    s++;
-    printf("[manager] Step %d starting...\n", s.load());
-    setIsWorkerReadyAll(false); printIsWorkersReady();
-    setStartWorking(true);
-    waitingAllWorkersReady(); printIsWorkersReady();    
-    setStartWorking(false);      
-    printf("[manager] Step %d completed!\n", s.load());
-    
+    while(s.load() <= numSteps)
+    {        
+        printf("[manager] Step %d starting...\n", s.load());
+        setIsWorkerReadyAll(false); printIsWorkersReady();    
+        setStartWorking(true);
+        waitingAllWorkersReady(); printIsWorkersReady();    
+        setStartWorking(false);
+        printf("[manager] Step %d completed!\n", s.load());
+        s++;
+    }       
 
     printf("[manager] All work completed!\n");
 }
