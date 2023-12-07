@@ -4,13 +4,17 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include <atomic>
 
 const unsigned numWorkerThreads = 4;
 
 std::mutex mutex;
 bool startWorking = false;
 bool isWorkersReady[numWorkerThreads];
+int workersCurrentS[numWorkerThreads];// Массив текущих обрабатываемых шагов
 std::mutex isWorkersReady_mutex;
+
+std::atomic_int s{0};
 
 void printIsWorkersReady()
 {
@@ -36,25 +40,74 @@ inline void waitingStartWorkingCommand()
     }
 }
 
-inline void setIsWorkerReady(int tid)
+inline void setIsWorkerReady(int tid, bool isReady)
 {
     isWorkersReady_mutex.lock();
-    isWorkersReady[tid] = true;    
+    isWorkersReady[tid] = isReady;    
     isWorkersReady_mutex.unlock();
+}
+
+inline void setIsWorkerReadyAll(bool isReady)
+{
+    isWorkersReady_mutex.lock();
+    for(int i=0;i<numWorkerThreads; i++)
+        isWorkersReady[i] = isReady;
+    isWorkersReady_mutex.unlock();
+}
+
+// Функция имитации вычислений одним потоом
+void calculationFunc(int tid, int s)
+{
+    printf("[worker %d] s=%d Working...\n", tid, s);
+    //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+}
+
+inline void waitingWorkersCurrentS(int tid)
+{
+    while (true)
+    {
+        bool isBreak = false;
+        mutex.lock();
+        int cur_thread_s = workersCurrentS[tid];
+        int cur_s = s.load();
+        if(cur_s>cur_thread_s) isBreak=true;
+        mutex.unlock();
+
+        if(isBreak) break;
+    }
 }
 
 void workerFunc(int tid)
 {
-    printf("[worker %d] Started\n", tid);
+    setIsWorkerReady(tid, true);
+    printf("[worker %d] Started and ready!\n", tid);
+
+
     waitingStartWorkingCommand();
-        
-    printf("[worker %d] Working\n", tid);
-    //std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    
-    setIsWorkerReady(tid);
-    
+    // Если текущее значение s=0 или s <= значению обработанного s текущим потоком (workersCurrentS), то ждём
+    waitingWorkersCurrentS(tid);    
+    setIsWorkerReady(tid, false);
+    int cur_s = s.load();
+    calculationFunc(tid, cur_s);
+    mutex.lock();
+        workersCurrentS[tid]=cur_s;
+        printf("[worker %d] workersCurrentS[%d]=cur_s=%d\n", tid, tid, workersCurrentS[tid]);
+        mutex.unlock();    
+    setIsWorkerReady(tid, true);
 
+    waitingStartWorkingCommand();
+    // Если текущее значение s=0 или s <= значению обработанного s текущим потоком (workersCurrentS), то ждём
+    waitingWorkersCurrentS(tid);    
+    setIsWorkerReady(tid, false);
+    cur_s = s.load();
+    calculationFunc(tid, cur_s);
+    mutex.lock();
+        workersCurrentS[tid]=cur_s;
+        printf("[worker %d] workersCurrentS[%d]=cur_s=%d\n", tid, tid, workersCurrentS[tid]);
+        mutex.unlock();    
+    setIsWorkerReady(tid, true);
 
+    
     printf("[worker %d] Ended\n", tid);
 }
 
@@ -81,18 +134,32 @@ inline void waitingAllWorkersReady()
     }
 }
 
-void managerFunc()
-{
-    printf("[manager] Started\n");
-    printIsWorkersReady();
-    //std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
-    setStartWorking(true);
-    
+void managerFunc()
+{    
+    printf("[manager] Started. s = %d\n", s.load());
+    //printIsWorkersReady();
+    //std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     waitingAllWorkersReady();
-    
-    printf("[manager] Step 1 completed!\n");
     printIsWorkersReady();
+
+    s++;
+    printf("[manager] Step %d starting...\n", s.load());
+    setIsWorkerReadyAll(false); printIsWorkersReady();    
+    setStartWorking(true);
+    waitingAllWorkersReady(); printIsWorkersReady();    
+    setStartWorking(false);
+    printf("[manager] Step %d completed!\n", s.load());
+    
+
+    s++;
+    printf("[manager] Step %d starting...\n", s.load());
+    setIsWorkerReadyAll(false); printIsWorkersReady();
+    setStartWorking(true);
+    waitingAllWorkersReady(); printIsWorkersReady();    
+    setStartWorking(false);      
+    printf("[manager] Step %d completed!\n", s.load());
+    
 
     printf("[manager] All work completed!\n");
 }
