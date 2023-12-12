@@ -1,5 +1,6 @@
 // g++ masterWorkers.cpp -o app
 // ./app
+// ГОНКА !!!!!!
 #include <iostream>
 #include <vector>
 #include <thread>
