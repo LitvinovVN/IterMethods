@@ -9,17 +9,27 @@
 
 using namespace std;
 
+// Флаг старта вычислений,
+// устанавливается управляющим потоком,
+// сбрасывается функцией on_completion 
 atomic_flag mt_flag{};
+
+// Номер шага вычислений
 std::atomic<int> s{0};
+
+// Количество шагов вычислений
 const unsigned s_max{10};
+
+// Суммарное количество вычислительных потоков
 const unsigned num_threads{4};
 
+// Флаг окончания вычислений
 atomic_flag end_calculation{};
 
 auto on_completion = []() noexcept
     {
         std::cout << "... step "<< s.load() <<" done! \n";
-        mt_flag.clear();
+        mt_flag.clear();// Сбрасываем флаг выполнения
         
         if (s.load() < s_max)
             s++;
