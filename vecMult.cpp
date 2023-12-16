@@ -4,11 +4,12 @@
 #include "vector1d.c"
 #include <thread>
 #include <mutex>
+#include <vector>
 
 std::mutex mutex;
-double scalar_mult_result = 0;
+//double scalar_mult_result = 0;
 
-void scalar_mult_cpu_thread(vector1d *v1, vector1d *v2, size_t startInd, size_t length)
+void scalar_mult_cpu_thread(vector1d *v1, vector1d *v2, size_t startInd, size_t length, double& result)
 {
     printf("scalar_mult_cpu_thread\n");
     double temp = 0;
@@ -18,13 +19,13 @@ void scalar_mult_cpu_thread(vector1d *v1, vector1d *v2, size_t startInd, size_t 
     }
 
     mutex.lock();
-    scalar_mult_result += temp;
+    result += temp;
     mutex.unlock();
 }
 
 int main()
 {
-    size_t size = 40000000;
+    size_t size = 19;
     
     vector1d *v1 = vector1d_create(size);
     printf("*v1 = %p\n", v1);
@@ -42,12 +43,41 @@ int main()
     double cpu_time_used;
         
     vector1d_init_scalar(v1, v2, k, min, max);
-    //vector1d_print(v1);
-    //vector1d_print(v2);
+    vector1d_print(v1, "v1 = ");
+    vector1d_print(v2, "v2 = ");
     
     start = clock();
 
-    std::thread t1(scalar_mult_cpu_thread, v1, v2, 0, v1->length); // + Вычисление скалярного произведения одном потоком
+    double scalar_mult_result = 0;
+    int NumCpuThreads = 4;
+    std::vector<std::thread> threads;
+
+    if(v1->length % NumCpuThreads == 0)//Если количество узлов делится на количество потоков нацело, размеры данных для каждого потока будут одинаковы
+    {
+        int NbyThread = v1->length / NumCpuThreads;
+        for(size_t i = 0; i < NumCpuThreads; i++)
+            threads.push_back(std::thread(scalar_mult_cpu_thread, v1, v2, i*NbyThread, NbyThread, std::ref(scalar_mult_result)));
+    }
+    else
+    {
+        int NbyThread = v1->length / (NumCpuThreads-1);
+        int NbyThreadLast = v1->length % (NumCpuThreads-1);
+        printf("NbyThread = %d, NbyThreadLast = %d\n", NbyThread, NbyThreadLast);
+
+        for(size_t i = 0; i < NumCpuThreads-1; i++)
+            threads.push_back(std::thread(scalar_mult_cpu_thread, v1, v2, i*NbyThread, NbyThread, std::ref(scalar_mult_result)));
+
+        threads.push_back(std::thread(scalar_mult_cpu_thread, v1, v2, (NumCpuThreads-1)*NbyThread, NbyThreadLast, std::ref(scalar_mult_result)));
+    }
+
+    for(auto& thread : threads)
+    {
+        if(thread.joinable())
+            thread.join();
+    }
+    
+
+    /*std::thread t1(scalar_mult_cpu_thread, v1, v2, 0, v1->length); // + Вычисление скалярного произведения одном потоком
     t1.join(); // */
 
     /*std::thread t1(scalar_mult_cpu_thread, v1, v2, 0,            v1->length/2); // + Вычисление скалярного произведения двум потоками

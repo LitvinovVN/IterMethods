@@ -60,6 +60,8 @@
         "optional": "cpp",
         "ostream": "cpp",
         "semaphore": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "time.h": "c",
+        "barrier": "cpp"
     }
 }

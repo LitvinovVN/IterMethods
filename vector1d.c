@@ -1,3 +1,7 @@
+#ifndef VECTOR1D_C
+
+#define VECTOR1D_C
+
 #include <stdio.h>
 #include <stdlib.h> // malloc
 #include <time.h> // rand, srand
@@ -9,7 +13,7 @@ typedef struct
     double *data;
 } vector1d;
 
-vector1d * vector1d_create(int size)
+vector1d* vector1d_create(int size)
 {
     vector1d *vec1d = (vector1d*)malloc(sizeof(vector1d));
     vec1d->length = size;
@@ -32,8 +36,9 @@ void vector1d_init_scalar(vector1d *v1, vector1d *v2, double k, int min, int max
     }
 }
 
-void vector1d_print(vector1d *v)
+void vector1d_print(vector1d *v, const char* message)
 {
+    printf("%s", message);
     for(size_t i = 0; i<v->length; i++)
     {        
         printf("%lf ", v->data[i]);         
@@ -52,3 +57,5 @@ double scalar_mult(vector1d *v1, vector1d *v2)
 
     return res;
 }
+
+#endif
