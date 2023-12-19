@@ -1,5 +1,5 @@
-// Вычисление скалярного произведения на CPU в многопоточном режиме
-// g++ vecMult.cpp -o app
+// Вычисление скалярного произведения на GPU
+// nvcc vecMultGpu.cpp -o app
 // ./app
 
 #include "vector1d.c"
@@ -30,8 +30,15 @@ void scalar_mult_cpu_thread(vector1d *v1, vector1d *v2, size_t startInd, size_t 
     mutex.unlock();
 }
 
+__global__ void cuda_hello()
+{
+    printf("Hello World from GPU!\n");
+}
+
 int main()
 {
+    cuda_hello<<<1,1>>>();
+
     size_t size = 10000000;
     
     vector1d *v1 = vector1d_create(size);
