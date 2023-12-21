@@ -1,4 +1,3 @@
-#include <cuda.h>
 #include <iostream>
 
 __global__ void cuda_hello()
@@ -12,6 +11,6 @@ int main ()
 
     int deviceCount;
     cudaError_t e = cudaGetDeviceCount(&deviceCount);
-    printf("deviceCount = %d", deviceCount);
+    printf("deviceCount = %d\n", deviceCount);
     return e == cudaSuccess ? deviceCount : -1;
 }
