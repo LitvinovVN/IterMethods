@@ -248,12 +248,12 @@ int vector1d_clone(vector1d* v1, vector1d** v2)
     return 1;
 }
 
-/// @brief 
-/// @param v1 
-/// @param v2 
-/// @param k 
-/// @param inner_product 
-/// @return 
+/// @brief Инициализирует вектор v2 таким образом, чтобы произведение v1[i]*v2[i]=k
+/// @param v1 Указатель на первый вектор
+/// @param v2 Адрес указателя на второй вектор
+/// @param k Число, которому должно быть равно произведение v1[i]*v2[i]
+/// @param inner_product Аналитическое значение скалярного произведения
+/// @return Код успешности: 1 - ОК; 0 - ERROR
 int vector1d_init_v2_for_inner_product_testing(vector1d* v1, vector1d** v2, double k, double* inner_product)
 {    
     if(!v1) return 0;
