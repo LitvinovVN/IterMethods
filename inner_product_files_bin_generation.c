@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
         }
         else if(strstr(argv[i],"-n"))
         {
-            size_t value = atoll(argv[i+1]);
+            unsigned long long value = atoll(argv[i+1]);
             if(value <= 0) { printf("CONTINUE\n");}            
-            printf("!!! command: %s | value = %ld\n", argv[i], value);
+            printf("command: %s | value = %lld\n", argv[i], value);
             N = value;
             i++;            
         }

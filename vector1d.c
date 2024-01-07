@@ -348,6 +348,31 @@ int vector1d_create_from_file(const char* file_name, vector1d** v)
 	return 1;
 }
 
+/// @brief Создаёт вектор указанного размера, считывая данные из двоичного файла с указанной позиции
+/// @param f Указатель на двоичный файл, открытый в режиме чтения
+/// @param index_start Индекс первого считываемого элемента
+/// @param length Количество элементов
+/// @param v Адрес указателя на вектор типа vector1d**
+/// @return Код успешности: 1 - ОК; 0 - ERROR
+int vector1d_create_from_file_pos(FILE *f, unsigned long long index_start,
+    unsigned long long length, vector1d** v)
+{
+    unsigned long long pos = sizeof((*v)->length) + index_start * sizeof((*v)->data);
+    printf("Reading from pos %lld\n", pos);
+	if(fseek(f, pos, SEEK_SET))
+    {
+        printf("Error in fseek!\n");
+        return 0;
+    }
+
+	*v = vector1d_create(length);
+    (*v)->length = length;	
+	//Чтение n чисел размером sizeof((*v)->data) каждое из файла f в массив (*v)->data.
+	fread((*v)->data, sizeof((*v)->data), length, f);
+
+	return 1;
+}
+
 /// @brief Создаёт два файла двоичного формата, первым значением является количество элементов, далее - элементы
 /// @param file_name_v1 Имя первого файла
 /// @param file_name_v2 Имя второго файла
