@@ -321,8 +321,8 @@ void vector1d_save_to_file_bin(const char* file_name, vector1d* v)
     FILE *f; //Описание файловой переменной.	
 	f = fopen(file_name, "wb"); //Создание двоичного файла в режиме записи.
 	size_t n = v->length;
-	fwrite(&n, sizeof(int), 1, f); //Запись числа в двоичный файл.
-	fwrite(v->data, sizeof(double), n, f); //Запись числа в двоичный файл.	
+	fwrite(&n, sizeof(v->length), 1, f); //Запись числа в двоичный файл.
+	fwrite(v->data, sizeof(v->data), n, f); //Запись числа в двоичный файл.	
 	fclose(f); //Закрыть файл.
 }
 
@@ -336,13 +336,13 @@ int vector1d_create_from_file(const char* file_name, vector1d** v)
     if(!f) return 0;
 
     unsigned long long n;
-	fread(&n, sizeof(unsigned long long), 1, f); //Читать из файла целое число в переменную n.
+	fread(&n, sizeof((*v)->length), 1, f); //Читать из файла целое число в переменную n.
     if(n <= 0) return 0;
 
 	*v = vector1d_create(n);
     (*v)->length = n;	
 	//Чтение n вещественных чисел размером sizeof(double) каждое из файла f в массив arr.
-	fread((*v)->data, sizeof(double), n, f);	
+	fread((*v)->data, sizeof((*v)->data), n, f);	
 	fclose(f); //Закрыть файл.
 
 	return 1;

@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include "vector1d.c"
 
-
-
 int main()
 {
     printf("*** vector1d files tests ***\n");
