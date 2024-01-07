@@ -9,7 +9,7 @@
 
 typedef struct
 {
-    int length;
+    unsigned long long length;
     double *data;
 } vector1d;
 
@@ -249,7 +249,7 @@ int vector1d_init_v2_for_inner_product_testing(vector1d* v1, vector1d** v2, doub
 /// @return Код успешности: 1 - ОК; 0 - ERROR
 int vector1d_init_vectors_for_inner_product_testing_range(vector1d* v1, vector1d* v2,
     size_t ind_start, size_t length,
-    double min, double max, double k, double* inner_product)
+    double min, double max, double k, long double* inner_product)
 {    
     if(!v1) return 0;
     if(!v2) return 0;
@@ -263,7 +263,7 @@ int vector1d_init_vectors_for_inner_product_testing_range(vector1d* v1, vector1d
         if(fabs(v1->data[i]) < 0.00000001)
             v2->data[i] = 0;
         else
-            v2->data[i] = k/v1->data[i];
+            v2->data[i] = ((long double)k/v1->data[i]);
     }
 
     *inner_product = k * v1->length;
@@ -280,7 +280,7 @@ int vector1d_init_vectors_for_inner_product_testing_range(vector1d* v1, vector1d
 /// @param inner_product Аналитическое значение скалярного произведения
 /// @return Код успешности: 1 - ОК; 0 - ERROR
 int vector1d_init_vectors_for_inner_product_testing(vector1d* v1, vector1d* v2,
-    double min, double max, double k, double* inner_product)
+    double min, double max, double k, long double* inner_product)
 {
     if(!v1) return 0;
     if(!v2) return 0;
@@ -296,11 +296,11 @@ int vector1d_init_vectors_for_inner_product_testing(vector1d* v1, vector1d* v2,
 /// @param v1 указатель на первый вектор
 /// @param v2 указатель на второй вектор
 /// @return скалярное произведение
-double scalar_mult(vector1d *v1, vector1d *v2)
+long double scalar_mult(vector1d *v1, vector1d *v2)
 {
-    double res = 0;
+    long double res = 0;
 
-    for(size_t i = 0; i < v1->length; i++)
+    for(unsigned long long i = 0ULL; i < v1->length; i++)
     {        
         res += v1->data[i] * v2->data[i];         
     }
@@ -335,9 +335,9 @@ int vector1d_create_from_file(const char* file_name, vector1d** v)
 	FILE *f = fopen(file_name, "rb"); //Открыть существующий двоичный файл в режиме чтения.
     if(!f) return 0;
 
-    int n;
-	fread(&n, sizeof(int), 1, f); //Читать из файла целое число в переменную n.
-    if(n <=0) return 0;
+    unsigned long long n;
+	fread(&n, sizeof(unsigned long long), 1, f); //Читать из файла целое число в переменную n.
+    if(n <= 0) return 0;
 
 	*v = vector1d_create(n);
     (*v)->length = n;	
@@ -359,7 +359,7 @@ int vector1d_create_from_file(const char* file_name, vector1d** v)
 /// @param inner_product Аналитическое значение скалярного произведения
 /// @return Код успешности: 1 - ОК; 0 - ERROR
 int inner_product_files_bin_generate(const char* file_name_v1, const char* file_name_v2,
-    size_t N, size_t Nb, int min, int max, double k, double* inner_product)
+    unsigned long long N, unsigned long long Nb, int min, int max, double k, double* inner_product)
 {
     // Создаём блоки памяти
     vector1d* v1 = vector1d_create(Nb);
@@ -383,13 +383,13 @@ int inner_product_files_bin_generate(const char* file_name_v1, const char* file_
         return 0;
     }
     
-	size_t n = N;
-	fwrite(&n, sizeof(int), 1, f_v1); //Запись числа в двоичный файл.
-    fwrite(&n, sizeof(int), 1, f_v2); //Запись числа в двоичный файл.
+	unsigned long long n = N;
+	fwrite(&n, sizeof(unsigned long long), 1, f_v1); //Запись числа в двоичный файл.
+    fwrite(&n, sizeof(unsigned long long), 1, f_v2); //Запись числа в двоичный файл.
 	
-    for (size_t i = 0; i < N/Nb; i++)
+    for (unsigned long long i = 0; i < N/Nb; i++)
     {
-        double inner_product_block = 0;
+        long double inner_product_block = 0;
         // Заполняем блоки v1 и v2       
         if(!vector1d_init_vectors_for_inner_product_testing(v1, v2, min, max, k, &inner_product_block))
         {
@@ -411,12 +411,12 @@ int inner_product_files_bin_generate(const char* file_name_v1, const char* file_
     vector1d_free(&v1);
     vector1d_free(&v2);
 
-    size_t ost = N % Nb;
+    unsigned long long ost = N % Nb;
     if(ost)
     {
         vector1d* v1_ost = vector1d_create(ost);
         vector1d* v2_ost = vector1d_create(ost);
-        double inner_product_block = 0;
+        long double inner_product_block = 0;
         // Заполняем блоки v1 и v2       
         if(!vector1d_init_vectors_for_inner_product_testing(v1_ost, v2_ost, min, max, k, &inner_product_block))
         {
