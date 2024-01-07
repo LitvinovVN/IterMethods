@@ -26,6 +26,33 @@ vector1d* vector1d_create(int size)
 //////////////////////// Создание (КОНЕЦ)  ///////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+/// @brief Освобождает память, занятую структурой vector1d
+/// @param v1 Адрес указателя на структуру vector1d
+void vector1d_free(vector1d** v1)
+{
+    free((*v1)->data);
+    (*v1)->data = NULL;
+    free(*v1);
+    *v1 = NULL;
+}
+
+/// @brief Клонирует вектор v1 в вектор v2
+/// @param v1 указатель на вектор-источник, адрес не равен 0
+/// @param v2 указатель на вектор-приёмник, адрес равен 0
+/// @return 1 - успех, 0 - ошибка
+int vector1d_clone(vector1d* v1, vector1d** v2)
+{    
+    if(!v1) return 0;
+    if(*v2) return 0;
+
+    *v2 = vector1d_create(v1->length);
+
+    for(size_t i = 0; i < v1->length; i++)
+        (*v2)->data[i] = v1->data[i];
+
+    return 1;
+}
+
 
 //////////////////////// Инициализация  //////////////////////////////
 
@@ -165,46 +192,6 @@ void vector1d_print_details(vector1d *v, const char* message)
 }
 
 
-/////////////// Файловые операции //////////////////
-/// @brief Записывает вектор v в файл file_name
-/// @param file_name имя файла
-/// @param v указатель на вектор типа vector1d*
-void vector1d_save_to_file_bin(const char* file_name, vector1d* v)
-{
-    printf("Saving vector1d into file %s...\n", file_name);
-    
-    FILE *f; //Описание файловой переменной.	
-	f = fopen(file_name, "wb"); //Создание двоичного файла в режиме записи.
-	size_t n = v->length;
-	fwrite(&n, sizeof(int), 1, f); //Запись числа в двоичный файл.
-	fwrite(v->data, sizeof(double), n, f); //Запись числа в двоичный файл.	
-	fclose(f); //Закрыть файл.
-}
-
-/// @brief Создаёт вектор, считывая данные из двоичного файла
-/// @param file_name имя файла
-/// @param v адрес указателя на вектор типа vector1d**
-/// @return 
-int vector1d_create_from_file(const char* file_name, vector1d** v)
-{	
-	FILE *f = fopen(file_name, "rb"); //Открыть существующий двоичный файл в режиме чтения.
-    if(!f) return 1;
-
-    int n;
-	fread(&n, sizeof(int), 1, f); //Читать из файла целое число в переменную n.
-    if(n <=0) return 2;
-
-	*v = vector1d_create(n);
-    (*v)->length = n;	
-	//Чтение n вещественных чисел размером sizeof(double) каждое из файла f в массив arr.
-	fread((*v)->data, sizeof(double), n, f);	
-	fclose(f); //Закрыть файл.
-
-	return 0;
-}
-
-/////////// Файловые операции (КОНЕЦ) //////////////
-
 /// @brief Сравнивает два вектора
 /// @param v1 указатель на первый вектор
 /// @param v2 указатель на второй вектор
@@ -223,30 +210,6 @@ int vector1d_is_equals(vector1d* v1, vector1d* v2)
     return 1;
 }
 
-void vector1d_free(vector1d** v1)
-{
-    free((*v1)->data);
-    (*v1)->data = NULL;
-    free(*v1);
-    *v1 = NULL;
-}
-
-/// @brief Клонирует вектор v1 в вектор v2
-/// @param v1 указатель на вектор-источник, адрес не равен 0
-/// @param v2 указатель на вектор-приёмник, адрес равен 0
-/// @return 1 - успех, 0 - ошибка
-int vector1d_clone(vector1d* v1, vector1d** v2)
-{    
-    if(!v1) return 0;
-    if(*v2) return 0;
-
-    *v2 = vector1d_create(v1->length);
-
-    for(size_t i = 0; i < v1->length; i++)
-        (*v2)->data[i] = v1->data[i];
-
-    return 1;
-}
 
 /// @brief Инициализирует вектор v2 таким образом, чтобы произведение v1[i]*v2[i]=k
 /// @param v1 Указатель на первый вектор
@@ -274,6 +237,61 @@ int vector1d_init_v2_for_inner_product_testing(vector1d* v1, vector1d** v2, doub
     return 1;
 }
 
+/// @brief Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k
+/// @param v1 Указатель на первый вектор
+/// @param v2 Указатель на второй вектор
+/// @param ind_start Индекс, с которого начинается инициализация
+/// @param length Длина области инциализации - количество элементов
+/// @param min Минимальное значение элементов вектора v1
+/// @param max Максимальное значение элементов вектора v1
+/// @param k Число, которому должно быть равно произведение v1[i]*v2[i]
+/// @param inner_product Аналитическое значение скалярного произведения
+/// @return Код успешности: 1 - ОК; 0 - ERROR
+int vector1d_init_vectors_for_inner_product_testing_range(vector1d* v1, vector1d* v2,
+    size_t ind_start, size_t length,
+    double min, double max, double k, double* inner_product)
+{    
+    if(!v1) return 0;
+    if(!v2) return 0;
+    if(v1->length != v2->length) return 0;
+    if(ind_start + length > v1->length) return 0;
+
+    vector1d_init_random_double(v1, min, max);
+    
+    for(size_t i = ind_start; i < ind_start+length; i++)
+    {
+        if(fabs(v1->data[i]) < 0.00000001)
+            v2->data[i] = 0;
+        else
+            v2->data[i] = k/v1->data[i];
+    }
+
+    *inner_product = k * v1->length;
+
+    return 1;
+}
+
+/// @brief Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k
+/// @param v1 Указатель на первый вектор
+/// @param v2 Указатель на второй вектор
+/// @param min Минимальное значение элементов вектора v1
+/// @param max Максимальное значение элементов вектора v1
+/// @param k Число, которому должно быть равно произведение v1[i]*v2[i]
+/// @param inner_product Аналитическое значение скалярного произведения
+/// @return Код успешности: 1 - ОК; 0 - ERROR
+int vector1d_init_vectors_for_inner_product_testing(vector1d* v1, vector1d* v2,
+    double min, double max, double k, double* inner_product)
+{
+    if(!v1) return 0;
+    if(!v2) return 0;
+    if(v1->length != v2->length) return 0;
+
+    if(!vector1d_init_vectors_for_inner_product_testing_range(v1, v2, 0, v1->length, min, max, k, inner_product))
+        return 0;
+
+    return 1;
+}
+
 /// @brief Вычисляет скалярное произведение векторов
 /// @param v1 указатель на первый вектор
 /// @param v2 указатель на второй вектор
@@ -289,5 +307,145 @@ double scalar_mult(vector1d *v1, vector1d *v2)
 
     return res;
 }
+
+
+
+/////////////// Файловые операции //////////////////
+/// @brief Записывает вектор v в файл file_name
+/// @param file_name имя файла
+/// @param v указатель на вектор типа vector1d*
+void vector1d_save_to_file_bin(const char* file_name, vector1d* v)
+{
+    printf("Saving vector1d into file %s...\n", file_name);
+    
+    FILE *f; //Описание файловой переменной.	
+	f = fopen(file_name, "wb"); //Создание двоичного файла в режиме записи.
+	size_t n = v->length;
+	fwrite(&n, sizeof(int), 1, f); //Запись числа в двоичный файл.
+	fwrite(v->data, sizeof(double), n, f); //Запись числа в двоичный файл.	
+	fclose(f); //Закрыть файл.
+}
+
+/// @brief Создаёт вектор, считывая данные из двоичного файла
+/// @param file_name имя файла
+/// @param v адрес указателя на вектор типа vector1d**
+/// @return Код успешности: 1 - ОК; 0 - ERROR
+int vector1d_create_from_file(const char* file_name, vector1d** v)
+{	
+	FILE *f = fopen(file_name, "rb"); //Открыть существующий двоичный файл в режиме чтения.
+    if(!f) return 0;
+
+    int n;
+	fread(&n, sizeof(int), 1, f); //Читать из файла целое число в переменную n.
+    if(n <=0) return 0;
+
+	*v = vector1d_create(n);
+    (*v)->length = n;	
+	//Чтение n вещественных чисел размером sizeof(double) каждое из файла f в массив arr.
+	fread((*v)->data, sizeof(double), n, f);	
+	fclose(f); //Закрыть файл.
+
+	return 1;
+}
+
+/// @brief Создаёт два файла двоичного формата, первым значением является количество элементов, далее - элементы
+/// @param file_name_v1 Имя первого файла
+/// @param file_name_v2 Имя второго файла
+/// @param N Количество элементов
+/// @param Nb Количество элементов в блоке памяти
+/// @param min Минимальное значение элементов вектора v1
+/// @param max Максимальное значение элементов вектора v1
+/// @param k Число, которому должно быть равно произведение v1[i]*v2[i]
+/// @param inner_product Аналитическое значение скалярного произведения
+/// @return Код успешности: 1 - ОК; 0 - ERROR
+int inner_product_files_bin_generate(const char* file_name_v1, const char* file_name_v2,
+    size_t N, size_t Nb, int min, int max, double k, double* inner_product)
+{
+    // Создаём блоки памяти
+    vector1d* v1 = vector1d_create(Nb);
+    vector1d* v2 = vector1d_create(Nb);
+    *inner_product = 0;
+        
+    //printf("Saving 2 vector1d into files %s and %s...\n", file_name_v1, file_name_v1);
+    
+    FILE *f_v1, *f_v2; //Описание файловых переменных.	
+	f_v1 = fopen(file_name_v1, "wb"); //Создание двоичного файла в режиме записи.
+    if(!f_v1)
+    {
+        printf("Error opening file %s\n", file_name_v1);
+        return 0;
+    }
+
+    f_v2 = fopen(file_name_v2, "wb"); //Создание двоичного файла в режиме записи.
+    if(!f_v2)
+    {
+        printf("Error opening file %s\n", file_name_v2);
+        return 0;
+    }
+    
+	size_t n = N;
+	fwrite(&n, sizeof(int), 1, f_v1); //Запись числа в двоичный файл.
+    fwrite(&n, sizeof(int), 1, f_v2); //Запись числа в двоичный файл.
+	
+    for (size_t i = 0; i < N/Nb; i++)
+    {
+        double inner_product_block = 0;
+        // Заполняем блоки v1 и v2       
+        if(!vector1d_init_vectors_for_inner_product_testing(v1, v2, min, max, k, &inner_product_block))
+        {
+            printf("ERROR in vector1d_init_vectors_for_inner_product_testing!");
+            return 0;
+        }
+        *inner_product += inner_product_block;
+        //printf("inner_product_block = %lf\n", inner_product_block);
+        //printf("inner_product must be %lf\n", *inner_product);
+
+        /*vector1d_print(v1, "block v1 = ");
+        vector1d_print_details(v1, "block v1 details: ");
+        vector1d_print(v2, "block v2 = ");
+        vector1d_print_details(v2, "block v2 details: "); //*/
+
+        fwrite(v1->data, sizeof(double), v1->length, f_v1); //Запись числа в двоичный файл.
+        fwrite(v2->data, sizeof(double), v2->length, f_v2); //Запись числа в двоичный файл.
+    }
+    vector1d_free(&v1);
+    vector1d_free(&v2);
+
+    size_t ost = N % Nb;
+    if(ost)
+    {
+        vector1d* v1_ost = vector1d_create(ost);
+        vector1d* v2_ost = vector1d_create(ost);
+        double inner_product_block = 0;
+        // Заполняем блоки v1 и v2       
+        if(!vector1d_init_vectors_for_inner_product_testing(v1_ost, v2_ost, min, max, k, &inner_product_block))
+        {
+            printf("ERROR in vector1d_init_vectors_for_inner_product_testing!");
+            return 0;
+        }
+        *inner_product += inner_product_block;
+        //printf("inner_product_block = %lf\n", inner_product_block);
+        //printf("inner_product must be %lf\n", *inner_product);
+
+        /*vector1d_print(v1_ost, "block v1_ost = ");
+        vector1d_print_details(v1_ost, "block v1_ost details: ");
+        vector1d_print(v2_ost, "block v2_ost = ");
+        vector1d_print_details(v2_ost, "block v2_ost details: "); //*/
+
+        fwrite(v1_ost->data, sizeof(double), v1_ost->length, f_v1); //Запись числа в двоичный файл.
+        fwrite(v2_ost->data, sizeof(double), v2_ost->length, f_v2); //Запись числа в двоичный файл.
+
+        vector1d_free(&v1_ost);
+        vector1d_free(&v2_ost);
+    }
+        
+    fclose(f_v1); //Закрыть файл.
+    fclose(f_v2); //Закрыть файл.
+
+    return 1;
+}
+
+/////////// Файловые операции (КОНЕЦ) //////////////
+
 
 #endif

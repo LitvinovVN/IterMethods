@@ -17,7 +17,7 @@ int main()
         inner_product_cpu_OpenMP      
     };
 
-    size_t N = 10000000;
+    size_t N = 100000000;
     vector1d* v1 = vector1d_create(N);
     vector1d_init_random_double(v1, -50, 50);
     vector1d* v2 = nullptr;
@@ -33,7 +33,7 @@ int main()
     params.v1 = v1->data;
     params.v2 = v2->data;
     params.n = N;
-    params.nt_cpu = 2;
+    params.nt_cpu = 4;
     params.nt_gpu = 0;
 
     for(int i = 0; i < inner_product_algorithms_number; i++)
