@@ -53,28 +53,73 @@ int main()
         exit(1);
     }
 
-    vector1d* v1 = nullptr;
-    if(!vector1d_create_from_file_pos(f1, 0, 10, &v1))
-    {
-        std::cout << "Error in vector1d_create_from_file_pos" << std::endl;
-        exit(1);
-    }
+    unsigned long long N = n1; // Количество элементов
+    unsigned long long Nb = 100000000ULL; // Количество элементов в блоке памяти
+    if(N < Nb)
+        Nb = N;
+    std::cout   << "N = "  << N  << "; "
+                << "Nb = " << Nb << "; "
+                << std::endl;
 
-    vector1d* v2 = nullptr;
-    if(!vector1d_create_from_file_pos(f2, 0, 10, &v2))
+    // Создаём векторы-буферы для хранения блоков данных
+    vector1d* v1_buff = vector1d_create(Nb);
+    vector1d* v2_buff = vector1d_create(Nb);
+
+    long double inner_product = 0;
+    for (unsigned long long  block_ind = 0; block_ind < N/Nb; block_ind++)
     {
-        std::cout << "Error in vector1d_create_from_file_pos" << std::endl;
-        exit(1);
+        unsigned long long  pos = block_ind*N;
+        if(!vector1d_init_from_file_pos(f1, pos, Nb, v1_buff))
+        {
+            std::cout << "Error in vector1d_init_from_file_pos (v1_buff)" << std::endl;
+            exit(1);
+        }        
+
+        if(!vector1d_init_from_file_pos(f2, pos, Nb, v2_buff))
+        {
+            std::cout << "Error in vector1d_init_from_file_pos (v2_buff)" << std::endl;
+            exit(1);
+        }
+
+        //vector1d_print(v1_buff,"v1_buff = ");
+        //vector1d_print(v2_buff,"v2_buff = ");
+
+        long double inner_product_block = scalar_mult(v1_buff, v2_buff);
+        //std::cout << block_ind << ": ";
+        //std::cout << "inner_product_block = " << inner_product_block << std::endl;       
+        inner_product += inner_product_block;
+    }    
+    if(N % Nb)
+    {
+        size_t pos = (N/Nb)*N;
+        if(!vector1d_init_from_file_pos(f1, pos, N % Nb, v1_buff))
+        {
+            std::cout << "Error in vector1d_create_from_file_pos" << std::endl;
+            exit(1);
+        }        
+
+        if(!vector1d_init_from_file_pos(f2, pos, N % Nb, v2_buff))
+        {
+            std::cout << "Error in vector1d_create_from_file_pos" << std::endl;
+            exit(1);
+        }
+
+        //vector1d_print(v1_buff,"v1_buff = ");
+        //vector1d_print(v2_buff,"v2_buff = ");
+
+        long double inner_product_block = scalar_mult_block(v1_buff, v2_buff, 0, N % Nb);
+        //std::cout << "inner_product_block = " << inner_product_block << std::endl;       
+        inner_product += inner_product_block;
     }
-    
-    vector1d_print(v1,"v1 = ");
-    vector1d_print(v2,"v2 = ");
-    double sm = scalar_mult(v1, v2);
-    printf("sm = %lf\n", sm);
+    std::cout << "inner_product = " << inner_product << std::endl;       
 
     // Закрываем файлы
     fclose(f1);
-    fclose(f2); 
+    fclose(f2);
+
+    // Освобождаем память
+    vector1d_free(&v1_buff);
+    vector1d_free(&v2_buff);
 
     return 0;
 }

@@ -293,14 +293,33 @@ int vector1d_init_vectors_for_inner_product_testing(vector1d* v1, vector1d* v2,
 }
 
 /// @brief Вычисляет скалярное произведение векторов
-/// @param v1 указатель на первый вектор
-/// @param v2 указатель на второй вектор
-/// @return скалярное произведение
+/// @param v1 Указатель на первый вектор
+/// @param v2 Указатель на второй вектор
+/// @return Скалярное произведение
 long double scalar_mult(vector1d *v1, vector1d *v2)
 {
     long double res = 0;
 
     for(unsigned long long i = 0ULL; i < v1->length; i++)
+    {        
+        res += v1->data[i] * v2->data[i];         
+    }
+
+    return res;
+}
+
+/// @brief Вычисляет скалярное произведение непрерывного диапазона элементов векторов
+/// @param v1 Указатель на первый вектор
+/// @param v2 Указатель на второй вектор
+/// @param ind_start Индекс первого элемента диапазона
+/// @param length Длина диапазона
+/// @return Скалярное произведение
+long double scalar_mult_block(vector1d *v1, vector1d *v2,
+    unsigned long long ind_start, unsigned long long length)
+{
+    long double res = 0;
+
+    for(unsigned long long i = ind_start; i < length; i++)
     {        
         res += v1->data[i] * v2->data[i];         
     }
@@ -369,6 +388,57 @@ int vector1d_create_from_file_pos(FILE *f, unsigned long long index_start,
     (*v)->length = length;	
 	//Чтение n чисел размером sizeof((*v)->data) каждое из файла f в массив (*v)->data.
 	fread((*v)->data, sizeof((*v)->data), length, f);
+
+	return 1;
+}
+
+int vector1d_init_from_file_pos(FILE *f, unsigned long long index_start,
+    unsigned long long length, vector1d* v)
+{
+    unsigned long long pos = sizeof(v->length) + index_start * sizeof(v->data);
+    //printf("Reading from pos %lld\n", pos);
+
+    unsigned long long seek_block_size = 1000000000Ull;
+    if(pos > seek_block_size)
+    {
+        if(fseek(f, seek_block_size, SEEK_SET))
+        {
+            printf("Reading from pos %lld\n", pos);
+            printf("Error in fseek!\n");
+            return 0;
+        }
+        for(size_t i = 1; i < pos / seek_block_size; i++)
+        {
+            if(fseek(f, seek_block_size, SEEK_CUR))
+            {
+                printf("Reading from pos %lld\n", pos);
+                printf("Error in fseek!\n");
+                return 0;
+            }
+        }
+
+        if(fseek(f, pos % seek_block_size, SEEK_CUR))
+        {
+            printf("Reading from pos %lld\n", pos);
+            printf("Error in fseek!\n");
+            return 0;
+        }
+
+        //printf("Reading from pos %lld\n", pos);
+        //printf("pos > 10^9!\n");        
+    }
+    else
+    {
+        if(fseek(f, pos, SEEK_SET))
+        {
+            printf("Reading from pos %lld\n", pos);
+            printf("Error in fseek!\n");
+            return 0;
+        }
+    }
+	
+	//Чтение n чисел размером sizeof(v->data) каждое из файла f в массив v->data.
+	fread(v->data, sizeof(v->data), length, f);
 
 	return 1;
 }
