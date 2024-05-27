@@ -1,0 +1,91 @@
+\doxysection{Файл conv.\+cpp}
+\hypertarget{conv_8cpp}{}\label{conv_8cpp}\index{conv.cpp@{conv.cpp}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$semaphore$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{conv_8cpp_a8073aab3634aa5f150670331b0b162b2}{Thread\+Proc}} (int thread\+\_\+id)
+\item 
+void \mbox{\hyperlink{conv_8cpp_af5e228c03a98392ffd389eb69c910607}{signal\+To\+Workers}} ()
+\item 
+void \mbox{\hyperlink{conv_8cpp_ac764650ca2db5cf7c6f1e1020cb70a66}{waiting\+Sygnal\+From\+Workers}} ()
+\item 
+int \mbox{\hyperlink{conv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned \mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}} \{4\}
+\item 
+const unsigned \mbox{\hyperlink{conv_8cpp_a497f38d55469514d66d3c66bdf4f4638}{Nbx}} \{10\}
+\item 
+const unsigned \mbox{\hyperlink{conv_8cpp_a088203dfc69537625544fc3187e1d18d}{num\+Steps}} \{\mbox{\hyperlink{conv_8cpp_a497f38d55469514d66d3c66bdf4f4638}{Nbx}}+\mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}}\}
+\item 
+std\+::counting\+\_\+semaphore$<$ \mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}} $>$ \mbox{\hyperlink{conv_8cpp_a9c6e9cc2f739b4aba537a7b44e8f8a45}{smph\+Signal\+Main\+To\+Thread}} \{0\}
+\item 
+std\+::counting\+\_\+semaphore$<$ \mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}} $>$ \mbox{\hyperlink{conv_8cpp_a742693ce66cb25bbeea3f34ed99baa58}{smph\+Signal\+Thread\+To\+Main}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{conv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{conv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{conv.cpp@{conv.cpp}!main@{main}}
+\index{main@{main}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{conv_8cpp_af5e228c03a98392ffd389eb69c910607}\label{conv_8cpp_af5e228c03a98392ffd389eb69c910607} 
+\index{conv.cpp@{conv.cpp}!signalToWorkers@{signalToWorkers}}
+\index{signalToWorkers@{signalToWorkers}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{signalToWorkers()}{signalToWorkers()}}
+{\footnotesize\ttfamily void signal\+To\+Workers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{conv_8cpp_a8073aab3634aa5f150670331b0b162b2}\label{conv_8cpp_a8073aab3634aa5f150670331b0b162b2} 
+\index{conv.cpp@{conv.cpp}!ThreadProc@{ThreadProc}}
+\index{ThreadProc@{ThreadProc}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{ThreadProc()}{ThreadProc()}}
+{\footnotesize\ttfamily void Thread\+Proc (\begin{DoxyParamCaption}\item[{int}]{thread\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{conv_8cpp_ac764650ca2db5cf7c6f1e1020cb70a66}\label{conv_8cpp_ac764650ca2db5cf7c6f1e1020cb70a66} 
+\index{conv.cpp@{conv.cpp}!waitingSygnalFromWorkers@{waitingSygnalFromWorkers}}
+\index{waitingSygnalFromWorkers@{waitingSygnalFromWorkers}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{waitingSygnalFromWorkers()}{waitingSygnalFromWorkers()}}
+{\footnotesize\ttfamily void waiting\+Sygnal\+From\+Workers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\Hypertarget{conv_8cpp_a497f38d55469514d66d3c66bdf4f4638}\label{conv_8cpp_a497f38d55469514d66d3c66bdf4f4638} 
+\index{conv.cpp@{conv.cpp}!Nbx@{Nbx}}
+\index{Nbx@{Nbx}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{Nbx}{Nbx}}
+{\footnotesize\ttfamily const unsigned Nbx \{10\}}
+
+\Hypertarget{conv_8cpp_a088203dfc69537625544fc3187e1d18d}\label{conv_8cpp_a088203dfc69537625544fc3187e1d18d} 
+\index{conv.cpp@{conv.cpp}!numSteps@{numSteps}}
+\index{numSteps@{numSteps}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{numSteps}{numSteps}}
+{\footnotesize\ttfamily const unsigned num\+Steps \{\mbox{\hyperlink{conv_8cpp_a497f38d55469514d66d3c66bdf4f4638}{Nbx}}+\mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}}\}}
+
+\Hypertarget{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}\label{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8} 
+\index{conv.cpp@{conv.cpp}!numThreads@{numThreads}}
+\index{numThreads@{numThreads}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{numThreads}{numThreads}}
+{\footnotesize\ttfamily const unsigned num\+Threads \{4\}}
+
+\Hypertarget{conv_8cpp_a9c6e9cc2f739b4aba537a7b44e8f8a45}\label{conv_8cpp_a9c6e9cc2f739b4aba537a7b44e8f8a45} 
+\index{conv.cpp@{conv.cpp}!smphSignalMainToThread@{smphSignalMainToThread}}
+\index{smphSignalMainToThread@{smphSignalMainToThread}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{smphSignalMainToThread}{smphSignalMainToThread}}
+{\footnotesize\ttfamily std\+::counting\+\_\+semaphore$<$\mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}}$>$ smph\+Signal\+Main\+To\+Thread \{0\}}
+
+\Hypertarget{conv_8cpp_a742693ce66cb25bbeea3f34ed99baa58}\label{conv_8cpp_a742693ce66cb25bbeea3f34ed99baa58} 
+\index{conv.cpp@{conv.cpp}!smphSignalThreadToMain@{smphSignalThreadToMain}}
+\index{smphSignalThreadToMain@{smphSignalThreadToMain}!conv.cpp@{conv.cpp}}
+\doxysubsubsection{\texorpdfstring{smphSignalThreadToMain}{smphSignalThreadToMain}}
+{\footnotesize\ttfamily std\+::counting\+\_\+semaphore$<$\mbox{\hyperlink{conv_8cpp_afc4abe097905ab7317695968a4a9ebd8}{num\+Threads}}$>$ smph\+Signal\+Thread\+To\+Main \{0\}}
+

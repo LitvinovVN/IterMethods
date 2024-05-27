@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Iter Methods: Файл algorithms_inner_product.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Iter Methods<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Библиотека итерационных методов решения сеточных уравнений</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл algorithms_inner_product.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &quot;<a class="el" href="vector1d_8c_source.html">vector1d.c</a>&quot;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;omp.h&gt;</code><br />
+</div>
+<p><a href="algorithms__inner__product_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinner__product__params.html">inner_product_params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура параметров алгоритмов вычисления скалярного произведения векторов  <a href="structinner__product__params.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinner__product__result.html">inner_product_result</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура результатов вычисления скалярного произведения векторов  <a href="structinner__product__result.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a7362ee28c94bbea299a464661ac00392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algorithms__inner__product_8cpp.html#a7362ee28c94bbea299a464661ac00392">inner_product_result_print</a> (<a class="el" href="structinner__product__result.html">inner_product_result</a> ipr, const char *message)</td></tr>
+<tr class="separator:a7362ee28c94bbea299a464661ac00392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d42ae07fdaa576c685c4cdb411113ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structinner__product__result.html">inner_product_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algorithms__inner__product_8cpp.html#a4d42ae07fdaa576c685c4cdb411113ef">inner_product_cpu_1</a> (<a class="el" href="structinner__product__params.html">inner_product_params</a> params)</td></tr>
+<tr class="memdesc:a4d42ae07fdaa576c685c4cdb411113ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное произведение векторов последовательно  <br /></td></tr>
+<tr class="separator:a4d42ae07fdaa576c685c4cdb411113ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3246bd2697f2f99d52e5749abc447a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algorithms__inner__product_8cpp.html#aca3246bd2697f2f99d52e5749abc447a">scalar_mult_cpu_thread</a> (double *v1, double *v2, size_t startInd, size_t length, double &amp;result)</td></tr>
+<tr class="separator:aca3246bd2697f2f99d52e5749abc447a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5848340cafe3f1351e02e451488327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structinner__product__result.html">inner_product_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algorithms__inner__product_8cpp.html#a4b5848340cafe3f1351e02e451488327">inner_product_cpu_n_threads</a> (<a class="el" href="structinner__product__params.html">inner_product_params</a> params)</td></tr>
+<tr class="memdesc:a4b5848340cafe3f1351e02e451488327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисление скалярного произведения на CPU в многопоточном режиме  <br /></td></tr>
+<tr class="separator:a4b5848340cafe3f1351e02e451488327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39eb271753ae73bb7a7effe310578968"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structinner__product__result.html">inner_product_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algorithms__inner__product_8cpp.html#a39eb271753ae73bb7a7effe310578968">inner_product_cpu_OpenMP</a> (<a class="el" href="structinner__product__params.html">inner_product_params</a> params)</td></tr>
+<tr class="memdesc:a39eb271753ae73bb7a7effe310578968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное произведение векторов с помощью OpenMP.  <br /></td></tr>
+<tr class="separator:a39eb271753ae73bb7a7effe310578968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a1be3f7fa26e4521098de5f1ec0f865f3"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="algorithms__inner__product_8cpp.html#a1be3f7fa26e4521098de5f1ec0f865f3">mutex</a></td></tr>
+<tr class="separator:a1be3f7fa26e4521098de5f1ec0f865f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a4d42ae07fdaa576c685c4cdb411113ef" name="a4d42ae07fdaa576c685c4cdb411113ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d42ae07fdaa576c685c4cdb411113ef">&#9670;&#160;</a></span>inner_product_cpu_1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structinner__product__result.html">inner_product_result</a> inner_product_cpu_1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structinner__product__params.html">inner_product_params</a>&#160;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вычисляет скалярное произведение векторов последовательно </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Структура параметров </td></tr>
+    <tr><td class="paramname">results</td><td>Структура результатов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>скалярное произведение </dd></dl>
+
+</div>
+</div>
+<a id="a4b5848340cafe3f1351e02e451488327" name="a4b5848340cafe3f1351e02e451488327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5848340cafe3f1351e02e451488327">&#9670;&#160;</a></span>inner_product_cpu_n_threads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structinner__product__result.html">inner_product_result</a> inner_product_cpu_n_threads </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structinner__product__params.html">inner_product_params</a>&#160;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вычисление скалярного произведения на CPU в многопоточном режиме </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a39eb271753ae73bb7a7effe310578968" name="a39eb271753ae73bb7a7effe310578968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39eb271753ae73bb7a7effe310578968">&#9670;&#160;</a></span>inner_product_cpu_OpenMP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structinner__product__result.html">inner_product_result</a> inner_product_cpu_OpenMP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structinner__product__params.html">inner_product_params</a>&#160;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вычисляет скалярное произведение векторов с помощью OpenMP. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Структура параметров </td></tr>
+    <tr><td class="paramname">results</td><td>Структура результатов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>скалярное произведение </dd></dl>
+
+</div>
+</div>
+<a id="a7362ee28c94bbea299a464661ac00392" name="a7362ee28c94bbea299a464661ac00392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7362ee28c94bbea299a464661ac00392">&#9670;&#160;</a></span>inner_product_result_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void inner_product_result_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structinner__product__result.html">inner_product_result</a>&#160;</td>
+          <td class="paramname"><em>ipr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca3246bd2697f2f99d52e5749abc447a" name="aca3246bd2697f2f99d52e5749abc447a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3246bd2697f2f99d52e5749abc447a">&#9670;&#160;</a></span>scalar_mult_cpu_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void scalar_mult_cpu_thread </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startInd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a1be3f7fa26e4521098de5f1ec0f865f3" name="a1be3f7fa26e4521098de5f1ec0f865f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be3f7fa26e4521098de5f1ec0f865f3">&#9670;&#160;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

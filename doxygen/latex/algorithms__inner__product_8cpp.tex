@@ -1,0 +1,116 @@
+\doxysection{Файл algorithms\+\_\+inner\+\_\+product.\+cpp}
+\hypertarget{algorithms__inner__product_8cpp}{}\label{algorithms__inner__product_8cpp}\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \"{}vector1d.\+c\"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Структура параметров алгоритмов вычисления скалярного произведения векторов \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}}
+\begin{DoxyCompactList}\small\item\em Структура результатов вычисления скалярного произведения векторов \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{algorithms__inner__product_8cpp_a7362ee28c94bbea299a464661ac00392}{inner\+\_\+product\+\_\+result\+\_\+print}} (\mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} ipr, const char \texorpdfstring{$\ast$}{*}message)
+\item 
+\mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} \mbox{\hyperlink{algorithms__inner__product_8cpp_a4d42ae07fdaa576c685c4cdb411113ef}{inner\+\_\+product\+\_\+cpu\+\_\+1}} (\mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}} params)
+\begin{DoxyCompactList}\small\item\em Вычисляет скалярное произведение векторов последовательно \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a}{scalar\+\_\+mult\+\_\+cpu\+\_\+thread}} (double \texorpdfstring{$\ast$}{*}v1, double \texorpdfstring{$\ast$}{*}v2, size\+\_\+t start\+Ind, size\+\_\+t length, double \&result)
+\item 
+\mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} \mbox{\hyperlink{algorithms__inner__product_8cpp_a4b5848340cafe3f1351e02e451488327}{inner\+\_\+product\+\_\+cpu\+\_\+n\+\_\+threads}} (\mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}} params)
+\begin{DoxyCompactList}\small\item\em Вычисление скалярного произведения на CPU в многопоточном режиме \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} \mbox{\hyperlink{algorithms__inner__product_8cpp_a39eb271753ae73bb7a7effe310578968}{inner\+\_\+product\+\_\+cpu\+\_\+\+Open\+MP}} (\mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}} params)
+\begin{DoxyCompactList}\small\item\em Вычисляет скалярное произведение векторов с помощью Open\+MP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{algorithms__inner__product_8cpp_a4d42ae07fdaa576c685c4cdb411113ef}\label{algorithms__inner__product_8cpp_a4d42ae07fdaa576c685c4cdb411113ef} 
+\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}!inner\_product\_cpu\_1@{inner\_product\_cpu\_1}}
+\index{inner\_product\_cpu\_1@{inner\_product\_cpu\_1}!algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+\doxysubsubsection{\texorpdfstring{inner\_product\_cpu\_1()}{inner\_product\_cpu\_1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} inner\+\_\+product\+\_\+cpu\+\_\+1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}}}]{params }\end{DoxyParamCaption})}
+
+
+
+Вычисляет скалярное произведение векторов последовательно 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em params} & Структура параметров \\
+\hline
+{\em results} & Структура результатов \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+скалярное произведение 
+\end{DoxyReturn}
+\Hypertarget{algorithms__inner__product_8cpp_a4b5848340cafe3f1351e02e451488327}\label{algorithms__inner__product_8cpp_a4b5848340cafe3f1351e02e451488327} 
+\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}!inner\_product\_cpu\_n\_threads@{inner\_product\_cpu\_n\_threads}}
+\index{inner\_product\_cpu\_n\_threads@{inner\_product\_cpu\_n\_threads}!algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+\doxysubsubsection{\texorpdfstring{inner\_product\_cpu\_n\_threads()}{inner\_product\_cpu\_n\_threads()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} inner\+\_\+product\+\_\+cpu\+\_\+n\+\_\+threads (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}}}]{params }\end{DoxyParamCaption})}
+
+
+
+Вычисление скалярного произведения на CPU в многопоточном режиме 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{algorithms__inner__product_8cpp_a39eb271753ae73bb7a7effe310578968}\label{algorithms__inner__product_8cpp_a39eb271753ae73bb7a7effe310578968} 
+\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}!inner\_product\_cpu\_OpenMP@{inner\_product\_cpu\_OpenMP}}
+\index{inner\_product\_cpu\_OpenMP@{inner\_product\_cpu\_OpenMP}!algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+\doxysubsubsection{\texorpdfstring{inner\_product\_cpu\_OpenMP()}{inner\_product\_cpu\_OpenMP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}} inner\+\_\+product\+\_\+cpu\+\_\+\+Open\+MP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinner__product__params}{inner\+\_\+product\+\_\+params}}}]{params }\end{DoxyParamCaption})}
+
+
+
+Вычисляет скалярное произведение векторов с помощью Open\+MP. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em params} & Структура параметров \\
+\hline
+{\em results} & Структура результатов \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+скалярное произведение 
+\end{DoxyReturn}
+\Hypertarget{algorithms__inner__product_8cpp_a7362ee28c94bbea299a464661ac00392}\label{algorithms__inner__product_8cpp_a7362ee28c94bbea299a464661ac00392} 
+\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}!inner\_product\_result\_print@{inner\_product\_result\_print}}
+\index{inner\_product\_result\_print@{inner\_product\_result\_print}!algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+\doxysubsubsection{\texorpdfstring{inner\_product\_result\_print()}{inner\_product\_result\_print()}}
+{\footnotesize\ttfamily void inner\+\_\+product\+\_\+result\+\_\+print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structinner__product__result}{inner\+\_\+product\+\_\+result}}}]{ipr,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+\Hypertarget{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a}\label{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a} 
+\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}!scalar\_mult\_cpu\_thread@{scalar\_mult\_cpu\_thread}}
+\index{scalar\_mult\_cpu\_thread@{scalar\_mult\_cpu\_thread}!algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+\doxysubsubsection{\texorpdfstring{scalar\_mult\_cpu\_thread()}{scalar\_mult\_cpu\_thread()}}
+{\footnotesize\ttfamily void scalar\+\_\+mult\+\_\+cpu\+\_\+thread (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{size\+\_\+t}]{start\+Ind,  }\item[{size\+\_\+t}]{length,  }\item[{double \&}]{result }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\Hypertarget{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}\label{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3} 
+\index{algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}!mutex@{mutex}}
+\index{mutex@{mutex}!algorithms\_inner\_product.cpp@{algorithms\_inner\_product.cpp}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::mutex mutex}
+

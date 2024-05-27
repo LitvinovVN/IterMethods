@@ -1,0 +1,42 @@
+\doxysection{Файл vec\+Mult.\+cpp}
+\hypertarget{vec_mult_8cpp}{}\label{vec_mult_8cpp}\index{vecMult.cpp@{vecMult.cpp}}
+{\ttfamily \#include \"{}vector1d.\+c\"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vec_mult_8cpp_af65f3d697e10f0c2d6e643fe9a080fed}{scalar\+\_\+mult\+\_\+cpu\+\_\+thread}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2, size\+\_\+t start\+Ind, size\+\_\+t length, double \&result)
+\item 
+int \mbox{\hyperlink{vec_mult_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{vec_mult_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{vec_mult_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{vec_mult_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{vecMult.cpp@{vecMult.cpp}!main@{main}}
+\index{main@{main}!vecMult.cpp@{vecMult.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{vec_mult_8cpp_af65f3d697e10f0c2d6e643fe9a080fed}\label{vec_mult_8cpp_af65f3d697e10f0c2d6e643fe9a080fed} 
+\index{vecMult.cpp@{vecMult.cpp}!scalar\_mult\_cpu\_thread@{scalar\_mult\_cpu\_thread}}
+\index{scalar\_mult\_cpu\_thread@{scalar\_mult\_cpu\_thread}!vecMult.cpp@{vecMult.cpp}}
+\doxysubsubsection{\texorpdfstring{scalar\_mult\_cpu\_thread()}{scalar\_mult\_cpu\_thread()}}
+{\footnotesize\ttfamily void scalar\+\_\+mult\+\_\+cpu\+\_\+thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{size\+\_\+t}]{start\+Ind,  }\item[{size\+\_\+t}]{length,  }\item[{double \&}]{result }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\Hypertarget{vec_mult_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}\label{vec_mult_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3} 
+\index{vecMult.cpp@{vecMult.cpp}!mutex@{mutex}}
+\index{mutex@{mutex}!vecMult.cpp@{vecMult.cpp}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::mutex mutex}
+

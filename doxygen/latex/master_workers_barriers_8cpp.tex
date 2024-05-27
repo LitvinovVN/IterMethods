@@ -1,0 +1,115 @@
+\doxysection{Файл master\+Workers\+Barriers.\+cpp}
+\hypertarget{master_workers_barriers_8cpp}{}\label{master_workers_barriers_8cpp}\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$barrier$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+std\+::barrier \mbox{\hyperlink{master_workers_barriers_8cpp_ad588e178023f20524166047986148231}{work\+Done}} (\mbox{\hyperlink{master_workers_barriers_8cpp_a8024d7bfb038f1bb0ee12477238e6d6a}{num\+\_\+threads}}+1, \mbox{\hyperlink{master_workers_barriers_8cpp_a3ba356e88997aeffe5edfe5f0ff538a3}{on\+\_\+completion}})
+\item 
+void \mbox{\hyperlink{master_workers_barriers_8cpp_acf967c6baf68c6f7ea4c462b1c3629a3}{main\+Thread\+Func}} ()
+\item 
+void \mbox{\hyperlink{master_workers_barriers_8cpp_a94b12758a85374df8ca83c3e6881d700}{calc\+Thread\+Func}} (int tid)
+\item 
+int \mbox{\hyperlink{master_workers_barriers_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+atomic\+\_\+flag \mbox{\hyperlink{master_workers_barriers_8cpp_acd5f59bba4342b1ce058878ebe12b9f4}{mt\+\_\+flag}} \{\}
+\item 
+std\+::atomic$<$ int $>$ \mbox{\hyperlink{master_workers_barriers_8cpp_ace1021f8f87ca3d4bd2aa07855d36384}{s}} \{0\}
+\item 
+const unsigned \mbox{\hyperlink{master_workers_barriers_8cpp_a41b7466d2b63598d9fad797010fef659}{s\+\_\+max}} \{10\}
+\item 
+const unsigned \mbox{\hyperlink{master_workers_barriers_8cpp_a8024d7bfb038f1bb0ee12477238e6d6a}{num\+\_\+threads}} \{4\}
+\item 
+atomic\+\_\+flag \mbox{\hyperlink{master_workers_barriers_8cpp_a0bddea091cfc059310502c2bfd43f9b2}{end\+\_\+calculation}} \{\}
+\item 
+auto \mbox{\hyperlink{master_workers_barriers_8cpp_a3ba356e88997aeffe5edfe5f0ff538a3}{on\+\_\+completion}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{master_workers_barriers_8cpp_a94b12758a85374df8ca83c3e6881d700}\label{master_workers_barriers_8cpp_a94b12758a85374df8ca83c3e6881d700} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!calcThreadFunc@{calcThreadFunc}}
+\index{calcThreadFunc@{calcThreadFunc}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{calcThreadFunc()}{calcThreadFunc()}}
+{\footnotesize\ttfamily void calc\+Thread\+Func (\begin{DoxyParamCaption}\item[{int}]{tid }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_barriers_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{master_workers_barriers_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!main@{main}}
+\index{main@{main}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_barriers_8cpp_acf967c6baf68c6f7ea4c462b1c3629a3}\label{master_workers_barriers_8cpp_acf967c6baf68c6f7ea4c462b1c3629a3} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!mainThreadFunc@{mainThreadFunc}}
+\index{mainThreadFunc@{mainThreadFunc}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{mainThreadFunc()}{mainThreadFunc()}}
+{\footnotesize\ttfamily void main\+Thread\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_barriers_8cpp_ad588e178023f20524166047986148231}\label{master_workers_barriers_8cpp_ad588e178023f20524166047986148231} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!workDone@{workDone}}
+\index{workDone@{workDone}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{workDone()}{workDone()}}
+{\footnotesize\ttfamily std\+::barrier work\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{master_workers_barriers_8cpp_a8024d7bfb038f1bb0ee12477238e6d6a}{num\+\_\+threads}}+}]{1,  }\item[{\mbox{\hyperlink{master_workers_barriers_8cpp_a3ba356e88997aeffe5edfe5f0ff538a3}{on\+\_\+completion}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\Hypertarget{master_workers_barriers_8cpp_a0bddea091cfc059310502c2bfd43f9b2}\label{master_workers_barriers_8cpp_a0bddea091cfc059310502c2bfd43f9b2} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!end\_calculation@{end\_calculation}}
+\index{end\_calculation@{end\_calculation}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{end\_calculation}{end\_calculation}}
+{\footnotesize\ttfamily atomic\+\_\+flag end\+\_\+calculation \{\}}
+
+\Hypertarget{master_workers_barriers_8cpp_acd5f59bba4342b1ce058878ebe12b9f4}\label{master_workers_barriers_8cpp_acd5f59bba4342b1ce058878ebe12b9f4} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!mt\_flag@{mt\_flag}}
+\index{mt\_flag@{mt\_flag}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{mt\_flag}{mt\_flag}}
+{\footnotesize\ttfamily atomic\+\_\+flag mt\+\_\+flag \{\}}
+
+\Hypertarget{master_workers_barriers_8cpp_a8024d7bfb038f1bb0ee12477238e6d6a}\label{master_workers_barriers_8cpp_a8024d7bfb038f1bb0ee12477238e6d6a} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!num\_threads@{num\_threads}}
+\index{num\_threads@{num\_threads}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{num\_threads}{num\_threads}}
+{\footnotesize\ttfamily const unsigned num\+\_\+threads \{4\}}
+
+\Hypertarget{master_workers_barriers_8cpp_a3ba356e88997aeffe5edfe5f0ff538a3}\label{master_workers_barriers_8cpp_a3ba356e88997aeffe5edfe5f0ff538a3} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!on\_completion@{on\_completion}}
+\index{on\_completion@{on\_completion}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{on\_completion}{on\_completion}}
+{\footnotesize\ttfamily auto on\+\_\+completion}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ []()\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}...\ step\ "{}}<<\ \mbox{\hyperlink{master_workers_barriers_8cpp_ace1021f8f87ca3d4bd2aa07855d36384}{s}}.load()\ <<\textcolor{stringliteral}{"{}\ done!\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{master_workers_barriers_8cpp_acd5f59bba4342b1ce058878ebe12b9f4}{mt\_flag}}.clear();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{master_workers_barriers_8cpp_ace1021f8f87ca3d4bd2aa07855d36384}{s}}.load()\ <\ \mbox{\hyperlink{master_workers_barriers_8cpp_a41b7466d2b63598d9fad797010fef659}{s\_max}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{master_workers_barriers_8cpp_ace1021f8f87ca3d4bd2aa07855d36384}{s}}++;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{master_workers_barriers_8cpp_a0bddea091cfc059310502c2bfd43f9b2}{end\_calculation}}.test\_and\_set();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}end\_calculation\ =\ "{}}<<\ \mbox{\hyperlink{master_workers_barriers_8cpp_a0bddea091cfc059310502c2bfd43f9b2}{end\_calculation}}.test()\ <<std::endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{master_workers_barriers_8cpp_ace1021f8f87ca3d4bd2aa07855d36384}\label{master_workers_barriers_8cpp_ace1021f8f87ca3d4bd2aa07855d36384} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!s@{s}}
+\index{s@{s}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily std\+::atomic$<$int$>$ s \{0\}}
+
+\Hypertarget{master_workers_barriers_8cpp_a41b7466d2b63598d9fad797010fef659}\label{master_workers_barriers_8cpp_a41b7466d2b63598d9fad797010fef659} 
+\index{masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}!s\_max@{s\_max}}
+\index{s\_max@{s\_max}!masterWorkersBarriers.cpp@{masterWorkersBarriers.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_max}{s\_max}}
+{\footnotesize\ttfamily const unsigned s\+\_\+max \{10\}}
+

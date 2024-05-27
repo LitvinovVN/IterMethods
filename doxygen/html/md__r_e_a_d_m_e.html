@@ -106,14 +106,17 @@ vector1d.c</h2>
 </li>
 </ol>
 <div class="fragment"><div class="line"> ++</div>
-<div class="line"><a class="code hl_struct" href="structvector1d.html">vector1d</a>* vector1d_create(<span class="keywordtype">int</span> size)</div>
+<div class="line"><a class="code hl_struct" href="structvector1d.html">vector1d</a>* <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(<span class="keywordtype">int</span> size)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_struct" href="structvector1d.html">vector1d</a> *vec1d = (<a class="code hl_struct" href="structvector1d.html">vector1d</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>));</div>
-<div class="line">    vec1d-&gt;length = size;    </div>
-<div class="line">    vec1d-&gt;data = (<span class="keywordtype">double</span>*)malloc(vec1d-&gt;length * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
+<div class="line">    vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> = size;    </div>
+<div class="line">    vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a> = (<span class="keywordtype">double</span>*)malloc(vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> vec1d;</div>
 <div class="line">}</div>
+<div class="ttc" id="astructvector1d_html_a6b6b5cd2f9a8f295341e4a66c3010a0f"><div class="ttname"><a href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">vector1d::data</a></div><div class="ttdeci">double * data</div><div class="ttdef"><b>Definition</b> vector1d.c:13</div></div>
+<div class="ttc" id="astructvector1d_html_abac9c2730833259c6cb59fc0ce6022e5"><div class="ttname"><a href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">vector1d::length</a></div><div class="ttdeci">unsigned long long length</div><div class="ttdef"><b>Definition</b> vector1d.c:12</div></div>
+<div class="ttc" id="avector1d_8c_html_a05aa7dfae1874d55c451df79ae5099a0"><div class="ttname"><a href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a></div><div class="ttdeci">vector1d * vector1d_create(int size)</div><div class="ttdef"><b>Definition</b> vector1d.c:17</div></div>
 </div><!-- fragment --><p>2.реализовать метод зейделя </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -1,0 +1,155 @@
+\doxysection{Файл comp\+\_\+system.\+c}
+\hypertarget{comp__system_8c}{}\label{comp__system_8c}\index{comp\_system.c@{comp\_system.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}}
+\begin{DoxyCompactList}\small\item\em Структура \"{}Технические характеристики графического ускорителя\"{}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Структура \"{}Узел гетерогенной вычислительной системы\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{comp__system_8c_aa99768ea4905126750dde26d1018d317}{COMP\+\_\+\+SYSTEM\+\_\+C}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{comp__system_8c_a63eac616eaf5aa3341e7a389a6ec6b0e}{comp\+\_\+system\+\_\+gpu\+\_\+create}} (double vram\+\_\+size\+\_\+gb, int gpu\+\_\+sm\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Создаёт структуру \"{}Технические характеристики графического ускорителя\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{comp__system_8c_a82e9c2b0e980a26f9823ff6933a2f97d}{comp\+\_\+system\+\_\+gpu\+\_\+array\+\_\+create}} (int gpu\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Создаёт массив графических ускорителей \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{comp__system_8c_abd99aa544dd6bd746330d2ef65b15dc6}{comp\+\_\+system\+\_\+node\+\_\+create}} (double ram\+\_\+size\+\_\+gb, int cpu\+\_\+threads\+\_\+max, int gpu\+\_\+num, \mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}gpus)
+\begin{DoxyCompactList}\small\item\em Создаёт структуру \"{}Узел гетерогенной вычислительной системы\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{comp__system_8c_ae8648a753c0a3533758ccb30cc523804}{comp\+\_\+system\+\_\+node\+\_\+create\+\_\+1\+GPU}} (double ram\+\_\+size\+\_\+gb, int cpu\+\_\+threads\+\_\+max, double vram\+\_\+size\+\_\+gb, int gpu\+\_\+sm\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Создаёт структуру \"{}Узел гетерогенной вычислительной системы\"{} с одним графическим ускорителем \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{comp__system_8c_a884e8c13e471027d6a1c7d0cec8aea61}{comp\+\_\+system\+\_\+gpu\+\_\+print}} (const char \texorpdfstring{$\ast$}{*}message, \mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*}gpu)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль параметры видеокарты \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{comp__system_8c_a10bac7f7b911da161f272348fb31c5ad}{comp\+\_\+system\+\_\+node\+\_\+print}} (const char \texorpdfstring{$\ast$}{*}message, \mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}} \texorpdfstring{$\ast$}{*}node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\Hypertarget{comp__system_8c_aa99768ea4905126750dde26d1018d317}\label{comp__system_8c_aa99768ea4905126750dde26d1018d317} 
+\index{comp\_system.c@{comp\_system.c}!COMP\_SYSTEM\_C@{COMP\_SYSTEM\_C}}
+\index{COMP\_SYSTEM\_C@{COMP\_SYSTEM\_C}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{COMP\_SYSTEM\_C}{COMP\_SYSTEM\_C}}
+{\footnotesize\ttfamily \#define COMP\+\_\+\+SYSTEM\+\_\+C}
+
+
+
+\doxysubsection{Функции}
+\Hypertarget{comp__system_8c_a82e9c2b0e980a26f9823ff6933a2f97d}\label{comp__system_8c_a82e9c2b0e980a26f9823ff6933a2f97d} 
+\index{comp\_system.c@{comp\_system.c}!comp\_system\_gpu\_array\_create@{comp\_system\_gpu\_array\_create}}
+\index{comp\_system\_gpu\_array\_create@{comp\_system\_gpu\_array\_create}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{comp\_system\_gpu\_array\_create()}{comp\_system\_gpu\_array\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} comp\+\_\+system\+\_\+gpu\+\_\+array\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{gpu\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Создаёт массив графических ускорителей 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em gpu\+\_\+num} & Количество графических ускорителей в вычислительной системе \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на массив графических ускорителей 
+\end{DoxyReturn}
+\Hypertarget{comp__system_8c_a63eac616eaf5aa3341e7a389a6ec6b0e}\label{comp__system_8c_a63eac616eaf5aa3341e7a389a6ec6b0e} 
+\index{comp\_system.c@{comp\_system.c}!comp\_system\_gpu\_create@{comp\_system\_gpu\_create}}
+\index{comp\_system\_gpu\_create@{comp\_system\_gpu\_create}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{comp\_system\_gpu\_create()}{comp\_system\_gpu\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*} comp\+\_\+system\+\_\+gpu\+\_\+create (\begin{DoxyParamCaption}\item[{double}]{vram\+\_\+size\+\_\+gb,  }\item[{int}]{gpu\+\_\+sm\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Создаёт структуру \"{}Технические характеристики графического ускорителя\"{}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em vram\+\_\+size\+\_\+gb} & Объём доступной видеопамяти, Гб \\
+\hline
+{\em gpu\+\_\+sm\+\_\+max} & Количество потоковых мультипроцессоров графического ускорителя, ед. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{comp__system_8c_a884e8c13e471027d6a1c7d0cec8aea61}\label{comp__system_8c_a884e8c13e471027d6a1c7d0cec8aea61} 
+\index{comp\_system.c@{comp\_system.c}!comp\_system\_gpu\_print@{comp\_system\_gpu\_print}}
+\index{comp\_system\_gpu\_print@{comp\_system\_gpu\_print}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{comp\_system\_gpu\_print()}{comp\_system\_gpu\_print()}}
+{\footnotesize\ttfamily void comp\+\_\+system\+\_\+gpu\+\_\+print (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message,  }\item[{\mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*}}]{gpu }\end{DoxyParamCaption})}
+
+
+
+Выводит в консоль параметры видеокарты 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение \\
+\hline
+{\em gpu} & Указатель на структуру \"{}Технические характеристики gpu\"{} (\doxylink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{comp__system_8c_abd99aa544dd6bd746330d2ef65b15dc6}\label{comp__system_8c_abd99aa544dd6bd746330d2ef65b15dc6} 
+\index{comp\_system.c@{comp\_system.c}!comp\_system\_node\_create@{comp\_system\_node\_create}}
+\index{comp\_system\_node\_create@{comp\_system\_node\_create}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{comp\_system\_node\_create()}{comp\_system\_node\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}} \texorpdfstring{$\ast$}{*} comp\+\_\+system\+\_\+node\+\_\+create (\begin{DoxyParamCaption}\item[{double}]{ram\+\_\+size\+\_\+gb,  }\item[{int}]{cpu\+\_\+threads\+\_\+max,  }\item[{int}]{gpu\+\_\+num,  }\item[{\mbox{\hyperlink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{gpus }\end{DoxyParamCaption})}
+
+
+
+Создаёт структуру \"{}Узел гетерогенной вычислительной системы\"{}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em ram\+\_\+size\+\_\+gb} & Объём доступной оперативной памяти, Гб \\
+\hline
+{\em cpu\+\_\+threads\+\_\+max} & Максимальное количество потоков, исполняемых на центральном процессоре (потоков CPU), ед. \\
+\hline
+{\em gpu\+\_\+num} & Количество графических ускорителей \\
+\hline
+{\em gpus} & Массив указателей на структуру \doxylink{structcomp__system__gpu}{comp\+\_\+system\+\_\+gpu} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на созданную структуру 
+\end{DoxyReturn}
+\Hypertarget{comp__system_8c_ae8648a753c0a3533758ccb30cc523804}\label{comp__system_8c_ae8648a753c0a3533758ccb30cc523804} 
+\index{comp\_system.c@{comp\_system.c}!comp\_system\_node\_create\_1GPU@{comp\_system\_node\_create\_1GPU}}
+\index{comp\_system\_node\_create\_1GPU@{comp\_system\_node\_create\_1GPU}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{comp\_system\_node\_create\_1GPU()}{comp\_system\_node\_create\_1GPU()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}} \texorpdfstring{$\ast$}{*} comp\+\_\+system\+\_\+node\+\_\+create\+\_\+1\+GPU (\begin{DoxyParamCaption}\item[{double}]{ram\+\_\+size\+\_\+gb,  }\item[{int}]{cpu\+\_\+threads\+\_\+max,  }\item[{double}]{vram\+\_\+size\+\_\+gb,  }\item[{int}]{gpu\+\_\+sm\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Создаёт структуру \"{}Узел гетерогенной вычислительной системы\"{} с одним графическим ускорителем 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em ram\+\_\+size\+\_\+gb} & Объём доступной оперативной памяти, Гб \\
+\hline
+{\em cpu\+\_\+threads\+\_\+max} & Максимальное количество потоков, исполняемых на центральном процессоре (потоков CPU), ед. \\
+\hline
+{\em vram\+\_\+size\+\_\+gb} & Объём доступной видеопамяти, Гб \\
+\hline
+{\em gpu\+\_\+sm\+\_\+max} & Количество потоковых мультипроцессоров графического ускорителя, ед. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на созданную структуру 
+\end{DoxyReturn}
+\Hypertarget{comp__system_8c_a10bac7f7b911da161f272348fb31c5ad}\label{comp__system_8c_a10bac7f7b911da161f272348fb31c5ad} 
+\index{comp\_system.c@{comp\_system.c}!comp\_system\_node\_print@{comp\_system\_node\_print}}
+\index{comp\_system\_node\_print@{comp\_system\_node\_print}!comp\_system.c@{comp\_system.c}}
+\doxysubsubsection{\texorpdfstring{comp\_system\_node\_print()}{comp\_system\_node\_print()}}
+{\footnotesize\ttfamily void comp\+\_\+system\+\_\+node\+\_\+print (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message,  }\item[{\mbox{\hyperlink{structcomp__system__node}{comp\+\_\+system\+\_\+node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})}
+

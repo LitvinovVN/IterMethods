@@ -1,0 +1,171 @@
+\doxysection{Файл master\+Workers.\+cpp}
+\hypertarget{master_workers_8cpp}{}\label{master_workers_8cpp}\index{masterWorkers.cpp@{masterWorkers.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_a4f959fded856d3e57dd0f3af758107c4}{print\+Is\+Workers\+Ready}} ()
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_adf8ab1a7b9b881af65d344551a17a28f}{waiting\+Start\+Working\+Command}} ()
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_ab3dc742fde567fc7eeedcd0dbfe3ffc9}{set\+Is\+Worker\+Ready}} (int tid, bool is\+Ready)
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_a6eaa2543685fe0a799c611c398120cf3}{set\+Is\+Worker\+Ready\+All}} (bool is\+Ready)
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_ab0912c763ec3586a0794b31bda53457a}{calculation\+Func}} (int tid, int \mbox{\hyperlink{master_workers_8cpp_a75f2d757b3db6c35722a379a556abdd9}{s}})
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_a7d5a32819e88bd8365cb958f147ace38}{waiting\+Workers\+CurrentS}} (int tid)
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_a375e3312000be86ebb7bdb56d52d8d8d}{worker\+Func}} (int tid)
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_a0268d23a860059900941727148dee584}{set\+Start\+Working}} (bool value)
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_a6068fca1fa50a10069d1af8d0a895d59}{waiting\+All\+Workers\+Ready}} ()
+\item 
+void \mbox{\hyperlink{master_workers_8cpp_ad58b6f22056770465fd25703fd935eb1}{manager\+Func}} ()
+\item 
+int \mbox{\hyperlink{master_workers_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned \mbox{\hyperlink{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2}{num\+Worker\+Threads}} = 4
+\item 
+const unsigned \mbox{\hyperlink{master_workers_8cpp_a088203dfc69537625544fc3187e1d18d}{num\+Steps}} = 10
+\item 
+std\+::mutex \mbox{\hyperlink{master_workers_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{mutex}}
+\item 
+bool \mbox{\hyperlink{master_workers_8cpp_a8b284bd06663a53079d856db480823d3}{start\+Working}} = false
+\item 
+bool \mbox{\hyperlink{master_workers_8cpp_ab7c64d4070629f4339561e117430d6e4}{is\+Workers\+Ready}} \mbox{[}\mbox{\hyperlink{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2}{num\+Worker\+Threads}}\mbox{]}
+\item 
+int \mbox{\hyperlink{master_workers_8cpp_acf8c200b9daa8d772c295fcda2896ccd}{workers\+CurrentS}} \mbox{[}\mbox{\hyperlink{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2}{num\+Worker\+Threads}}\mbox{]}
+\item 
+\mbox{\hyperlink{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{std\+::mutex}} \mbox{\hyperlink{master_workers_8cpp_a7cf0e2d873cb571cf03f738b5a911b37}{is\+Workers\+Ready\+\_\+mutex}}
+\item 
+std\+::atomic\+\_\+int \mbox{\hyperlink{master_workers_8cpp_a75f2d757b3db6c35722a379a556abdd9}{s}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{master_workers_8cpp_ab0912c763ec3586a0794b31bda53457a}\label{master_workers_8cpp_ab0912c763ec3586a0794b31bda53457a} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!calculationFunc@{calculationFunc}}
+\index{calculationFunc@{calculationFunc}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{calculationFunc()}{calculationFunc()}}
+{\footnotesize\ttfamily void calculation\+Func (\begin{DoxyParamCaption}\item[{int}]{tid,  }\item[{int}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{master_workers_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!main@{main}}
+\index{main@{main}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_8cpp_ad58b6f22056770465fd25703fd935eb1}\label{master_workers_8cpp_ad58b6f22056770465fd25703fd935eb1} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!managerFunc@{managerFunc}}
+\index{managerFunc@{managerFunc}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{managerFunc()}{managerFunc()}}
+{\footnotesize\ttfamily void manager\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_8cpp_a4f959fded856d3e57dd0f3af758107c4}\label{master_workers_8cpp_a4f959fded856d3e57dd0f3af758107c4} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!printIsWorkersReady@{printIsWorkersReady}}
+\index{printIsWorkersReady@{printIsWorkersReady}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{printIsWorkersReady()}{printIsWorkersReady()}}
+{\footnotesize\ttfamily void print\+Is\+Workers\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{master_workers_8cpp_ab3dc742fde567fc7eeedcd0dbfe3ffc9}\label{master_workers_8cpp_ab3dc742fde567fc7eeedcd0dbfe3ffc9} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!setIsWorkerReady@{setIsWorkerReady}}
+\index{setIsWorkerReady@{setIsWorkerReady}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{setIsWorkerReady()}{setIsWorkerReady()}}
+{\footnotesize\ttfamily void set\+Is\+Worker\+Ready (\begin{DoxyParamCaption}\item[{int}]{tid,  }\item[{bool}]{is\+Ready }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{master_workers_8cpp_a6eaa2543685fe0a799c611c398120cf3}\label{master_workers_8cpp_a6eaa2543685fe0a799c611c398120cf3} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!setIsWorkerReadyAll@{setIsWorkerReadyAll}}
+\index{setIsWorkerReadyAll@{setIsWorkerReadyAll}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{setIsWorkerReadyAll()}{setIsWorkerReadyAll()}}
+{\footnotesize\ttfamily void set\+Is\+Worker\+Ready\+All (\begin{DoxyParamCaption}\item[{bool}]{is\+Ready }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{master_workers_8cpp_a0268d23a860059900941727148dee584}\label{master_workers_8cpp_a0268d23a860059900941727148dee584} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!setStartWorking@{setStartWorking}}
+\index{setStartWorking@{setStartWorking}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{setStartWorking()}{setStartWorking()}}
+{\footnotesize\ttfamily void set\+Start\+Working (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{master_workers_8cpp_a6068fca1fa50a10069d1af8d0a895d59}\label{master_workers_8cpp_a6068fca1fa50a10069d1af8d0a895d59} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!waitingAllWorkersReady@{waitingAllWorkersReady}}
+\index{waitingAllWorkersReady@{waitingAllWorkersReady}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{waitingAllWorkersReady()}{waitingAllWorkersReady()}}
+{\footnotesize\ttfamily void waiting\+All\+Workers\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{master_workers_8cpp_adf8ab1a7b9b881af65d344551a17a28f}\label{master_workers_8cpp_adf8ab1a7b9b881af65d344551a17a28f} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!waitingStartWorkingCommand@{waitingStartWorkingCommand}}
+\index{waitingStartWorkingCommand@{waitingStartWorkingCommand}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{waitingStartWorkingCommand()}{waitingStartWorkingCommand()}}
+{\footnotesize\ttfamily void waiting\+Start\+Working\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{master_workers_8cpp_a7d5a32819e88bd8365cb958f147ace38}\label{master_workers_8cpp_a7d5a32819e88bd8365cb958f147ace38} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!waitingWorkersCurrentS@{waitingWorkersCurrentS}}
+\index{waitingWorkersCurrentS@{waitingWorkersCurrentS}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{waitingWorkersCurrentS()}{waitingWorkersCurrentS()}}
+{\footnotesize\ttfamily void waiting\+Workers\+CurrentS (\begin{DoxyParamCaption}\item[{int}]{tid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{master_workers_8cpp_a375e3312000be86ebb7bdb56d52d8d8d}\label{master_workers_8cpp_a375e3312000be86ebb7bdb56d52d8d8d} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!workerFunc@{workerFunc}}
+\index{workerFunc@{workerFunc}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{workerFunc()}{workerFunc()}}
+{\footnotesize\ttfamily void worker\+Func (\begin{DoxyParamCaption}\item[{int}]{tid }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\Hypertarget{master_workers_8cpp_ab7c64d4070629f4339561e117430d6e4}\label{master_workers_8cpp_ab7c64d4070629f4339561e117430d6e4} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!isWorkersReady@{isWorkersReady}}
+\index{isWorkersReady@{isWorkersReady}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{isWorkersReady}{isWorkersReady}}
+{\footnotesize\ttfamily bool is\+Workers\+Ready\mbox{[}\mbox{\hyperlink{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2}{num\+Worker\+Threads}}\mbox{]}}
+
+\Hypertarget{master_workers_8cpp_a7cf0e2d873cb571cf03f738b5a911b37}\label{master_workers_8cpp_a7cf0e2d873cb571cf03f738b5a911b37} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!isWorkersReady\_mutex@{isWorkersReady\_mutex}}
+\index{isWorkersReady\_mutex@{isWorkersReady\_mutex}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{isWorkersReady\_mutex}{isWorkersReady\_mutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{std\+::mutex}} is\+Workers\+Ready\+\_\+mutex}
+
+\Hypertarget{master_workers_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}\label{master_workers_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!mutex@{mutex}}
+\index{mutex@{mutex}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::mutex mutex}
+
+\Hypertarget{master_workers_8cpp_a088203dfc69537625544fc3187e1d18d}\label{master_workers_8cpp_a088203dfc69537625544fc3187e1d18d} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!numSteps@{numSteps}}
+\index{numSteps@{numSteps}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{numSteps}{numSteps}}
+{\footnotesize\ttfamily const unsigned num\+Steps = 10}
+
+\Hypertarget{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2}\label{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!numWorkerThreads@{numWorkerThreads}}
+\index{numWorkerThreads@{numWorkerThreads}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{numWorkerThreads}{numWorkerThreads}}
+{\footnotesize\ttfamily const unsigned num\+Worker\+Threads = 4}
+
+\Hypertarget{master_workers_8cpp_a75f2d757b3db6c35722a379a556abdd9}\label{master_workers_8cpp_a75f2d757b3db6c35722a379a556abdd9} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!s@{s}}
+\index{s@{s}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily std\+::atomic\+\_\+int s \{0\}}
+
+\Hypertarget{master_workers_8cpp_a8b284bd06663a53079d856db480823d3}\label{master_workers_8cpp_a8b284bd06663a53079d856db480823d3} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!startWorking@{startWorking}}
+\index{startWorking@{startWorking}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{startWorking}{startWorking}}
+{\footnotesize\ttfamily bool start\+Working = false}
+
+\Hypertarget{master_workers_8cpp_acf8c200b9daa8d772c295fcda2896ccd}\label{master_workers_8cpp_acf8c200b9daa8d772c295fcda2896ccd} 
+\index{masterWorkers.cpp@{masterWorkers.cpp}!workersCurrentS@{workersCurrentS}}
+\index{workersCurrentS@{workersCurrentS}!masterWorkers.cpp@{masterWorkers.cpp}}
+\doxysubsubsection{\texorpdfstring{workersCurrentS}{workersCurrentS}}
+{\footnotesize\ttfamily int workers\+CurrentS\mbox{[}\mbox{\hyperlink{master_workers_8cpp_a5c39c8490925780e0683a20869b2c8c2}{num\+Worker\+Threads}}\mbox{]}}
+

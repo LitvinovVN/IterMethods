@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Iter Methods: Файл masterWorkersBarriers.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Iter Methods<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Библиотека итерационных методов решения сеточных уравнений</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл masterWorkersBarriers.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;barrier&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ad588e178023f20524166047986148231"><td class="memItemLeft" align="right" valign="top">std::barrier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#ad588e178023f20524166047986148231">workDone</a> (<a class="el" href="master_workers_barriers_8cpp.html#a8024d7bfb038f1bb0ee12477238e6d6a">num_threads</a>+1, <a class="el" href="master_workers_barriers_8cpp.html#a3ba356e88997aeffe5edfe5f0ff538a3">on_completion</a>)</td></tr>
+<tr class="separator:ad588e178023f20524166047986148231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf967c6baf68c6f7ea4c462b1c3629a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#acf967c6baf68c6f7ea4c462b1c3629a3">mainThreadFunc</a> ()</td></tr>
+<tr class="separator:acf967c6baf68c6f7ea4c462b1c3629a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b12758a85374df8ca83c3e6881d700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#a94b12758a85374df8ca83c3e6881d700">calcThreadFunc</a> (int tid)</td></tr>
+<tr class="separator:a94b12758a85374df8ca83c3e6881d700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:acd5f59bba4342b1ce058878ebe12b9f4"><td class="memItemLeft" align="right" valign="top">atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#acd5f59bba4342b1ce058878ebe12b9f4">mt_flag</a> {}</td></tr>
+<tr class="separator:acd5f59bba4342b1ce058878ebe12b9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace1021f8f87ca3d4bd2aa07855d36384"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384">s</a> {0}</td></tr>
+<tr class="separator:ace1021f8f87ca3d4bd2aa07855d36384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b7466d2b63598d9fad797010fef659"><td class="memItemLeft" align="right" valign="top">const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#a41b7466d2b63598d9fad797010fef659">s_max</a> {10}</td></tr>
+<tr class="separator:a41b7466d2b63598d9fad797010fef659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8024d7bfb038f1bb0ee12477238e6d6a"><td class="memItemLeft" align="right" valign="top">const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#a8024d7bfb038f1bb0ee12477238e6d6a">num_threads</a> {4}</td></tr>
+<tr class="separator:a8024d7bfb038f1bb0ee12477238e6d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bddea091cfc059310502c2bfd43f9b2"><td class="memItemLeft" align="right" valign="top">atomic_flag&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#a0bddea091cfc059310502c2bfd43f9b2">end_calculation</a> {}</td></tr>
+<tr class="separator:a0bddea091cfc059310502c2bfd43f9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba356e88997aeffe5edfe5f0ff538a3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master_workers_barriers_8cpp.html#a3ba356e88997aeffe5edfe5f0ff538a3">on_completion</a></td></tr>
+<tr class="separator:a3ba356e88997aeffe5edfe5f0ff538a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a94b12758a85374df8ca83c3e6881d700" name="a94b12758a85374df8ca83c3e6881d700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b12758a85374df8ca83c3e6881d700">&#9670;&#160;</a></span>calcThreadFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calcThreadFunc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf967c6baf68c6f7ea4c462b1c3629a3" name="acf967c6baf68c6f7ea4c462b1c3629a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf967c6baf68c6f7ea4c462b1c3629a3">&#9670;&#160;</a></span>mainThreadFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mainThreadFunc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad588e178023f20524166047986148231" name="ad588e178023f20524166047986148231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad588e178023f20524166047986148231">&#9670;&#160;</a></span>workDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::barrier workDone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="master_workers_barriers_8cpp.html#a8024d7bfb038f1bb0ee12477238e6d6a">num_threads</a>+&#160;</td>
+          <td class="paramname"><em>1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="master_workers_barriers_8cpp.html#a3ba356e88997aeffe5edfe5f0ff538a3">on_completion</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a0bddea091cfc059310502c2bfd43f9b2" name="a0bddea091cfc059310502c2bfd43f9b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bddea091cfc059310502c2bfd43f9b2">&#9670;&#160;</a></span>end_calculation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">atomic_flag end_calculation {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd5f59bba4342b1ce058878ebe12b9f4" name="acd5f59bba4342b1ce058878ebe12b9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd5f59bba4342b1ce058878ebe12b9f4">&#9670;&#160;</a></span>mt_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">atomic_flag mt_flag {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8024d7bfb038f1bb0ee12477238e6d6a" name="a8024d7bfb038f1bb0ee12477238e6d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8024d7bfb038f1bb0ee12477238e6d6a">&#9670;&#160;</a></span>num_threads</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned num_threads {4}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ba356e88997aeffe5edfe5f0ff538a3" name="a3ba356e88997aeffe5edfe5f0ff538a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ba356e88997aeffe5edfe5f0ff538a3">&#9670;&#160;</a></span>on_completion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto on_completion</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= []() <span class="keyword">noexcept</span></div>
+<div class="line">    {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;... step &quot;</span>&lt;&lt; <a class="code hl_variable" href="master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384">s</a>.load() &lt;&lt;<span class="stringliteral">&quot; done! \n&quot;</span>;</div>
+<div class="line">        <a class="code hl_variable" href="master_workers_barriers_8cpp.html#acd5f59bba4342b1ce058878ebe12b9f4">mt_flag</a>.clear();</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_variable" href="master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384">s</a>.load() &lt; <a class="code hl_variable" href="master_workers_barriers_8cpp.html#a41b7466d2b63598d9fad797010fef659">s_max</a>)</div>
+<div class="line">            <a class="code hl_variable" href="master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384">s</a>++;</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            <a class="code hl_variable" href="master_workers_barriers_8cpp.html#a0bddea091cfc059310502c2bfd43f9b2">end_calculation</a>.test_and_set();</div>
+<div class="line">            </div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;end_calculation = &quot;</span>&lt;&lt; <a class="code hl_variable" href="master_workers_barriers_8cpp.html#a0bddea091cfc059310502c2bfd43f9b2">end_calculation</a>.test() &lt;&lt;std::endl;</div>
+<div class="line">    }</div>
+<div class="ttc" id="amaster_workers_barriers_8cpp_html_a0bddea091cfc059310502c2bfd43f9b2"><div class="ttname"><a href="master_workers_barriers_8cpp.html#a0bddea091cfc059310502c2bfd43f9b2">end_calculation</a></div><div class="ttdeci">atomic_flag end_calculation</div><div class="ttdef"><b>Definition</b> masterWorkersBarriers.cpp:27</div></div>
+<div class="ttc" id="amaster_workers_barriers_8cpp_html_a41b7466d2b63598d9fad797010fef659"><div class="ttname"><a href="master_workers_barriers_8cpp.html#a41b7466d2b63598d9fad797010fef659">s_max</a></div><div class="ttdeci">const unsigned s_max</div><div class="ttdef"><b>Definition</b> masterWorkersBarriers.cpp:21</div></div>
+<div class="ttc" id="amaster_workers_barriers_8cpp_html_acd5f59bba4342b1ce058878ebe12b9f4"><div class="ttname"><a href="master_workers_barriers_8cpp.html#acd5f59bba4342b1ce058878ebe12b9f4">mt_flag</a></div><div class="ttdeci">atomic_flag mt_flag</div><div class="ttdef"><b>Definition</b> masterWorkersBarriers.cpp:15</div></div>
+<div class="ttc" id="amaster_workers_barriers_8cpp_html_ace1021f8f87ca3d4bd2aa07855d36384"><div class="ttname"><a href="master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384">s</a></div><div class="ttdeci">std::atomic&lt; int &gt; s</div><div class="ttdef"><b>Definition</b> masterWorkersBarriers.cpp:18</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace1021f8f87ca3d4bd2aa07855d36384" name="ace1021f8f87ca3d4bd2aa07855d36384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace1021f8f87ca3d4bd2aa07855d36384">&#9670;&#160;</a></span>s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;int&gt; s {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41b7466d2b63598d9fad797010fef659" name="a41b7466d2b63598d9fad797010fef659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b7466d2b63598d9fad797010fef659">&#9670;&#160;</a></span>s_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned s_max {10}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

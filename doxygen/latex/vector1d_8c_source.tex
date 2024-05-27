@@ -1,5 +1,5 @@
 \doxysection{vector1d.\+c}
-\hypertarget{vector1d_8c_source}{}\label{vector1d_8c_source}
+\hypertarget{vector1d_8c_source}{}\label{vector1d_8c_source}\mbox{\hyperlink{vector1d_8c}{См. документацию.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VECTOR1D\_C}}
 \DoxyCodeLine{00002\ }
@@ -12,21 +12,21 @@
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
 \DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ length;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ *data;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ *\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}};}
 \DoxyCodeLine{00014\ \}\ \mbox{\hyperlink{structvector1d}{vector1d}};}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00017\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ vector1d\_create(\textcolor{keywordtype}{int}\ size)}
+\DoxyCodeLine{00017\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(\textcolor{keywordtype}{int}\ size)}
 \DoxyCodeLine{00018\ \{}
 \DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}\ *vec1d\ =\ (\mbox{\hyperlink{structvector1d}{vector1d}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structvector1d}{vector1d}}));}
-\DoxyCodeLine{00020\ \ \ \ \ vec1d-\/>length\ =\ size;}
+\DoxyCodeLine{00020\ \ \ \ \ vec1d-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ =\ size;}
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//printf("{}vec1d-\/>length\ =\ \%d\(\backslash\)n"{},\ vec1d-\/>length);}}
-\DoxyCodeLine{00022\ \ \ \ \ vec1d-\/>data\ =\ (\textcolor{keywordtype}{double}*)malloc(vec1d-\/>length\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00022\ \ \ \ \ vec1d-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}\ =\ (\textcolor{keywordtype}{double}*)malloc(vec1d-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{return}\ vec1d;}
 \DoxyCodeLine{00025\ \}}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ vector1d\_free(\mbox{\hyperlink{structvector1d}{vector1d}}**\ v1)}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}{vector1d\_free}}(\mbox{\hyperlink{structvector1d}{vector1d}}**\ v1)}
 \DoxyCodeLine{00032\ \{}
 \DoxyCodeLine{00033\ \ \ \ \ free((*v1)-\/>data);}
 \DoxyCodeLine{00034\ \ \ \ \ (*v1)-\/>data\ =\ NULL;}
@@ -34,144 +34,144 @@
 \DoxyCodeLine{00036\ \ \ \ \ *v1\ =\ NULL;}
 \DoxyCodeLine{00037\ \}}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ vector1d\_clone(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v2)}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a381236421b8b8d6967162d9d340adbd2}{vector1d\_clone}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v2)}
 \DoxyCodeLine{00044\ \{\ \ \ \ }
 \DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{if}(!v1)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}(*v2)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ *v2\ =\ vector1d\_create(v1-\/>length);}
+\DoxyCodeLine{00048\ \ \ \ \ *v2\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}});}
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v1-\/>length;\ i++)}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ (*v2)-\/>data[i]\ =\ v1-\/>data[i];}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ (*v2)-\/>data[i]\ =\ v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i];}
 \DoxyCodeLine{00052\ }
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00054\ \}}
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ vector1d\_init\_int(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v,\ \textcolor{keywordtype}{int}\ value)}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a2f44b860bb9763b894e703a827538ea4}{vector1d\_init\_int}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v,\ \textcolor{keywordtype}{int}\ value)}
 \DoxyCodeLine{00063\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>length;\ i++)}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00065\ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ v-\/>data[i]\ =\ value;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ value;}
 \DoxyCodeLine{00067\ \ \ \ \ \}}
 \DoxyCodeLine{00068\ \}}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ vector1d\_init\_zeroes(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a3daa3242e9593a4489fb6a21f6afc360}{vector1d\_init\_zeroes}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
 \DoxyCodeLine{00073\ \{}
-\DoxyCodeLine{00074\ \ \ \ \ vector1d\_init\_int(v,\ 0);}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a2f44b860bb9763b894e703a827538ea4}{vector1d\_init\_int}}(v,\ 0);}
 \DoxyCodeLine{00075\ \}}
 \DoxyCodeLine{00076\ }
-\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ vector1d\_init\_random(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_aeb12114301e577c083a30674e75db869}{vector1d\_init\_random}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
 \DoxyCodeLine{00082\ \{}
 \DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}(min\ ==\ max)}
 \DoxyCodeLine{00084\ \ \ \ \ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ vector1d\_init\_int(v,\ min);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a2f44b860bb9763b894e703a827538ea4}{vector1d\_init\_int}}(v,\ min);}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00087\ \ \ \ \ \}}
 \DoxyCodeLine{00088\ }
 \DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}(min\ >\ max)}
 \DoxyCodeLine{00090\ \ \ \ \ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ vector1d\_init\_random(v,\ max,\ min);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vector1d_8c_aeb12114301e577c083a30674e75db869}{vector1d\_init\_random}}(v,\ max,\ min);}
 \DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00093\ \ \ \ \ \}}
 \DoxyCodeLine{00094\ }
 \DoxyCodeLine{00095\ \ \ \ \ srand(time(0));}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>length;\ i++)}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00097\ \ \ \ \ \{}
 \DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ num\ =\ min\ +\ (rand()\ \%\ (max\ -\/\ min\ +\ 1));}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ v-\/>data[i]\ =\ num;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ num;}
 \DoxyCodeLine{00100\ \ \ \ \ \}\ \ \ \ }
 \DoxyCodeLine{00101\ \}}
 \DoxyCodeLine{00102\ }
-\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ vector1d\_init\_random\_double(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a0074a35045a54f02d131e487b0a71cf2}{vector1d\_init\_random\_double}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
 \DoxyCodeLine{00108\ \{}
 \DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}(min\ ==\ max)}
 \DoxyCodeLine{00110\ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ vector1d\_init\_int(v,\ min);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a2f44b860bb9763b894e703a827538ea4}{vector1d\_init\_int}}(v,\ min);}
 \DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00113\ \ \ \ \ \}}
 \DoxyCodeLine{00114\ }
 \DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{if}(min\ >\ max)}
 \DoxyCodeLine{00116\ \ \ \ \ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ vector1d\_init\_random\_double(v,\ max,\ min);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a0074a35045a54f02d131e487b0a71cf2}{vector1d\_init\_random\_double}}(v,\ max,\ min);}
 \DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00119\ \ \ \ \ \}}
 \DoxyCodeLine{00120\ }
 \DoxyCodeLine{00121\ \ \ \ \ srand(time(0));}
 \DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ d\ =\ 1000;}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>length;\ i++)}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00124\ \ \ \ \ \{}
 \DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ num\ =\ min\ +\ (rand()\ \%\ (max\ -\/\ min));}
 \DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ frac\ =\ (rand()\ \%\ d)\ /\ (\textcolor{keywordtype}{double})d;}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ v-\/>data[i]\ =\ num\ +\ frac;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ num\ +\ frac;}
 \DoxyCodeLine{00128\ \ \ \ \ \}\ \ \ \ }
 \DoxyCodeLine{00129\ \}}
 \DoxyCodeLine{00130\ }
-\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ vector1d\_add\_random\_0\_1\_3digit(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a0a3163cc9b20c95f2f7e39882d1ac26d}{vector1d\_add\_random\_0\_1\_3digit}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
 \DoxyCodeLine{00134\ \{}
 \DoxyCodeLine{00135\ \ \ \ \ srand(time(0));}
 \DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ d\ =\ 1000;}
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>length;\ i++)}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00138\ \ \ \ \ \{}
 \DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ num\ =\ (rand()\ \%\ d)\ /\ (\textcolor{keywordtype}{double})d;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ v-\/>data[i]\ =\ v-\/>data[i]+num;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]+num;}
 \DoxyCodeLine{00141\ \ \ \ \ \}\ \ }
 \DoxyCodeLine{00142\ \}}
 \DoxyCodeLine{00143\ }
 \DoxyCodeLine{00144\ }
-\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ vector1d\_init\_scalar(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}\ *v2,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a04519364eae575ca49f17ebe0f45432e}{vector1d\_init\_scalar}}(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}\ *v2,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
 \DoxyCodeLine{00146\ \{}
 \DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ rnd;}
 \DoxyCodeLine{00148\ \ \ \ \ srand(time(NULL));}
 \DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<v1-\/>length;\ i++)}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00151\ \ \ \ \ \{}
 \DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ rnd\ =\ min\ +\ rand()\ \%\ (max-\/min);\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ v1-\/>data[i]\ =\ k*rnd;}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ v2-\/>data[i]\ =\ 1/rnd;\ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ k*rnd;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ 1/rnd;\ \ \ \ \ \ }
 \DoxyCodeLine{00155\ \ \ \ \ \}}
 \DoxyCodeLine{00156\ \}}
 \DoxyCodeLine{00157\ }
 \DoxyCodeLine{00160\ }
 \DoxyCodeLine{00161\ }
-\DoxyCodeLine{00165\ \textcolor{keywordtype}{void}\ vector1d\_print(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
+\DoxyCodeLine{00165\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a4c695e4f5ed27d8ac5079821ecb0cdb9}{vector1d\_print}}(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
 \DoxyCodeLine{00166\ \{}
 \DoxyCodeLine{00167\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
-\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<v-\/>length;\ i++)}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i<v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00169\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ "{}},\ v-\/>data[i]);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ "{}},\ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]);\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00171\ \ \ \ \ \}}
 \DoxyCodeLine{00172\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00173\ \}}
 \DoxyCodeLine{00174\ }
-\DoxyCodeLine{00175\ \textcolor{keywordtype}{void}\ vector1d\_print\_range(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \textcolor{keywordtype}{size\_t}\ indStart,\ \textcolor{keywordtype}{size\_t}\ length)}
+\DoxyCodeLine{00175\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a4d316f9b2bdec03f0b9523cc7cba59cb}{vector1d\_print\_range}}(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \textcolor{keywordtype}{size\_t}\ indStart,\ \textcolor{keywordtype}{size\_t}\ length)}
 \DoxyCodeLine{00176\ \{}
 \DoxyCodeLine{00177\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s\ [\%ld...\%ld]:\ "{}},\ message,\ indStart,\ indStart+length-\/1);}
 \DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ indStart;\ i\ <\ indStart+length;\ i++)}
 \DoxyCodeLine{00179\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ "{}},\ v-\/>data[i]);\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ "{}},\ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]);\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00181\ \ \ \ \ \}}
 \DoxyCodeLine{00182\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00183\ \}}
 \DoxyCodeLine{00184\ }
 \DoxyCodeLine{00185\ }
-\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ vector1d\_print\_details(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_a03bacd0853094ba4d0132fb17abdacc8}{vector1d\_print\_details}}(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
 \DoxyCodeLine{00190\ \{}
 \DoxyCodeLine{00191\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
-\DoxyCodeLine{00192\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v-\/>length\ =\ \%d\ |\ "{}},\ v-\/>length);}
-\DoxyCodeLine{00193\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v-\/>data\ =\ \%p\(\backslash\)n"{}},\ v-\/>data);}
+\DoxyCodeLine{00192\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v-\/>length\ =\ \%d\ |\ "{}},\ v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}});}
+\DoxyCodeLine{00193\ \ \ \ \ printf(\textcolor{stringliteral}{"{}v-\/>data\ =\ \%p\(\backslash\)n"{}},\ v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}});}
 \DoxyCodeLine{00194\ \}}
 \DoxyCodeLine{00195\ }
 \DoxyCodeLine{00196\ }
-\DoxyCodeLine{00201\ \textcolor{keywordtype}{int}\ vector1d\_is\_equals(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2)}
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a8862204cc248465f5fb0ead1b80f5c36}{vector1d\_is\_equals}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2)}
 \DoxyCodeLine{00202\ \{}
-\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{if}(v1-\/>length\ !=\ v2-\/>length)}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{if}(v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ !=\ v2-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}})}
 \DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00205\ }
-\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v1-\/>length;\ i++)}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00207\ \ \ \ \ \{}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(v1-\/>data[i]\ -\/\ v2-\/>data[i])\ >\ 0.00000001)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ -\/\ v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i])\ >\ 0.00000001)}
 \DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00210\ \ \ \ \ \}}
 \DoxyCodeLine{00211\ \ \ \ \ }
@@ -179,83 +179,83 @@
 \DoxyCodeLine{00213\ \}}
 \DoxyCodeLine{00214\ }
 \DoxyCodeLine{00215\ }
-\DoxyCodeLine{00222\ \textcolor{keywordtype}{int}\ vector1d\_init\_v2\_for\_inner\_product\_testing(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v2,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{double}*\ inner\_product)}
+\DoxyCodeLine{00222\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_ad145b24841854993e61ee5b7261dffe0}{vector1d\_init\_v2\_for\_inner\_product\_testing}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v2,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{double}*\ inner\_product)}
 \DoxyCodeLine{00223\ \{\ \ \ \ }
 \DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{if}(!v1)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{if}(*v2)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00226\ }
-\DoxyCodeLine{00227\ \ \ \ \ *v2\ =\ vector1d\_create(v1-\/>length);}
+\DoxyCodeLine{00227\ \ \ \ \ *v2\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}});}
 \DoxyCodeLine{00228\ }
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v1-\/>length;\ i++)}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00230\ \ \ \ \ \{}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(v1-\/>data[i])\ <\ 0.00000001)}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i])\ <\ 0.00000001)}
 \DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ (*v2)-\/>data[i]\ =\ 0;}
 \DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ (*v2)-\/>data[i]\ =\ k/v1-\/>data[i];}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ (*v2)-\/>data[i]\ =\ k/v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i];}
 \DoxyCodeLine{00235\ \ \ \ \ \}}
 \DoxyCodeLine{00236\ }
-\DoxyCodeLine{00237\ \ \ \ \ *inner\_product\ =\ k\ *\ v1-\/>length;}
+\DoxyCodeLine{00237\ \ \ \ \ *inner\_product\ =\ k\ *\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};}
 \DoxyCodeLine{00238\ }
 \DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00240\ \}}
 \DoxyCodeLine{00241\ }
-\DoxyCodeLine{00252\ \textcolor{keywordtype}{int}\ vector1d\_init\_vectors\_for\_inner\_product\_testing\_range(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2,}
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a493a56824c84c68b632925af0f3ccc69}{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2,}
 \DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ ind\_start,\ \textcolor{keywordtype}{size\_t}\ length,}
 \DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}*\ inner\_product)}
 \DoxyCodeLine{00255\ \{\ \ \ \ }
 \DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{if}(!v1)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{if}(!v2)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{if}(v1-\/>length\ !=\ v2-\/>length)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{if}(ind\_start\ +\ length\ >\ v1-\/>length)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{if}(v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ !=\ v2-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}})\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{if}(ind\_start\ +\ length\ >\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}})\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00260\ }
-\DoxyCodeLine{00261\ \ \ \ \ vector1d\_init\_random\_double(v1,\ min,\ max);}
+\DoxyCodeLine{00261\ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a0074a35045a54f02d131e487b0a71cf2}{vector1d\_init\_random\_double}}(v1,\ min,\ max);}
 \DoxyCodeLine{00262\ \ \ \ \ }
 \DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ ind\_start;\ i\ <\ ind\_start+length;\ i++)}
 \DoxyCodeLine{00264\ \ \ \ \ \{}
-\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(v1-\/>data[i])\ <\ 0.00000001)}
-\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ v2-\/>data[i]\ =\ 0;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fabs(v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i])\ <\ 0.00000001)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ 0;}
 \DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ v2-\/>data[i]\ =\ ((\textcolor{keywordtype}{long}\ double)k/v1-\/>data[i]);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ =\ ((\textcolor{keywordtype}{long}\ double)k/v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]);}
 \DoxyCodeLine{00269\ \ \ \ \ \}}
 \DoxyCodeLine{00270\ }
-\DoxyCodeLine{00271\ \ \ \ \ *inner\_product\ =\ k\ *\ v1-\/>length;}
+\DoxyCodeLine{00271\ \ \ \ \ *inner\_product\ =\ k\ *\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};}
 \DoxyCodeLine{00272\ }
 \DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00274\ \}}
 \DoxyCodeLine{00275\ }
-\DoxyCodeLine{00284\ \textcolor{keywordtype}{int}\ vector1d\_init\_vectors\_for\_inner\_product\_testing(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2,}
+\DoxyCodeLine{00284\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a5af5d497abca16e44c1013ee7f398e0f}{vector1d\_init\_vectors\_for\_inner\_product\_testing}}(\mbox{\hyperlink{structvector1d}{vector1d}}*\ v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2,}
 \DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}*\ inner\_product)}
 \DoxyCodeLine{00286\ \{}
 \DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{if}(!v1)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordflow}{if}(!v2)\ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{if}(v1-\/>length\ !=\ v2-\/>length)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{if}(v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ !=\ v2-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}})\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00290\ }
-\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordflow}{if}(!vector1d\_init\_vectors\_for\_inner\_product\_testing\_range(v1,\ v2,\ 0,\ v1-\/>length,\ min,\ max,\ k,\ inner\_product))}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{vector1d_8c_a493a56824c84c68b632925af0f3ccc69}{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range}}(v1,\ v2,\ 0,\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}},\ min,\ max,\ k,\ inner\_product))}
 \DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00293\ }
 \DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00295\ \}}
 \DoxyCodeLine{00296\ }
-\DoxyCodeLine{00301\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ scalar\_mult(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}\ *v2)}
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{vector1d_8c_ae8661f64f3b933cdc113267d6bfdd89e}{scalar\_mult}}(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}\ *v2)}
 \DoxyCodeLine{00302\ \{}
 \DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ res\ =\ 0;}
 \DoxyCodeLine{00304\ }
-\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ i\ =\ 0ULL;\ i\ <\ v1-\/>length;\ i++)}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ i\ =\ 0ULL;\ i\ <\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};\ i++)}
 \DoxyCodeLine{00306\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ res\ +=\ v1-\/>data[i]\ *\ v2-\/>data[i];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ res\ +=\ v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ *\ v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i];\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00308\ \ \ \ \ \}}
 \DoxyCodeLine{00309\ }
 \DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
 \DoxyCodeLine{00311\ \}}
 \DoxyCodeLine{00312\ }
-\DoxyCodeLine{00319\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ scalar\_mult\_block(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}\ *v2,}
+\DoxyCodeLine{00319\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{vector1d_8c_a548f0e57b06a5f8b7d025256beedb542}{scalar\_mult\_block}}(\mbox{\hyperlink{structvector1d}{vector1d}}\ *v1,\ \mbox{\hyperlink{structvector1d}{vector1d}}\ *v2,}
 \DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ ind\_start,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ length)}
 \DoxyCodeLine{00321\ \{}
 \DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ res\ =\ 0;}
 \DoxyCodeLine{00323\ }
 \DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ i\ =\ ind\_start;\ i\ <\ length;\ i++)}
 \DoxyCodeLine{00325\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ res\ +=\ v1-\/>data[i]\ *\ v2-\/>data[i];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ res\ +=\ v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i]\ *\ v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}[i];\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00327\ \ \ \ \ \}}
 \DoxyCodeLine{00328\ }
 \DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
@@ -263,19 +263,19 @@
 \DoxyCodeLine{00331\ }
 \DoxyCodeLine{00332\ }
 \DoxyCodeLine{00333\ }
-\DoxyCodeLine{00338\ \textcolor{keywordtype}{void}\ vector1d\_save\_to\_file\_bin(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
+\DoxyCodeLine{00338\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vector1d_8c_ac189b6be6a3797640f48a655d2fcf7f3}{vector1d\_save\_to\_file\_bin}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
 \DoxyCodeLine{00339\ \{}
 \DoxyCodeLine{00340\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Saving\ vector1d\ into\ file\ \%s...\(\backslash\)n"{}},\ file\_name);}
 \DoxyCodeLine{00341\ \ \ \ \ }
 \DoxyCodeLine{00342\ \ \ \ \ FILE\ *f;\ \textcolor{comment}{//Описание\ файловой\ переменной.\ \ \ \ }}
 \DoxyCodeLine{00343\ \ \ \ \ f\ =\ fopen(file\_name,\ \textcolor{stringliteral}{"{}wb"{}});\ \textcolor{comment}{//Создание\ двоичного\ файла\ в\ режиме\ записи.}}
-\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ v-\/>length;}
-\DoxyCodeLine{00345\ \ \ \ \ fwrite(\&n,\ \textcolor{keyword}{sizeof}(v-\/>length),\ 1,\ f);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
-\DoxyCodeLine{00346\ \ \ \ \ fwrite(v-\/>data,\ \textcolor{keyword}{sizeof}(v-\/>data),\ n,\ f);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.\ }}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}};}
+\DoxyCodeLine{00345\ \ \ \ \ fwrite(\&n,\ \textcolor{keyword}{sizeof}(v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}),\ 1,\ f);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
+\DoxyCodeLine{00346\ \ \ \ \ fwrite(v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}},\ \textcolor{keyword}{sizeof}(v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}),\ n,\ f);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.\ }}
 \DoxyCodeLine{00347\ \ \ \ \ fclose(f);\ \textcolor{comment}{//Закрыть\ файл.}}
 \DoxyCodeLine{00348\ \}}
 \DoxyCodeLine{00349\ }
-\DoxyCodeLine{00354\ \textcolor{keywordtype}{int}\ vector1d\_create\_from\_file(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v)}
+\DoxyCodeLine{00354\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a97984c5babf7f90cace65df60692a5be}{vector1d\_create\_from\_file}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v)}
 \DoxyCodeLine{00355\ \{\ \ \ }
 \DoxyCodeLine{00356\ \ \ \ \ FILE\ *f\ =\ fopen(file\_name,\ \textcolor{stringliteral}{"{}rb"{}});\ \textcolor{comment}{//Открыть\ существующий\ двоичный\ файл\ в\ режиме\ чтения.}}
 \DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordflow}{if}(!f)\ \textcolor{keywordflow}{return}\ 0;}
@@ -284,7 +284,7 @@
 \DoxyCodeLine{00360\ \ \ \ \ fread(\&n,\ \textcolor{keyword}{sizeof}((*v)-\/>length),\ 1,\ f);\ \textcolor{comment}{//Читать\ из\ файла\ целое\ число\ в\ переменную\ n.}}
 \DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordflow}{if}(n\ <=\ 0)\ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00362\ }
-\DoxyCodeLine{00363\ \ \ \ \ *v\ =\ vector1d\_create(n);}
+\DoxyCodeLine{00363\ \ \ \ \ *v\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(n);}
 \DoxyCodeLine{00364\ \ \ \ \ (*v)-\/>length\ =\ n;\ \ \ }
 \DoxyCodeLine{00365\ \ \ \ \ \textcolor{comment}{//Чтение\ n\ вещественных\ чисел\ размером\ sizeof(double)\ каждое\ из\ файла\ f\ в\ массив\ arr.}}
 \DoxyCodeLine{00366\ \ \ \ \ fread((*v)-\/>data,\ \textcolor{keyword}{sizeof}((*v)-\/>data),\ n,\ f);\ \ \ \ }
@@ -293,7 +293,7 @@
 \DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00370\ \}}
 \DoxyCodeLine{00371\ }
-\DoxyCodeLine{00378\ \textcolor{keywordtype}{int}\ vector1d\_create\_from\_file\_pos(FILE\ *f,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ index\_start,}
+\DoxyCodeLine{00378\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a8be7cd1ea3afedd6e7000257eb1f923e}{vector1d\_create\_from\_file\_pos}}(FILE\ *f,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ index\_start,}
 \DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ length,\ \mbox{\hyperlink{structvector1d}{vector1d}}**\ v)}
 \DoxyCodeLine{00380\ \{}
 \DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ pos\ =\ \textcolor{keyword}{sizeof}((*v)-\/>length)\ +\ index\_start\ *\ \textcolor{keyword}{sizeof}((*v)-\/>data);}
@@ -304,7 +304,7 @@
 \DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{00387\ \ \ \ \ \}}
 \DoxyCodeLine{00388\ }
-\DoxyCodeLine{00389\ \ \ \ \ *v\ =\ vector1d\_create(length);}
+\DoxyCodeLine{00389\ \ \ \ \ *v\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(length);}
 \DoxyCodeLine{00390\ \ \ \ \ (*v)-\/>length\ =\ length;\ \ }
 \DoxyCodeLine{00391\ \ \ \ \ \textcolor{comment}{//Чтение\ n\ чисел\ размером\ sizeof((*v)-\/>data)\ каждое\ из\ файла\ f\ в\ массив\ (*v)-\/>data.}}
 \DoxyCodeLine{00392\ \ \ \ \ fread((*v)-\/>data,\ \textcolor{keyword}{sizeof}((*v)-\/>data),\ length,\ f);}
@@ -312,10 +312,10 @@
 \DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00395\ \}}
 \DoxyCodeLine{00396\ }
-\DoxyCodeLine{00397\ \textcolor{keywordtype}{int}\ vector1d\_init\_from\_file\_pos(FILE\ *f,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ index\_start,}
+\DoxyCodeLine{00397\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a02c28a6dda8a9e65868884805a97d6b6}{vector1d\_init\_from\_file\_pos}}(FILE\ *f,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ index\_start,}
 \DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ length,\ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v)}
 \DoxyCodeLine{00399\ \{}
-\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ pos\ =\ \textcolor{keyword}{sizeof}(v-\/>length)\ +\ index\_start\ *\ \textcolor{keyword}{sizeof}(v-\/>data);}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ pos\ =\ \textcolor{keyword}{sizeof}(v-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}})\ +\ index\_start\ *\ \textcolor{keyword}{sizeof}(v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}});}
 \DoxyCodeLine{00401\ \ \ \ \ \textcolor{comment}{//printf("{}Reading\ from\ pos\ \%lld\(\backslash\)n"{},\ pos);}}
 \DoxyCodeLine{00402\ }
 \DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ seek\_block\_size\ =\ 1000000000Ull;}
@@ -358,17 +358,17 @@
 \DoxyCodeLine{00440\ \ \ \ \ \}}
 \DoxyCodeLine{00441\ \ \ \ \ }
 \DoxyCodeLine{00442\ \ \ \ \ \textcolor{comment}{//Чтение\ n\ чисел\ размером\ sizeof(v-\/>data)\ каждое\ из\ файла\ f\ в\ массив\ v-\/>data.}}
-\DoxyCodeLine{00443\ \ \ \ \ fread(v-\/>data,\ \textcolor{keyword}{sizeof}(v-\/>data),\ length,\ f);}
+\DoxyCodeLine{00443\ \ \ \ \ fread(v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}},\ \textcolor{keyword}{sizeof}(v-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}),\ length,\ f);}
 \DoxyCodeLine{00444\ }
 \DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{00446\ \}}
 \DoxyCodeLine{00447\ }
-\DoxyCodeLine{00458\ \textcolor{keywordtype}{int}\ inner\_product\_files\_bin\_generate(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name\_v1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name\_v2,}
+\DoxyCodeLine{00458\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{vector1d_8c_a9998e6a159d3c163800a562e960ba048}{inner\_product\_files\_bin\_generate}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name\_v1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_name\_v2,}
 \DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ N,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ Nb,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{double}*\ inner\_product)}
 \DoxyCodeLine{00460\ \{}
 \DoxyCodeLine{00461\ \ \ \ \ \textcolor{comment}{//\ Создаём\ блоки\ памяти}}
-\DoxyCodeLine{00462\ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v1\ =\ vector1d\_create(Nb);}
-\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2\ =\ vector1d\_create(Nb);}
+\DoxyCodeLine{00462\ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v1\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(Nb);}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(Nb);}
 \DoxyCodeLine{00464\ \ \ \ \ *inner\_product\ =\ 0;}
 \DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00466\ \ \ \ \ \textcolor{comment}{//printf("{}Saving\ 2\ vector1d\ into\ files\ \%s\ and\ \%s...\(\backslash\)n"{},\ file\_name\_v1,\ file\_name\_v1);}}
@@ -396,7 +396,7 @@
 \DoxyCodeLine{00488\ \ \ \ \ \{}
 \DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ inner\_product\_block\ =\ 0;}
 \DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Заполняем\ блоки\ v1\ и\ v2\ \ \ \ \ \ \ }}
-\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!vector1d\_init\_vectors\_for\_inner\_product\_testing(v1,\ v2,\ min,\ max,\ k,\ \&inner\_product\_block))}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{vector1d_8c_a5af5d497abca16e44c1013ee7f398e0f}{vector1d\_init\_vectors\_for\_inner\_product\_testing}}(v1,\ v2,\ min,\ max,\ k,\ \&inner\_product\_block))}
 \DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ERROR\ in\ vector1d\_init\_vectors\_for\_inner\_product\_testing!"{}});}
 \DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
@@ -410,20 +410,20 @@
 \DoxyCodeLine{00502\ \textcolor{comment}{\ \ \ \ \ \ \ \ vector1d\_print(v2,\ "{}block\ v2\ =\ "{});}}
 \DoxyCodeLine{00503\ \textcolor{comment}{\ \ \ \ \ \ \ \ vector1d\_print\_details(v2,\ "{}block\ v2\ details:\ "{});\ //*/}}
 \DoxyCodeLine{00504\ }
-\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ fwrite(v1-\/>data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v1-\/>length,\ f\_v1);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
-\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ fwrite(v2-\/>data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v2-\/>length,\ f\_v2);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ fwrite(v1-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v1-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}},\ f\_v1);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ fwrite(v2-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v2-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}},\ f\_v2);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
 \DoxyCodeLine{00507\ \ \ \ \ \}}
-\DoxyCodeLine{00508\ \ \ \ \ vector1d\_free(\&v1);}
-\DoxyCodeLine{00509\ \ \ \ \ vector1d\_free(\&v2);}
+\DoxyCodeLine{00508\ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}{vector1d\_free}}(\&v1);}
+\DoxyCodeLine{00509\ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}{vector1d\_free}}(\&v2);}
 \DoxyCodeLine{00510\ }
 \DoxyCodeLine{00511\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ ost\ =\ N\ \%\ Nb;}
 \DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordflow}{if}(ost)}
 \DoxyCodeLine{00513\ \ \ \ \ \{}
-\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v1\_ost\ =\ vector1d\_create(ost);}
-\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2\_ost\ =\ vector1d\_create(ost);}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v1\_ost\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(ost);}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}*\ v2\_ost\ =\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(ost);}
 \DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ inner\_product\_block\ =\ 0;}
 \DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Заполняем\ блоки\ v1\ и\ v2\ \ \ \ \ \ \ }}
-\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!vector1d\_init\_vectors\_for\_inner\_product\_testing(v1\_ost,\ v2\_ost,\ min,\ max,\ k,\ \&inner\_product\_block))}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{vector1d_8c_a5af5d497abca16e44c1013ee7f398e0f}{vector1d\_init\_vectors\_for\_inner\_product\_testing}}(v1\_ost,\ v2\_ost,\ min,\ max,\ k,\ \&inner\_product\_block))}
 \DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ERROR\ in\ vector1d\_init\_vectors\_for\_inner\_product\_testing!"{}});}
 \DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
@@ -437,11 +437,11 @@
 \DoxyCodeLine{00529\ \textcolor{comment}{\ \ \ \ \ \ \ \ vector1d\_print(v2\_ost,\ "{}block\ v2\_ost\ =\ "{});}}
 \DoxyCodeLine{00530\ \textcolor{comment}{\ \ \ \ \ \ \ \ vector1d\_print\_details(v2\_ost,\ "{}block\ v2\_ost\ details:\ "{});\ //*/}}
 \DoxyCodeLine{00531\ }
-\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ fwrite(v1\_ost-\/>data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v1\_ost-\/>length,\ f\_v1);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
-\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ fwrite(v2\_ost-\/>data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v2\_ost-\/>length,\ f\_v2);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ fwrite(v1\_ost-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v1\_ost-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}},\ f\_v1);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ fwrite(v2\_ost-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ v2\_ost-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}},\ f\_v2);\ \textcolor{comment}{//Запись\ числа\ в\ двоичный\ файл.}}
 \DoxyCodeLine{00534\ }
-\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ vector1d\_free(\&v1\_ost);}
-\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ vector1d\_free(\&v2\_ost);}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}{vector1d\_free}}(\&v1\_ost);}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}{vector1d\_free}}(\&v2\_ost);}
 \DoxyCodeLine{00537\ \ \ \ \ \}}
 \DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00539\ \ \ \ \ fclose(f\_v1);\ \textcolor{comment}{//Закрыть\ файл.}}

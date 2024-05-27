@@ -73,9 +73,9 @@ $(function() {
   <div class="headertitle"><div class="title">vector1d.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VECTOR1D_C</span></div>
+<a href="vector1d_8c.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VECTOR1D_C</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define VECTOR1D_C</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a246a93c213381a01c072e693a18ec86f">    3</a></span><span class="preprocessor">#define VECTOR1D_C</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span> <span class="comment">// malloc</span></div>
@@ -84,21 +84,21 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structvector1d.html">   10</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> length;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">double</span> *data;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">   12</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">   13</a></span>    <span class="keywordtype">double</span> *<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>} <a class="code hl_struct" href="structvector1d.html">vector1d</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_struct" href="structvector1d.html">vector1d</a>* vector1d_create(<span class="keywordtype">int</span> size)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">   17</a></span><a class="code hl_struct" href="structvector1d.html">vector1d</a>* <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(<span class="keywordtype">int</span> size)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_struct" href="structvector1d.html">vector1d</a> *vec1d = (<a class="code hl_struct" href="structvector1d.html">vector1d</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>));</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    vec1d-&gt;length = size;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> = size;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">//printf(&quot;vec1d-&gt;length = %d\n&quot;, vec1d-&gt;length);</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    vec1d-&gt;data = (<span class="keywordtype">double</span>*)malloc(vec1d-&gt;length * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a> = (<span class="keywordtype">double</span>*)malloc(vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> vec1d;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> vector1d_free(<a class="code hl_struct" href="structvector1d.html">vector1d</a>** v1)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>** v1)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    free((*v1)-&gt;data);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    (*v1)-&gt;data = NULL;</div>
@@ -106,144 +106,144 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    *v1 = NULL;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">int</span> vector1d_clone(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v2)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a381236421b8b8d6967162d9d340adbd2">   43</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a381236421b8b8d6967162d9d340adbd2">vector1d_clone</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v2)</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{    </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span>(!v1) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span>(*v2) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    *v2 = vector1d_create(v1-&gt;length);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    *v2 = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v1-&gt;length; i++)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        (*v2)-&gt;data[i] = v1-&gt;data[i];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        (*v2)-&gt;data[i] = v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i];</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> vector1d_init_int(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v, <span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">   62</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">vector1d_init_int</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v, <span class="keywordtype">int</span> value)</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;length; i++)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        v-&gt;data[i] = value;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = value;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> vector1d_init_zeroes(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a3daa3242e9593a4489fb6a21f6afc360">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a3daa3242e9593a4489fb6a21f6afc360">vector1d_init_zeroes</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    vector1d_init_int(v, 0);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">vector1d_init_int</a>(v, 0);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">void</span> vector1d_init_random(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="vector1d_8c.html#aeb12114301e577c083a30674e75db869">   81</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#aeb12114301e577c083a30674e75db869">vector1d_init_random</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max)</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span>(min == max)</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        vector1d_init_int(v, min);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_function" href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">vector1d_init_int</a>(v, min);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span>(min &gt; max)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        vector1d_init_random(v, max, min);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_function" href="vector1d_8c.html#aeb12114301e577c083a30674e75db869">vector1d_init_random</a>(v, max, min);</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    srand(time(0));</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;length; i++)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">int</span> num = min + (rand() % (max - min + 1));</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        v-&gt;data[i] = num;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = num;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }    </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">void</span> vector1d_init_random_double(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">vector1d_init_random_double</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max)</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span>(min == max)</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        vector1d_init_int(v, min);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_function" href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">vector1d_init_int</a>(v, min);</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span>(min &gt; max)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        vector1d_init_random_double(v, max, min);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_function" href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">vector1d_init_random_double</a>(v, max, min);</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    srand(time(0));</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">int</span> d = 1000;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;length; i++)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordtype">int</span> num = min + (rand() % (max - min));</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordtype">double</span> frac = (rand() % d) / (<span class="keywordtype">double</span>)d;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        v-&gt;data[i] = num + frac;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = num + frac;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }    </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keywordtype">void</span> vector1d_add_random_0_1_3digit(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a0a3163cc9b20c95f2f7e39882d1ac26d">  133</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a0a3163cc9b20c95f2f7e39882d1ac26d">vector1d_add_random_0_1_3digit</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    srand(time(0));</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">int</span> d = 1000;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;length; i++)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordtype">double</span> num = (rand() % d) / (<span class="keywordtype">double</span>)d;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        v-&gt;data[i] = v-&gt;data[i]+num;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]+num;</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }  </div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keywordtype">void</span> vector1d_init_scalar(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a> *v2, <span class="keywordtype">double</span> k, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a04519364eae575ca49f17ebe0f45432e">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a04519364eae575ca49f17ebe0f45432e">vector1d_init_scalar</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a> *v2, <span class="keywordtype">double</span> k, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max)</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">int</span> rnd;</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    srand(time(NULL));</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;v1-&gt;length; i++)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordtype">double</span> rnd = min + rand() % (max-min);        </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        v1-&gt;data[i] = k*rnd;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        v2-&gt;data[i] = 1/rnd;      </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = k*rnd;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = 1/rnd;      </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keywordtype">void</span> vector1d_print(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span>* message)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a4c695e4f5ed27d8ac5079821ecb0cdb9">  165</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a4c695e4f5ed27d8ac5079821ecb0cdb9">vector1d_print</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span>* message)</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>{</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    printf(<span class="stringliteral">&quot;%s&quot;</span>, message);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;v-&gt;length; i++)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i&lt;v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    {        </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        printf(<span class="stringliteral">&quot;%lf &quot;</span>, v-&gt;data[i]);         </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        printf(<span class="stringliteral">&quot;%lf &quot;</span>, v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]);         </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keywordtype">void</span> vector1d_print_range(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span>* message, <span class="keywordtype">size_t</span> indStart, <span class="keywordtype">size_t</span> length)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a4d316f9b2bdec03f0b9523cc7cba59cb">  175</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a4d316f9b2bdec03f0b9523cc7cba59cb">vector1d_print_range</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span>* message, <span class="keywordtype">size_t</span> indStart, <span class="keywordtype">size_t</span> length)</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>{</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    printf(<span class="stringliteral">&quot;%s [%ld...%ld]: &quot;</span>, message, indStart, indStart+length-1);</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = indStart; i &lt; indStart+length; i++)</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    {        </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        printf(<span class="stringliteral">&quot;%lf &quot;</span>, v-&gt;data[i]);         </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        printf(<span class="stringliteral">&quot;%lf &quot;</span>, v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]);         </div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keywordtype">void</span> vector1d_print_details(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span>* message)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a03bacd0853094ba4d0132fb17abdacc8">  189</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#a03bacd0853094ba4d0132fb17abdacc8">vector1d_print_details</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v, <span class="keyword">const</span> <span class="keywordtype">char</span>* message)</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>{</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    printf(<span class="stringliteral">&quot;%s&quot;</span>, message);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    printf(<span class="stringliteral">&quot;v-&gt;length = %d | &quot;</span>, v-&gt;length);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    printf(<span class="stringliteral">&quot;v-&gt;data = %p\n&quot;</span>, v-&gt;data);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    printf(<span class="stringliteral">&quot;v-&gt;length = %d | &quot;</span>, v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    printf(<span class="stringliteral">&quot;v-&gt;data = %p\n&quot;</span>, v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>);</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="keywordtype">int</span> vector1d_is_equals(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a8862204cc248465f5fb0ead1b80f5c36">  201</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a8862204cc248465f5fb0ead1b80f5c36">vector1d_is_equals</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2)</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>{</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">if</span>(v1-&gt;length != v2-&gt;length)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">if</span>(v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> != v2-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>)</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v1-&gt;length; i++)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span>(fabs(v1-&gt;data[i] - v2-&gt;data[i]) &gt; 0.00000001)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span>(fabs(v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] - v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]) &gt; 0.00000001)</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    </div>
@@ -251,83 +251,83 @@ $(function() {
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>}</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keywordtype">int</span> vector1d_init_v2_for_inner_product_testing(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v2, <span class="keywordtype">double</span> k, <span class="keywordtype">double</span>* inner_product)</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="vector1d_8c.html#ad145b24841854993e61ee5b7261dffe0">  222</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#ad145b24841854993e61ee5b7261dffe0">vector1d_init_v2_for_inner_product_testing</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v2, <span class="keywordtype">double</span> k, <span class="keywordtype">double</span>* inner_product)</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>{    </div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">if</span>(!v1) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">if</span>(*v2) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    *v2 = vector1d_create(v1-&gt;length);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    *v2 = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>);</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v1-&gt;length; i++)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    {</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">if</span>(fabs(v1-&gt;data[i]) &lt; 0.00000001)</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">if</span>(fabs(v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]) &lt; 0.00000001)</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            (*v2)-&gt;data[i] = 0;</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            (*v2)-&gt;data[i] = k/v1-&gt;data[i];</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            (*v2)-&gt;data[i] = k/v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i];</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    *inner_product = k * v1-&gt;length;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    *inner_product = k * v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>;</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>}</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="keywordtype">int</span> vector1d_init_vectors_for_inner_product_testing_range(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2,</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a493a56824c84c68b632925af0f3ccc69">  252</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a493a56824c84c68b632925af0f3ccc69">vector1d_init_vectors_for_inner_product_testing_range</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2,</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordtype">size_t</span> ind_start, <span class="keywordtype">size_t</span> length,</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max, <span class="keywordtype">double</span> k, <span class="keywordtype">long</span> <span class="keywordtype">double</span>* inner_product)</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>{    </div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">if</span>(!v1) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">if</span>(!v2) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">if</span>(v1-&gt;length != v2-&gt;length) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">if</span>(ind_start + length &gt; v1-&gt;length) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">if</span>(v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> != v2-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">if</span>(ind_start + length &gt; v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    vector1d_init_random_double(v1, min, max);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <a class="code hl_function" href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">vector1d_init_random_double</a>(v1, min, max);</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    </div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = ind_start; i &lt; ind_start+length; i++)</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">if</span>(fabs(v1-&gt;data[i]) &lt; 0.00000001)</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            v2-&gt;data[i] = 0;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">if</span>(fabs(v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]) &lt; 0.00000001)</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = 0;</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            v2-&gt;data[i] = ((<span class="keywordtype">long</span> double)k/v1-&gt;data[i]);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] = ((<span class="keywordtype">long</span> double)k/v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i]);</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    *inner_product = k * v1-&gt;length;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    *inner_product = k * v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>;</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="keywordtype">int</span> vector1d_init_vectors_for_inner_product_testing(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2,</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">  284</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">vector1d_init_vectors_for_inner_product_testing</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2,</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max, <span class="keywordtype">double</span> k, <span class="keywordtype">long</span> <span class="keywordtype">double</span>* inner_product)</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>{</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">if</span>(!v1) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordflow">if</span>(!v2) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">if</span>(v1-&gt;length != v2-&gt;length) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">if</span>(v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> != v2-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">if</span>(!vector1d_init_vectors_for_inner_product_testing_range(v1, v2, 0, v1-&gt;length, min, max, k, inner_product))</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="vector1d_8c.html#a493a56824c84c68b632925af0f3ccc69">vector1d_init_vectors_for_inner_product_testing_range</a>(v1, v2, 0, v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>, min, max, k, inner_product))</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keywordtype">long</span> <span class="keywordtype">double</span> scalar_mult(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a> *v2)</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="vector1d_8c.html#ae8661f64f3b933cdc113267d6bfdd89e">  301</a></span><span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code hl_function" href="vector1d_8c.html#ae8661f64f3b933cdc113267d6bfdd89e">scalar_mult</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a> *v2)</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>{</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">long</span> <span class="keywordtype">double</span> res = 0;</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0ULL; i &lt; v1-&gt;length; i++)</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> i = 0ULL; i &lt; v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>; i++)</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    {        </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        res += v1-&gt;data[i] * v2-&gt;data[i];         </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        res += v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] * v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i];         </div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>}</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="keywordtype">long</span> <span class="keywordtype">double</span> scalar_mult_block(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a> *v2,</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a548f0e57b06a5f8b7d025256beedb542">  319</a></span><span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code hl_function" href="vector1d_8c.html#a548f0e57b06a5f8b7d025256beedb542">scalar_mult_block</a>(<a class="code hl_struct" href="structvector1d.html">vector1d</a> *v1, <a class="code hl_struct" href="structvector1d.html">vector1d</a> *v2,</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> ind_start, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> length)</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>{</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordtype">long</span> <span class="keywordtype">double</span> res = 0;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> i = ind_start; i &lt; length; i++)</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    {        </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        res += v1-&gt;data[i] * v2-&gt;data[i];         </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        res += v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i] * v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>[i];         </div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    }</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keywordflow">return</span> res;</div>
@@ -335,19 +335,19 @@ $(function() {
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="keywordtype">void</span> vector1d_save_to_file_bin(<span class="keyword">const</span> <span class="keywordtype">char</span>* file_name, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="vector1d_8c.html#ac189b6be6a3797640f48a655d2fcf7f3">  338</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vector1d_8c.html#ac189b6be6a3797640f48a655d2fcf7f3">vector1d_save_to_file_bin</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* file_name, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>{</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    printf(<span class="stringliteral">&quot;Saving vector1d into file %s...\n&quot;</span>, file_name);</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    </div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    FILE *f; <span class="comment">//Описание файловой переменной.    </span></div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    f = fopen(file_name, <span class="stringliteral">&quot;wb&quot;</span>); <span class="comment">//Создание двоичного файла в режиме записи.</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keywordtype">size_t</span> n = v-&gt;length;</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    fwrite(&amp;n, <span class="keyword">sizeof</span>(v-&gt;length), 1, f); <span class="comment">//Запись числа в двоичный файл.</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    fwrite(v-&gt;data, <span class="keyword">sizeof</span>(v-&gt;data), n, f); <span class="comment">//Запись числа в двоичный файл. </span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keywordtype">size_t</span> n = v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>;</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    fwrite(&amp;n, <span class="keyword">sizeof</span>(v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>), 1, f); <span class="comment">//Запись числа в двоичный файл.</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    fwrite(v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>, <span class="keyword">sizeof</span>(v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>), n, f); <span class="comment">//Запись числа в двоичный файл. </span></div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    fclose(f); <span class="comment">//Закрыть файл.</span></div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>}</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span><span class="keywordtype">int</span> vector1d_create_from_file(<span class="keyword">const</span> <span class="keywordtype">char</span>* file_name, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v)</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a97984c5babf7f90cace65df60692a5be">  354</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a97984c5babf7f90cace65df60692a5be">vector1d_create_from_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* file_name, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v)</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>{   </div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    FILE *f = fopen(file_name, <span class="stringliteral">&quot;rb&quot;</span>); <span class="comment">//Открыть существующий двоичный файл в режиме чтения.</span></div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keywordflow">if</span>(!f) <span class="keywordflow">return</span> 0;</div>
@@ -356,7 +356,7 @@ $(function() {
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    fread(&amp;n, <span class="keyword">sizeof</span>((*v)-&gt;length), 1, f); <span class="comment">//Читать из файла целое число в переменную n.</span></div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordflow">if</span>(n &lt;= 0) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    *v = vector1d_create(n);</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    *v = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(n);</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    (*v)-&gt;length = n;   </div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="comment">//Чтение n вещественных чисел размером sizeof(double) каждое из файла f в массив arr.</span></div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    fread((*v)-&gt;data, <span class="keyword">sizeof</span>((*v)-&gt;data), n, f);    </div>
@@ -365,7 +365,7 @@ $(function() {
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>}</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="keywordtype">int</span> vector1d_create_from_file_pos(FILE *f, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> index_start,</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a8be7cd1ea3afedd6e7000257eb1f923e">  378</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a8be7cd1ea3afedd6e7000257eb1f923e">vector1d_create_from_file_pos</a>(FILE *f, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> index_start,</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> length, <a class="code hl_struct" href="structvector1d.html">vector1d</a>** v)</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>{</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> pos = <span class="keyword">sizeof</span>((*v)-&gt;length) + index_start * <span class="keyword">sizeof</span>((*v)-&gt;data);</div>
@@ -376,7 +376,7 @@ $(function() {
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    }</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    *v = vector1d_create(length);</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    *v = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(length);</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    (*v)-&gt;length = length;  </div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="comment">//Чтение n чисел размером sizeof((*v)-&gt;data) каждое из файла f в массив (*v)-&gt;data.</span></div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    fread((*v)-&gt;data, <span class="keyword">sizeof</span>((*v)-&gt;data), length, f);</div>
@@ -384,10 +384,10 @@ $(function() {
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>}</div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="keywordtype">int</span> vector1d_init_from_file_pos(FILE *f, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> index_start,</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a02c28a6dda8a9e65868884805a97d6b6">  397</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a02c28a6dda8a9e65868884805a97d6b6">vector1d_init_from_file_pos</a>(FILE *f, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> index_start,</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> length, <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v)</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>{</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> pos = <span class="keyword">sizeof</span>(v-&gt;length) + index_start * <span class="keyword">sizeof</span>(v-&gt;data);</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> pos = <span class="keyword">sizeof</span>(v-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>) + index_start * <span class="keyword">sizeof</span>(v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>);</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <span class="comment">//printf(&quot;Reading from pos %lld\n&quot;, pos);</span></div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> seek_block_size = 1000000000Ull;</div>
@@ -430,17 +430,17 @@ $(function() {
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    }</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    </div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="comment">//Чтение n чисел размером sizeof(v-&gt;data) каждое из файла f в массив v-&gt;data.</span></div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    fread(v-&gt;data, <span class="keyword">sizeof</span>(v-&gt;data), length, f);</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    fread(v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>, <span class="keyword">sizeof</span>(v-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>), length, f);</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span> </div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>}</div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="keywordtype">int</span> inner_product_files_bin_generate(<span class="keyword">const</span> <span class="keywordtype">char</span>* file_name_v1, <span class="keyword">const</span> <span class="keywordtype">char</span>* file_name_v2,</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno"><a class="line" href="vector1d_8c.html#a9998e6a159d3c163800a562e960ba048">  458</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="vector1d_8c.html#a9998e6a159d3c163800a562e960ba048">inner_product_files_bin_generate</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* file_name_v1, <span class="keyword">const</span> <span class="keywordtype">char</span>* file_name_v2,</div>
 <div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> N, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> Nb, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max, <span class="keywordtype">double</span> k, <span class="keywordtype">double</span>* inner_product)</div>
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>{</div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    <span class="comment">// Создаём блоки памяти</span></div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1 = vector1d_create(Nb);</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2 = vector1d_create(Nb);</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1 = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(Nb);</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2 = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(Nb);</div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    *inner_product = 0;</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        </div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    <span class="comment">//printf(&quot;Saving 2 vector1d into files %s and %s...\n&quot;, file_name_v1, file_name_v1);</span></div>
@@ -468,7 +468,7 @@ $(function() {
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    {</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        <span class="keywordtype">long</span> <span class="keywordtype">double</span> inner_product_block = 0;</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        <span class="comment">// Заполняем блоки v1 и v2       </span></div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        <span class="keywordflow">if</span>(!vector1d_init_vectors_for_inner_product_testing(v1, v2, min, max, k, &amp;inner_product_block))</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        <span class="keywordflow">if</span>(!<a class="code hl_function" href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">vector1d_init_vectors_for_inner_product_testing</a>(v1, v2, min, max, k, &amp;inner_product_block))</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        {</div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>            printf(<span class="stringliteral">&quot;ERROR in vector1d_init_vectors_for_inner_product_testing!&quot;</span>);</div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>            <span class="keywordflow">return</span> 0;</div>
@@ -482,20 +482,20 @@ $(function() {
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span><span class="comment">        vector1d_print(v2, &quot;block v2 = &quot;);</span></div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="comment">        vector1d_print_details(v2, &quot;block v2 details: &quot;); //*/</span></div>
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span> </div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>        fwrite(v1-&gt;data, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v1-&gt;length, f_v1); <span class="comment">//Запись числа в двоичный файл.</span></div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        fwrite(v2-&gt;data, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v2-&gt;length, f_v2); <span class="comment">//Запись числа в двоичный файл.</span></div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>        fwrite(v1-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v1-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>, f_v1); <span class="comment">//Запись числа в двоичный файл.</span></div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        fwrite(v2-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v2-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>, f_v2); <span class="comment">//Запись числа в двоичный файл.</span></div>
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>    }</div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    vector1d_free(&amp;v1);</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    vector1d_free(&amp;v2);</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    <a class="code hl_function" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a>(&amp;v1);</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    <a class="code hl_function" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a>(&amp;v2);</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span> </div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> ost = N % Nb;</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordflow">if</span>(ost)</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    {</div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1_ost = vector1d_create(ost);</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2_ost = vector1d_create(ost);</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v1_ost = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(ost);</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        <a class="code hl_struct" href="structvector1d.html">vector1d</a>* v2_ost = <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(ost);</div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        <span class="keywordtype">long</span> <span class="keywordtype">double</span> inner_product_block = 0;</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <span class="comment">// Заполняем блоки v1 и v2       </span></div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        <span class="keywordflow">if</span>(!vector1d_init_vectors_for_inner_product_testing(v1_ost, v2_ost, min, max, k, &amp;inner_product_block))</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        <span class="keywordflow">if</span>(!<a class="code hl_function" href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">vector1d_init_vectors_for_inner_product_testing</a>(v1_ost, v2_ost, min, max, k, &amp;inner_product_block))</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>        {</div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>            printf(<span class="stringliteral">&quot;ERROR in vector1d_init_vectors_for_inner_product_testing!&quot;</span>);</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>            <span class="keywordflow">return</span> 0;</div>
@@ -509,11 +509,11 @@ $(function() {
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><span class="comment">        vector1d_print(v2_ost, &quot;block v2_ost = &quot;);</span></div>
 <div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span><span class="comment">        vector1d_print_details(v2_ost, &quot;block v2_ost details: &quot;); //*/</span></div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>        fwrite(v1_ost-&gt;data, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v1_ost-&gt;length, f_v1); <span class="comment">//Запись числа в двоичный файл.</span></div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>        fwrite(v2_ost-&gt;data, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v2_ost-&gt;length, f_v2); <span class="comment">//Запись числа в двоичный файл.</span></div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>        fwrite(v1_ost-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v1_ost-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>, f_v1); <span class="comment">//Запись числа в двоичный файл.</span></div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>        fwrite(v2_ost-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>), v2_ost-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a>, f_v2); <span class="comment">//Запись числа в двоичный файл.</span></div>
 <div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span> </div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>        vector1d_free(&amp;v1_ost);</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>        vector1d_free(&amp;v2_ost);</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>        <a class="code hl_function" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a>(&amp;v1_ost);</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>        <a class="code hl_function" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a>(&amp;v2_ost);</div>
 <div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>    }</div>
 <div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>        </div>
 <div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>    fclose(f_v1); <span class="comment">//Закрыть файл.</span></div>
@@ -526,6 +526,31 @@ $(function() {
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructvector1d_html"><div class="ttname"><a href="structvector1d.html">vector1d</a></div><div class="ttdef"><b>Definition</b> vector1d.c:11</div></div>
+<div class="ttc" id="astructvector1d_html_a6b6b5cd2f9a8f295341e4a66c3010a0f"><div class="ttname"><a href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">vector1d::data</a></div><div class="ttdeci">double * data</div><div class="ttdef"><b>Definition</b> vector1d.c:13</div></div>
+<div class="ttc" id="astructvector1d_html_abac9c2730833259c6cb59fc0ce6022e5"><div class="ttname"><a href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">vector1d::length</a></div><div class="ttdeci">unsigned long long length</div><div class="ttdef"><b>Definition</b> vector1d.c:12</div></div>
+<div class="ttc" id="avector1d_8c_html_a0074a35045a54f02d131e487b0a71cf2"><div class="ttname"><a href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">vector1d_init_random_double</a></div><div class="ttdeci">void vector1d_init_random_double(vector1d *v, int min, int max)</div><div class="ttdoc">Инициализирует все элементы вектора v случайными вещественными числами в диапазоне от min до max.</div><div class="ttdef"><b>Definition</b> vector1d.c:107</div></div>
+<div class="ttc" id="avector1d_8c_html_a02c28a6dda8a9e65868884805a97d6b6"><div class="ttname"><a href="vector1d_8c.html#a02c28a6dda8a9e65868884805a97d6b6">vector1d_init_from_file_pos</a></div><div class="ttdeci">int vector1d_init_from_file_pos(FILE *f, unsigned long long index_start, unsigned long long length, vector1d *v)</div><div class="ttdef"><b>Definition</b> vector1d.c:397</div></div>
+<div class="ttc" id="avector1d_8c_html_a03bacd0853094ba4d0132fb17abdacc8"><div class="ttname"><a href="vector1d_8c.html#a03bacd0853094ba4d0132fb17abdacc8">vector1d_print_details</a></div><div class="ttdeci">void vector1d_print_details(vector1d *v, const char *message)</div><div class="ttdoc">Выводит в консоль детализированную информацио о векторе</div><div class="ttdef"><b>Definition</b> vector1d.c:189</div></div>
+<div class="ttc" id="avector1d_8c_html_a04519364eae575ca49f17ebe0f45432e"><div class="ttname"><a href="vector1d_8c.html#a04519364eae575ca49f17ebe0f45432e">vector1d_init_scalar</a></div><div class="ttdeci">void vector1d_init_scalar(vector1d *v1, vector1d *v2, double k, int min, int max)</div><div class="ttdef"><b>Definition</b> vector1d.c:145</div></div>
+<div class="ttc" id="avector1d_8c_html_a05aa7dfae1874d55c451df79ae5099a0"><div class="ttname"><a href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a></div><div class="ttdeci">vector1d * vector1d_create(int size)</div><div class="ttdef"><b>Definition</b> vector1d.c:17</div></div>
+<div class="ttc" id="avector1d_8c_html_a0a3163cc9b20c95f2f7e39882d1ac26d"><div class="ttname"><a href="vector1d_8c.html#a0a3163cc9b20c95f2f7e39882d1ac26d">vector1d_add_random_0_1_3digit</a></div><div class="ttdeci">void vector1d_add_random_0_1_3digit(vector1d *v)</div><div class="ttdoc">Добавляет к текущему значению каждого элемента вектора v случайное число в диапазоне от 0....</div><div class="ttdef"><b>Definition</b> vector1d.c:133</div></div>
+<div class="ttc" id="avector1d_8c_html_a2f44b860bb9763b894e703a827538ea4"><div class="ttname"><a href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">vector1d_init_int</a></div><div class="ttdeci">void vector1d_init_int(vector1d *v, int value)</div><div class="ttdoc">Инициализирует все элементы вектора v значением value.</div><div class="ttdef"><b>Definition</b> vector1d.c:62</div></div>
+<div class="ttc" id="avector1d_8c_html_a381236421b8b8d6967162d9d340adbd2"><div class="ttname"><a href="vector1d_8c.html#a381236421b8b8d6967162d9d340adbd2">vector1d_clone</a></div><div class="ttdeci">int vector1d_clone(vector1d *v1, vector1d **v2)</div><div class="ttdoc">Клонирует вектор v1 в вектор v2.</div><div class="ttdef"><b>Definition</b> vector1d.c:43</div></div>
+<div class="ttc" id="avector1d_8c_html_a3daa3242e9593a4489fb6a21f6afc360"><div class="ttname"><a href="vector1d_8c.html#a3daa3242e9593a4489fb6a21f6afc360">vector1d_init_zeroes</a></div><div class="ttdeci">void vector1d_init_zeroes(vector1d *v)</div><div class="ttdoc">Инициализирует все элементы вектора v значением 0.</div><div class="ttdef"><b>Definition</b> vector1d.c:72</div></div>
+<div class="ttc" id="avector1d_8c_html_a493a56824c84c68b632925af0f3ccc69"><div class="ttname"><a href="vector1d_8c.html#a493a56824c84c68b632925af0f3ccc69">vector1d_init_vectors_for_inner_product_testing_range</a></div><div class="ttdeci">int vector1d_init_vectors_for_inner_product_testing_range(vector1d *v1, vector1d *v2, size_t ind_start, size_t length, double min, double max, double k, long double *inner_product)</div><div class="ttdoc">Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k.</div><div class="ttdef"><b>Definition</b> vector1d.c:252</div></div>
+<div class="ttc" id="avector1d_8c_html_a4aa7da9c7e29d0eaf7a5e1af90226100"><div class="ttname"><a href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a></div><div class="ttdeci">void vector1d_free(vector1d **v1)</div><div class="ttdoc">Освобождает память, занятую структурой vector1d.</div><div class="ttdef"><b>Definition</b> vector1d.c:31</div></div>
+<div class="ttc" id="avector1d_8c_html_a4c695e4f5ed27d8ac5079821ecb0cdb9"><div class="ttname"><a href="vector1d_8c.html#a4c695e4f5ed27d8ac5079821ecb0cdb9">vector1d_print</a></div><div class="ttdeci">void vector1d_print(vector1d *v, const char *message)</div><div class="ttdoc">Выводит в консоль сообщение message и затем все элементы вектора через пробел</div><div class="ttdef"><b>Definition</b> vector1d.c:165</div></div>
+<div class="ttc" id="avector1d_8c_html_a4d316f9b2bdec03f0b9523cc7cba59cb"><div class="ttname"><a href="vector1d_8c.html#a4d316f9b2bdec03f0b9523cc7cba59cb">vector1d_print_range</a></div><div class="ttdeci">void vector1d_print_range(vector1d *v, const char *message, size_t indStart, size_t length)</div><div class="ttdef"><b>Definition</b> vector1d.c:175</div></div>
+<div class="ttc" id="avector1d_8c_html_a548f0e57b06a5f8b7d025256beedb542"><div class="ttname"><a href="vector1d_8c.html#a548f0e57b06a5f8b7d025256beedb542">scalar_mult_block</a></div><div class="ttdeci">long double scalar_mult_block(vector1d *v1, vector1d *v2, unsigned long long ind_start, unsigned long long length)</div><div class="ttdoc">Вычисляет скалярное произведение непрерывного диапазона элементов векторов</div><div class="ttdef"><b>Definition</b> vector1d.c:319</div></div>
+<div class="ttc" id="avector1d_8c_html_a5af5d497abca16e44c1013ee7f398e0f"><div class="ttname"><a href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">vector1d_init_vectors_for_inner_product_testing</a></div><div class="ttdeci">int vector1d_init_vectors_for_inner_product_testing(vector1d *v1, vector1d *v2, double min, double max, double k, long double *inner_product)</div><div class="ttdoc">Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k.</div><div class="ttdef"><b>Definition</b> vector1d.c:284</div></div>
+<div class="ttc" id="avector1d_8c_html_a8862204cc248465f5fb0ead1b80f5c36"><div class="ttname"><a href="vector1d_8c.html#a8862204cc248465f5fb0ead1b80f5c36">vector1d_is_equals</a></div><div class="ttdeci">int vector1d_is_equals(vector1d *v1, vector1d *v2)</div><div class="ttdoc">Сравнивает два вектора</div><div class="ttdef"><b>Definition</b> vector1d.c:201</div></div>
+<div class="ttc" id="avector1d_8c_html_a8be7cd1ea3afedd6e7000257eb1f923e"><div class="ttname"><a href="vector1d_8c.html#a8be7cd1ea3afedd6e7000257eb1f923e">vector1d_create_from_file_pos</a></div><div class="ttdeci">int vector1d_create_from_file_pos(FILE *f, unsigned long long index_start, unsigned long long length, vector1d **v)</div><div class="ttdoc">Создаёт вектор указанного размера, считывая данные из двоичного файла с указанной позиции</div><div class="ttdef"><b>Definition</b> vector1d.c:378</div></div>
+<div class="ttc" id="avector1d_8c_html_a97984c5babf7f90cace65df60692a5be"><div class="ttname"><a href="vector1d_8c.html#a97984c5babf7f90cace65df60692a5be">vector1d_create_from_file</a></div><div class="ttdeci">int vector1d_create_from_file(const char *file_name, vector1d **v)</div><div class="ttdoc">Создаёт вектор, считывая данные из двоичного файла</div><div class="ttdef"><b>Definition</b> vector1d.c:354</div></div>
+<div class="ttc" id="avector1d_8c_html_a9998e6a159d3c163800a562e960ba048"><div class="ttname"><a href="vector1d_8c.html#a9998e6a159d3c163800a562e960ba048">inner_product_files_bin_generate</a></div><div class="ttdeci">int inner_product_files_bin_generate(const char *file_name_v1, const char *file_name_v2, unsigned long long N, unsigned long long Nb, int min, int max, double k, double *inner_product)</div><div class="ttdoc">Создаёт два файла двоичного формата, первым значением является количество элементов,...</div><div class="ttdef"><b>Definition</b> vector1d.c:458</div></div>
+<div class="ttc" id="avector1d_8c_html_ac189b6be6a3797640f48a655d2fcf7f3"><div class="ttname"><a href="vector1d_8c.html#ac189b6be6a3797640f48a655d2fcf7f3">vector1d_save_to_file_bin</a></div><div class="ttdeci">void vector1d_save_to_file_bin(const char *file_name, vector1d *v)</div><div class="ttdoc">Записывает вектор v в файл file_name.</div><div class="ttdef"><b>Definition</b> vector1d.c:338</div></div>
+<div class="ttc" id="avector1d_8c_html_ad145b24841854993e61ee5b7261dffe0"><div class="ttname"><a href="vector1d_8c.html#ad145b24841854993e61ee5b7261dffe0">vector1d_init_v2_for_inner_product_testing</a></div><div class="ttdeci">int vector1d_init_v2_for_inner_product_testing(vector1d *v1, vector1d **v2, double k, double *inner_product)</div><div class="ttdoc">Инициализирует вектор v2 таким образом, чтобы произведение v1[i]*v2[i]=k.</div><div class="ttdef"><b>Definition</b> vector1d.c:222</div></div>
+<div class="ttc" id="avector1d_8c_html_ae8661f64f3b933cdc113267d6bfdd89e"><div class="ttname"><a href="vector1d_8c.html#ae8661f64f3b933cdc113267d6bfdd89e">scalar_mult</a></div><div class="ttdeci">long double scalar_mult(vector1d *v1, vector1d *v2)</div><div class="ttdoc">Вычисляет скалярное произведение векторов</div><div class="ttdef"><b>Definition</b> vector1d.c:301</div></div>
+<div class="ttc" id="avector1d_8c_html_aeb12114301e577c083a30674e75db869"><div class="ttname"><a href="vector1d_8c.html#aeb12114301e577c083a30674e75db869">vector1d_init_random</a></div><div class="ttdeci">void vector1d_init_random(vector1d *v, int min, int max)</div><div class="ttdoc">Инициализирует все элементы вектора v случайными целыми числами в диапазоне от min до max.</div><div class="ttdef"><b>Definition</b> vector1d.c:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

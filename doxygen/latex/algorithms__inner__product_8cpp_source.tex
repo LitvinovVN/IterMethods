@@ -1,42 +1,42 @@
 \doxysection{algorithms\+\_\+inner\+\_\+product.\+cpp}
-\hypertarget{algorithms__inner__product_8cpp_source}{}\label{algorithms__inner__product_8cpp_source}
+\hypertarget{algorithms__inner__product_8cpp_source}{}\label{algorithms__inner__product_8cpp_source}\mbox{\hyperlink{algorithms__inner__product_8cpp}{См. документацию.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <chrono>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}vector1d.c"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector1d_8c}{vector1d.c}}"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <thread>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ std::mutex\ mutex;}
+\DoxyCodeLine{00009\ std::mutex\ \mbox{\hyperlink{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{mutex}};}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
 \DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}*\ v1;\textcolor{comment}{//\ указатель\ на\ первый\ массив}}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}*\ v2;\textcolor{comment}{//\ указатель\ на\ второй\ массив}}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n;\ \textcolor{comment}{//\ размерность\ векторов\ }}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nt\_cpu;\textcolor{comment}{//\ количество\ потоков\ CPU,\ задействуемых\ в\ процессе\ вычислений}}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nt\_gpu;\ \textcolor{comment}{//\ количество\ потоковых\ мультипроцессоров,\ задействуемых\ в\ процессе\ вычислений}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{structinner__product__params_ab3a95bab60c62840153a1f8eac45f8ec}{v1}};\textcolor{comment}{//\ указатель\ на\ первый\ массив}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{structinner__product__params_a58dda8e40499f148d9b9f34b586fd9a6}{v2}};\textcolor{comment}{//\ указатель\ на\ второй\ массив}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structinner__product__params_a8fc009dd3e9400c23b266ff831d8a0de}{n}};\ \textcolor{comment}{//\ размерность\ векторов\ }}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structinner__product__params_a801f1d37baf38e067ad346c3b068f622}{nt\_cpu}};\textcolor{comment}{//\ количество\ потоков\ CPU,\ задействуемых\ в\ процессе\ вычислений}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structinner__product__params_a9d00404fdbe9ba7e75533b6f3e6d1de7}{nt\_gpu}};\ \textcolor{comment}{//\ количество\ потоковых\ мультипроцессоров,\ задействуемых\ в\ процессе\ вычислений}}
 \DoxyCodeLine{00019\ \}\ \mbox{\hyperlink{structinner__product__params}{inner\_product\_params}};}
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
 \DoxyCodeLine{00023\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_success;\textcolor{comment}{//\ флаг\ успешности\ вычислений}}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ result;\textcolor{comment}{//\ результат\ вычисления}}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ time;\ \textcolor{comment}{//\ время\ вычислений}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structinner__product__result_aa3f4ba24a6fae8a87e5e63b5d56b7c1b}{is\_success}};\textcolor{comment}{//\ флаг\ успешности\ вычислений}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structinner__product__result_ac7bfbf33a51c20982eac77ceae9226dd}{result}};\textcolor{comment}{//\ результат\ вычисления}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structinner__product__result_ac2e99a3aef12cfb6d6b11ff8c309d605}{time}};\ \textcolor{comment}{//\ время\ вычислений}}
 \DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}};}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ inner\_product\_result\_print(\mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ ipr,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{algorithms__inner__product_8cpp_a7362ee28c94bbea299a464661ac00392}{inner\_product\_result\_print}}(\mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ ipr,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
 \DoxyCodeLine{00030\ \{}
 \DoxyCodeLine{00031\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}(!ipr.is\_success)}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}(!ipr.\mbox{\hyperlink{structinner__product__result_aa3f4ba24a6fae8a87e5e63b5d56b7c1b}{is\_success}})}
 \DoxyCodeLine{00033\ \ \ \ \ \{}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ERROR!\(\backslash\)n"{}});}
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00036\ \ \ \ \ \}}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ printf(\textcolor{stringliteral}{"{}OK\ |\ res=\%lf\ |\ \%lf\ sec.\(\backslash\)n"{}},\ ipr.result,\ ipr.time);}
+\DoxyCodeLine{00038\ \ \ \ \ printf(\textcolor{stringliteral}{"{}OK\ |\ res=\%lf\ |\ \%lf\ sec.\(\backslash\)n"{}},\ ipr.\mbox{\hyperlink{structinner__product__result_ac7bfbf33a51c20982eac77ceae9226dd}{result}},\ ipr.\mbox{\hyperlink{structinner__product__result_ac2e99a3aef12cfb6d6b11ff8c309d605}{time}});}
 \DoxyCodeLine{00039\ \}}
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00041\ }
@@ -44,24 +44,24 @@
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ }
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00050\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ inner\_product\_cpu\_1(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
+\DoxyCodeLine{00050\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ \mbox{\hyperlink{algorithms__inner__product_8cpp_a4d42ae07fdaa576c685c4cdb411113ef}{inner\_product\_cpu\_1}}(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
 \DoxyCodeLine{00051\ \{}
 \DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::system\_clock::now();}
 \DoxyCodeLine{00053\ }
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0;}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ params.n;\ i++)}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ params.\mbox{\hyperlink{structinner__product__params_a8fc009dd3e9400c23b266ff831d8a0de}{n}};\ i++)}
 \DoxyCodeLine{00057\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ res\ +=\ params.v1[i]\ *\ params.v2[i];}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ res\ +=\ params.\mbox{\hyperlink{structinner__product__params_ab3a95bab60c62840153a1f8eac45f8ec}{v1}}[i]\ *\ params.\mbox{\hyperlink{structinner__product__params_a58dda8e40499f148d9b9f34b586fd9a6}{v2}}[i];}
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ i\ <<\ "{}:\ res\ =\ "{}\ <<\ res\ <<\ "{}\ |\ params.v1[i]\ =\ "{}\ <<\ params.v1[i]\ <<\ "{}\ |\ params.v2[i]\ =\ "{}\ <<\ params.v2[i]\ <<\ std::endl;\ \ \ \ \ \ \ \ }}
 \DoxyCodeLine{00060\ \ \ \ \ \}}
 \DoxyCodeLine{00061\ }
 \DoxyCodeLine{00062\ \ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}
 \DoxyCodeLine{00063\ \ \ \ \ }
 \DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ return\_res;}
-\DoxyCodeLine{00065\ \ \ \ \ return\_res.is\_success\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00066\ \ \ \ \ return\_res.result\ =\ res;}
-\DoxyCodeLine{00067\ \ \ \ \ return\_res.time\ =\ dur.count();}
+\DoxyCodeLine{00065\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_aa3f4ba24a6fae8a87e5e63b5d56b7c1b}{is\_success}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_ac7bfbf33a51c20982eac77ceae9226dd}{result}}\ =\ res;}
+\DoxyCodeLine{00067\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_ac2e99a3aef12cfb6d6b11ff8c309d605}{time}}\ =\ dur.count();}
 \DoxyCodeLine{00068\ }
 \DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ return\_res;}
 \DoxyCodeLine{00070\ \}}
@@ -74,7 +74,7 @@
 \DoxyCodeLine{00078\ \textcolor{comment}{//\ startInd\ -\/\ индекс\ элемента,\ с\ которого\ будет\ рассчитывать\ свой\ фрагмент\ текущий\ поток}}
 \DoxyCodeLine{00079\ \textcolor{comment}{//\ length\ -\/\ количество\ элементов\ (размер\ фрагмента),\ которое\ будет\ рассчитывать\ текущий\ поток}}
 \DoxyCodeLine{00080\ \textcolor{comment}{//\ result\ -\/\ ссылка\ на\ переменную,\ куда\ будет\ записан\ результат\ вычисления\ скалярного\ произведения}}
-\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ scalar\_mult\_cpu\_thread(\textcolor{keywordtype}{double}\ *v1,\ \textcolor{keywordtype}{double}\ *v2,\ \textcolor{keywordtype}{size\_t}\ startInd,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{double}\&\ result)}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a}{scalar\_mult\_cpu\_thread}}(\textcolor{keywordtype}{double}\ *v1,\ \textcolor{keywordtype}{double}\ *v2,\ \textcolor{keywordtype}{size\_t}\ startInd,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{double}\&\ result)}
 \DoxyCodeLine{00082\ \{}
 \DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//printf("{}scalar\_mult\_cpu\_thread\(\backslash\)n"{});}}
 \DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{double}\ temp\ =\ 0;}
@@ -83,20 +83,20 @@
 \DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ temp\ +=\ v1[i]\ *\ v2[i];}
 \DoxyCodeLine{00088\ \ \ \ \ \}}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ mutex.lock();}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{mutex}}.lock();}
 \DoxyCodeLine{00091\ \ \ \ \ result\ +=\ temp;}
-\DoxyCodeLine{00092\ \ \ \ \ mutex.unlock();}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{algorithms__inner__product_8cpp_a1be3f7fa26e4521098de5f1ec0f865f3}{mutex}}.unlock();}
 \DoxyCodeLine{00093\ \}}
 \DoxyCodeLine{00094\ }
-\DoxyCodeLine{00098\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ inner\_product\_cpu\_n\_threads(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ \mbox{\hyperlink{algorithms__inner__product_8cpp_a4b5848340cafe3f1351e02e451488327}{inner\_product\_cpu\_n\_threads}}(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
 \DoxyCodeLine{00099\ \{}
 \DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::system\_clock::now();}
 \DoxyCodeLine{00101\ \ \ \ \ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ params.n;}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ params.v1;}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ v2\ =\ params.v2;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ params.\mbox{\hyperlink{structinner__product__params_a8fc009dd3e9400c23b266ff831d8a0de}{n}};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ params.\mbox{\hyperlink{structinner__product__params_ab3a95bab60c62840153a1f8eac45f8ec}{v1}};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ v2\ =\ params.\mbox{\hyperlink{structinner__product__params_a58dda8e40499f148d9b9f34b586fd9a6}{v2}};}
 \DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0;}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ NumCpuThreads\ =\ params.nt\_cpu;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ NumCpuThreads\ =\ params.\mbox{\hyperlink{structinner__product__params_a801f1d37baf38e067ad346c3b068f622}{nt\_cpu}};}
 \DoxyCodeLine{00107\ \ \ \ \ std::vector<std::thread>\ threads;}
 \DoxyCodeLine{00108\ }
 \DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}(n\ \%\ NumCpuThreads\ ==\ 0)\textcolor{comment}{//Если\ количество\ узлов\ делится\ на\ количество\ потоков\ нацело,\ размеры\ данных\ для\ каждого\ потока\ будут\ одинаковы}}
@@ -104,7 +104,7 @@
 \DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NbyThread\ =\ n\ /\ NumCpuThreads;}
 \DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}NbyThread\ =\ \%d\(\backslash\)n"{},\ NbyThread);}}
 \DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ NumCpuThreads;\ i++)}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(scalar\_mult\_cpu\_thread,\ v1,\ v2,\ i*NbyThread,\ NbyThread,\ std::ref(res)));}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(\mbox{\hyperlink{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a}{scalar\_mult\_cpu\_thread}},\ v1,\ v2,\ i*NbyThread,\ NbyThread,\ std::ref(res)));}
 \DoxyCodeLine{00115\ \ \ \ \ \}}
 \DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00117\ \ \ \ \ \{}
@@ -113,9 +113,9 @@
 \DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}NbyThread\ =\ \%d,\ NbyThreadLast\ =\ \%d\(\backslash\)n"{},\ NbyThread,\ NbyThreadLast);}}
 \DoxyCodeLine{00121\ }
 \DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ NumCpuThreads-\/1;\ i++)}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(scalar\_mult\_cpu\_thread,\ v1,\ v2,\ i*NbyThread,\ NbyThread,\ std::ref(res)));}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(\mbox{\hyperlink{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a}{scalar\_mult\_cpu\_thread}},\ v1,\ v2,\ i*NbyThread,\ NbyThread,\ std::ref(res)));}
 \DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(scalar\_mult\_cpu\_thread,\ v1,\ v2,\ (NumCpuThreads-\/1)*NbyThread,\ NbyThreadLast,\ std::ref(res)));}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(\mbox{\hyperlink{algorithms__inner__product_8cpp_aca3246bd2697f2f99d52e5749abc447a}{scalar\_mult\_cpu\_thread}},\ v1,\ v2,\ (NumCpuThreads-\/1)*NbyThread,\ NbyThreadLast,\ std::ref(res)));}
 \DoxyCodeLine{00126\ \ \ \ \ \}}
 \DoxyCodeLine{00127\ }
 \DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ thread\ :\ threads)}
@@ -127,33 +127,33 @@
 \DoxyCodeLine{00134\ \ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}
 \DoxyCodeLine{00135\ \ \ \ \ }
 \DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ return\_res;}
-\DoxyCodeLine{00137\ \ \ \ \ return\_res.is\_success\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00138\ \ \ \ \ return\_res.result\ =\ res;}
-\DoxyCodeLine{00139\ \ \ \ \ return\_res.time\ =\ dur.count();}
+\DoxyCodeLine{00137\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_aa3f4ba24a6fae8a87e5e63b5d56b7c1b}{is\_success}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00138\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_ac7bfbf33a51c20982eac77ceae9226dd}{result}}\ =\ res;}
+\DoxyCodeLine{00139\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_ac2e99a3aef12cfb6d6b11ff8c309d605}{time}}\ =\ dur.count();}
 \DoxyCodeLine{00140\ }
 \DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ return\_res;}
 \DoxyCodeLine{00142\ \}}
 \DoxyCodeLine{00144\ }
 \DoxyCodeLine{00145\ \textcolor{preprocessor}{\#include\ <omp.h>}}
 \DoxyCodeLine{00146\ }
-\DoxyCodeLine{00151\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ inner\_product\_cpu\_OpenMP(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
+\DoxyCodeLine{00151\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ \mbox{\hyperlink{algorithms__inner__product_8cpp_a39eb271753ae73bb7a7effe310578968}{inner\_product\_cpu\_OpenMP}}(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
 \DoxyCodeLine{00152\ \{}
 \DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::system\_clock::now();}
 \DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0.;}
-\DoxyCodeLine{00155\ \ \ \ \ omp\_set\_num\_threads(params.nt\_cpu);}
+\DoxyCodeLine{00155\ \ \ \ \ omp\_set\_num\_threads(params.\mbox{\hyperlink{structinner__product__params_a801f1d37baf38e067ad346c3b068f622}{nt\_cpu}});}
 \DoxyCodeLine{00156\ \textcolor{preprocessor}{\#pragma\ omp\ parallel\ for\ reduction(+:res)}}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ params.n;\ ++i)}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ params.\mbox{\hyperlink{structinner__product__params_a8fc009dd3e9400c23b266ff831d8a0de}{n}};\ ++i)}
 \DoxyCodeLine{00158\ \ \ \ \ \{}
 \DoxyCodeLine{00159\ \textcolor{comment}{//\#pragma\ omp\ atomic}}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ res\ +=\ (params.v1[i]\ *\ params.v2[i]);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ res\ +=\ (params.\mbox{\hyperlink{structinner__product__params_ab3a95bab60c62840153a1f8eac45f8ec}{v1}}[i]\ *\ params.\mbox{\hyperlink{structinner__product__params_a58dda8e40499f148d9b9f34b586fd9a6}{v2}}[i]);}
 \DoxyCodeLine{00161\ \ \ \ \ \}}
 \DoxyCodeLine{00162\ }
 \DoxyCodeLine{00163\ \ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}
 \DoxyCodeLine{00164\ \ \ \ \ }
 \DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ return\_res;}
-\DoxyCodeLine{00166\ \ \ \ \ return\_res.is\_success\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00167\ \ \ \ \ return\_res.result\ =\ res;}
-\DoxyCodeLine{00168\ \ \ \ \ return\_res.time\ =\ dur.count();}
+\DoxyCodeLine{00166\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_aa3f4ba24a6fae8a87e5e63b5d56b7c1b}{is\_success}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00167\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_ac7bfbf33a51c20982eac77ceae9226dd}{result}}\ =\ res;}
+\DoxyCodeLine{00168\ \ \ \ \ return\_res.\mbox{\hyperlink{structinner__product__result_ac2e99a3aef12cfb6d6b11ff8c309d605}{time}}\ =\ dur.count();}
 \DoxyCodeLine{00169\ }
 \DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ return\_res;}
 \DoxyCodeLine{00171\ \}}

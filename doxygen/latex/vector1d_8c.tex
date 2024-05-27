@@ -1,0 +1,496 @@
+\doxysection{Файл vector1d.\+c}
+\hypertarget{vector1d_8c}{}\label{vector1d_8c}\index{vector1d.c@{vector1d.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvector1d}{vector1d}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vector1d_8c_a246a93c213381a01c072e693a18ec86f}{VECTOR1\+D\+\_\+C}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\+\_\+create}} (int size)
+\item 
+void \mbox{\hyperlink{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}{vector1d\+\_\+free}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}v1)
+\begin{DoxyCompactList}\small\item\em Освобождает память, занятую структурой \doxylink{structvector1d}{vector1d}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a381236421b8b8d6967162d9d340adbd2}{vector1d\+\_\+clone}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}v2)
+\begin{DoxyCompactList}\small\item\em Клонирует вектор v1 в вектор v2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_a2f44b860bb9763b894e703a827538ea4}{vector1d\+\_\+init\+\_\+int}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v, int value)
+\begin{DoxyCompactList}\small\item\em Инициализирует все элементы вектора v значением value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_a3daa3242e9593a4489fb6a21f6afc360}{vector1d\+\_\+init\+\_\+zeroes}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Инициализирует все элементы вектора v значением 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_aeb12114301e577c083a30674e75db869}{vector1d\+\_\+init\+\_\+random}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v, int min, int max)
+\begin{DoxyCompactList}\small\item\em Инициализирует все элементы вектора v случайными целыми числами в диапазоне от min до max. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_a0074a35045a54f02d131e487b0a71cf2}{vector1d\+\_\+init\+\_\+random\+\_\+double}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v, int min, int max)
+\begin{DoxyCompactList}\small\item\em Инициализирует все элементы вектора v случайными вещественными числами в диапазоне от min до max. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_a0a3163cc9b20c95f2f7e39882d1ac26d}{vector1d\+\_\+add\+\_\+random\+\_\+0\+\_\+1\+\_\+3digit}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Добавляет к текущему значению каждого элемента вектора v случайное число в диапазоне от 0.\+000 до 0.\+999. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_a04519364eae575ca49f17ebe0f45432e}{vector1d\+\_\+init\+\_\+scalar}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2, double k, int min, int max)
+\item 
+void \mbox{\hyperlink{vector1d_8c_a4c695e4f5ed27d8ac5079821ecb0cdb9}{vector1d\+\_\+print}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v, const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль сообщение message и затем все элементы вектора через пробел \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_a4d316f9b2bdec03f0b9523cc7cba59cb}{vector1d\+\_\+print\+\_\+range}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v, const char \texorpdfstring{$\ast$}{*}message, size\+\_\+t ind\+Start, size\+\_\+t length)
+\item 
+void \mbox{\hyperlink{vector1d_8c_a03bacd0853094ba4d0132fb17abdacc8}{vector1d\+\_\+print\+\_\+details}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v, const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль детализированную информацио о векторе \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a8862204cc248465f5fb0ead1b80f5c36}{vector1d\+\_\+is\+\_\+equals}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2)
+\begin{DoxyCompactList}\small\item\em Сравнивает два вектора \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_ad145b24841854993e61ee5b7261dffe0}{vector1d\+\_\+init\+\_\+v2\+\_\+for\+\_\+inner\+\_\+product\+\_\+testing}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}v2, double k, double \texorpdfstring{$\ast$}{*}inner\+\_\+product)
+\begin{DoxyCompactList}\small\item\em Инициализирует вектор v2 таким образом, чтобы произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]}=k. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a493a56824c84c68b632925af0f3ccc69}{vector1d\+\_\+init\+\_\+vectors\+\_\+for\+\_\+inner\+\_\+product\+\_\+testing\+\_\+range}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2, size\+\_\+t ind\+\_\+start, size\+\_\+t length, double min, double max, double k, long double \texorpdfstring{$\ast$}{*}inner\+\_\+product)
+\begin{DoxyCompactList}\small\item\em Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]}=k. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a5af5d497abca16e44c1013ee7f398e0f}{vector1d\+\_\+init\+\_\+vectors\+\_\+for\+\_\+inner\+\_\+product\+\_\+testing}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2, double min, double max, double k, long double \texorpdfstring{$\ast$}{*}inner\+\_\+product)
+\begin{DoxyCompactList}\small\item\em Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]}=k. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{vector1d_8c_ae8661f64f3b933cdc113267d6bfdd89e}{scalar\+\_\+mult}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2)
+\begin{DoxyCompactList}\small\item\em Вычисляет скалярное произведение векторов \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{vector1d_8c_a548f0e57b06a5f8b7d025256beedb542}{scalar\+\_\+mult\+\_\+block}} (\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v2, unsigned long long ind\+\_\+start, unsigned long long length)
+\begin{DoxyCompactList}\small\item\em Вычисляет скалярное произведение непрерывного диапазона элементов векторов \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector1d_8c_ac189b6be6a3797640f48a655d2fcf7f3}{vector1d\+\_\+save\+\_\+to\+\_\+file\+\_\+bin}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+name, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Записывает вектор v в файл file\+\_\+name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a97984c5babf7f90cace65df60692a5be}{vector1d\+\_\+create\+\_\+from\+\_\+file}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+name, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Создаёт вектор, считывая данные из двоичного файла \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a8be7cd1ea3afedd6e7000257eb1f923e}{vector1d\+\_\+create\+\_\+from\+\_\+file\+\_\+pos}} (FILE \texorpdfstring{$\ast$}{*}f, unsigned long long index\+\_\+start, unsigned long long length, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Создаёт вектор указанного размера, считывая данные из двоичного файла с указанной позиции \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{vector1d_8c_a02c28a6dda8a9e65868884805a97d6b6}{vector1d\+\_\+init\+\_\+from\+\_\+file\+\_\+pos}} (FILE \texorpdfstring{$\ast$}{*}f, unsigned long long index\+\_\+start, unsigned long long length, \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}v)
+\item 
+int \mbox{\hyperlink{vector1d_8c_a9998e6a159d3c163800a562e960ba048}{inner\+\_\+product\+\_\+files\+\_\+bin\+\_\+generate}} (const char \texorpdfstring{$\ast$}{*}file\+\_\+name\+\_\+v1, const char \texorpdfstring{$\ast$}{*}file\+\_\+name\+\_\+v2, unsigned long long N, unsigned long long Nb, int min, int max, double k, double \texorpdfstring{$\ast$}{*}inner\+\_\+product)
+\begin{DoxyCompactList}\small\item\em Создаёт два файла двоичного формата, первым значением является количество элементов, далее -\/ элементы \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\Hypertarget{vector1d_8c_a246a93c213381a01c072e693a18ec86f}\label{vector1d_8c_a246a93c213381a01c072e693a18ec86f} 
+\index{vector1d.c@{vector1d.c}!VECTOR1D\_C@{VECTOR1D\_C}}
+\index{VECTOR1D\_C@{VECTOR1D\_C}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{VECTOR1D\_C}{VECTOR1D\_C}}
+{\footnotesize\ttfamily \#define VECTOR1\+D\+\_\+C}
+
+
+
+\doxysubsection{Функции}
+\Hypertarget{vector1d_8c_a9998e6a159d3c163800a562e960ba048}\label{vector1d_8c_a9998e6a159d3c163800a562e960ba048} 
+\index{vector1d.c@{vector1d.c}!inner\_product\_files\_bin\_generate@{inner\_product\_files\_bin\_generate}}
+\index{inner\_product\_files\_bin\_generate@{inner\_product\_files\_bin\_generate}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{inner\_product\_files\_bin\_generate()}{inner\_product\_files\_bin\_generate()}}
+{\footnotesize\ttfamily int inner\+\_\+product\+\_\+files\+\_\+bin\+\_\+generate (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name\+\_\+v1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name\+\_\+v2,  }\item[{unsigned long long}]{N,  }\item[{unsigned long long}]{Nb,  }\item[{int}]{min,  }\item[{int}]{max,  }\item[{double}]{k,  }\item[{double \texorpdfstring{$\ast$}{*}}]{inner\+\_\+product }\end{DoxyParamCaption})}
+
+
+
+Создаёт два файла двоичного формата, первым значением является количество элементов, далее -\/ элементы 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+name\+\_\+v1} & Имя первого файла \\
+\hline
+{\em file\+\_\+name\+\_\+v2} & Имя второго файла \\
+\hline
+{\em N} & Количество элементов \\
+\hline
+{\em Nb} & Количество элементов в блоке памяти \\
+\hline
+{\em min} & Минимальное значение элементов вектора v1 \\
+\hline
+{\em max} & Максимальное значение элементов вектора v1 \\
+\hline
+{\em k} & Число, которому должно быть равно произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]} \\
+\hline
+{\em inner\+\_\+product} & Аналитическое значение скалярного произведения \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код успешности\+: 1 -\/ ОК; 0 -\/ ERROR 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_ae8661f64f3b933cdc113267d6bfdd89e}\label{vector1d_8c_ae8661f64f3b933cdc113267d6bfdd89e} 
+\index{vector1d.c@{vector1d.c}!scalar\_mult@{scalar\_mult}}
+\index{scalar\_mult@{scalar\_mult}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{scalar\_mult()}{scalar\_mult()}}
+{\footnotesize\ttfamily long double scalar\+\_\+mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Вычисляет скалярное произведение векторов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & Указатель на первый вектор \\
+\hline
+{\em v2} & Указатель на второй вектор \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Скалярное произведение 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a548f0e57b06a5f8b7d025256beedb542}\label{vector1d_8c_a548f0e57b06a5f8b7d025256beedb542} 
+\index{vector1d.c@{vector1d.c}!scalar\_mult\_block@{scalar\_mult\_block}}
+\index{scalar\_mult\_block@{scalar\_mult\_block}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{scalar\_mult\_block()}{scalar\_mult\_block()}}
+{\footnotesize\ttfamily long double scalar\+\_\+mult\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{unsigned long long}]{ind\+\_\+start,  }\item[{unsigned long long}]{length }\end{DoxyParamCaption})}
+
+
+
+Вычисляет скалярное произведение непрерывного диапазона элементов векторов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & Указатель на первый вектор \\
+\hline
+{\em v2} & Указатель на второй вектор \\
+\hline
+{\em ind\+\_\+start} & Индекс первого элемента диапазона \\
+\hline
+{\em length} & Длина диапазона \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Скалярное произведение 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a0a3163cc9b20c95f2f7e39882d1ac26d}\label{vector1d_8c_a0a3163cc9b20c95f2f7e39882d1ac26d} 
+\index{vector1d.c@{vector1d.c}!vector1d\_add\_random\_0\_1\_3digit@{vector1d\_add\_random\_0\_1\_3digit}}
+\index{vector1d\_add\_random\_0\_1\_3digit@{vector1d\_add\_random\_0\_1\_3digit}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_add\_random\_0\_1\_3digit()}{vector1d\_add\_random\_0\_1\_3digit()}}
+{\footnotesize\ttfamily void vector1d\+\_\+add\+\_\+random\+\_\+0\+\_\+1\+\_\+3digit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Добавляет к текущему значению каждого элемента вектора v случайное число в диапазоне от 0.\+000 до 0.\+999. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & указатель на модифицируемый вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a381236421b8b8d6967162d9d340adbd2}\label{vector1d_8c_a381236421b8b8d6967162d9d340adbd2} 
+\index{vector1d.c@{vector1d.c}!vector1d\_clone@{vector1d\_clone}}
+\index{vector1d\_clone@{vector1d\_clone}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_clone()}{vector1d\_clone()}}
+{\footnotesize\ttfamily int vector1d\+\_\+clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Клонирует вектор v1 в вектор v2. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & указатель на вектор-\/источник, адрес не равен 0 \\
+\hline
+{\em v2} & указатель на вектор-\/приёмник, адрес равен 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1 -\/ успех, 0 -\/ ошибка 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}\label{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0} 
+\index{vector1d.c@{vector1d.c}!vector1d\_create@{vector1d\_create}}
+\index{vector1d\_create@{vector1d\_create}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_create()}{vector1d\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*} vector1d\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+\Hypertarget{vector1d_8c_a97984c5babf7f90cace65df60692a5be}\label{vector1d_8c_a97984c5babf7f90cace65df60692a5be} 
+\index{vector1d.c@{vector1d.c}!vector1d\_create\_from\_file@{vector1d\_create\_from\_file}}
+\index{vector1d\_create\_from\_file@{vector1d\_create\_from\_file}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_create\_from\_file()}{vector1d\_create\_from\_file()}}
+{\footnotesize\ttfamily int vector1d\+\_\+create\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Создаёт вектор, считывая данные из двоичного файла 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+name} & имя файла \\
+\hline
+{\em v} & адрес указателя на вектор типа vector1d\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код успешности\+: 1 -\/ ОК; 0 -\/ ERROR 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a8be7cd1ea3afedd6e7000257eb1f923e}\label{vector1d_8c_a8be7cd1ea3afedd6e7000257eb1f923e} 
+\index{vector1d.c@{vector1d.c}!vector1d\_create\_from\_file\_pos@{vector1d\_create\_from\_file\_pos}}
+\index{vector1d\_create\_from\_file\_pos@{vector1d\_create\_from\_file\_pos}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_create\_from\_file\_pos()}{vector1d\_create\_from\_file\_pos()}}
+{\footnotesize\ttfamily int vector1d\+\_\+create\+\_\+from\+\_\+file\+\_\+pos (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{f,  }\item[{unsigned long long}]{index\+\_\+start,  }\item[{unsigned long long}]{length,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Создаёт вектор указанного размера, считывая данные из двоичного файла с указанной позиции 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em f} & Указатель на двоичный файл, открытый в режиме чтения \\
+\hline
+{\em index\+\_\+start} & Индекс первого считываемого элемента \\
+\hline
+{\em length} & Количество элементов \\
+\hline
+{\em v} & Адрес указателя на вектор типа vector1d\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код успешности\+: 1 -\/ ОК; 0 -\/ ERROR 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100}\label{vector1d_8c_a4aa7da9c7e29d0eaf7a5e1af90226100} 
+\index{vector1d.c@{vector1d.c}!vector1d\_free@{vector1d\_free}}
+\index{vector1d\_free@{vector1d\_free}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_free()}{vector1d\_free()}}
+{\footnotesize\ttfamily void vector1d\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{v1 }\end{DoxyParamCaption})}
+
+
+
+Освобождает память, занятую структурой \doxylink{structvector1d}{vector1d}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & Адрес указателя на структуру \doxylink{structvector1d}{vector1d} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a02c28a6dda8a9e65868884805a97d6b6}\label{vector1d_8c_a02c28a6dda8a9e65868884805a97d6b6} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_from\_file\_pos@{vector1d\_init\_from\_file\_pos}}
+\index{vector1d\_init\_from\_file\_pos@{vector1d\_init\_from\_file\_pos}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_from\_file\_pos()}{vector1d\_init\_from\_file\_pos()}}
+{\footnotesize\ttfamily int vector1d\+\_\+init\+\_\+from\+\_\+file\+\_\+pos (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{f,  }\item[{unsigned long long}]{index\+\_\+start,  }\item[{unsigned long long}]{length,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+\Hypertarget{vector1d_8c_a2f44b860bb9763b894e703a827538ea4}\label{vector1d_8c_a2f44b860bb9763b894e703a827538ea4} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_int@{vector1d\_init\_int}}
+\index{vector1d\_init\_int@{vector1d\_init\_int}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_int()}{vector1d\_init\_int()}}
+{\footnotesize\ttfamily void vector1d\+\_\+init\+\_\+int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Инициализирует все элементы вектора v значением value. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & указатель на инициализируемый вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em value} & целочисленное значение, которое будет присвоено всем элементам вектора v \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_aeb12114301e577c083a30674e75db869}\label{vector1d_8c_aeb12114301e577c083a30674e75db869} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_random@{vector1d\_init\_random}}
+\index{vector1d\_init\_random@{vector1d\_init\_random}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_random()}{vector1d\_init\_random()}}
+{\footnotesize\ttfamily void vector1d\+\_\+init\+\_\+random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Инициализирует все элементы вектора v случайными целыми числами в диапазоне от min до max. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & указатель на инициализируемый вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em min} & минимальное значение \\
+\hline
+{\em max} & максимальное значение \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a0074a35045a54f02d131e487b0a71cf2}\label{vector1d_8c_a0074a35045a54f02d131e487b0a71cf2} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_random\_double@{vector1d\_init\_random\_double}}
+\index{vector1d\_init\_random\_double@{vector1d\_init\_random\_double}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_random\_double()}{vector1d\_init\_random\_double()}}
+{\footnotesize\ttfamily void vector1d\+\_\+init\+\_\+random\+\_\+double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Инициализирует все элементы вектора v случайными вещественными числами в диапазоне от min до max. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & указатель на инициализируемый вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em min} & минимальное значение \\
+\hline
+{\em max} & максимальное значение \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a04519364eae575ca49f17ebe0f45432e}\label{vector1d_8c_a04519364eae575ca49f17ebe0f45432e} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_scalar@{vector1d\_init\_scalar}}
+\index{vector1d\_init\_scalar@{vector1d\_init\_scalar}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_scalar()}{vector1d\_init\_scalar()}}
+{\footnotesize\ttfamily void vector1d\+\_\+init\+\_\+scalar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{double}]{k,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+\Hypertarget{vector1d_8c_ad145b24841854993e61ee5b7261dffe0}\label{vector1d_8c_ad145b24841854993e61ee5b7261dffe0} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_v2\_for\_inner\_product\_testing@{vector1d\_init\_v2\_for\_inner\_product\_testing}}
+\index{vector1d\_init\_v2\_for\_inner\_product\_testing@{vector1d\_init\_v2\_for\_inner\_product\_testing}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_v2\_for\_inner\_product\_testing()}{vector1d\_init\_v2\_for\_inner\_product\_testing()}}
+{\footnotesize\ttfamily int vector1d\+\_\+init\+\_\+v2\+\_\+for\+\_\+inner\+\_\+product\+\_\+testing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{v2,  }\item[{double}]{k,  }\item[{double \texorpdfstring{$\ast$}{*}}]{inner\+\_\+product }\end{DoxyParamCaption})}
+
+
+
+Инициализирует вектор v2 таким образом, чтобы произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]}=k. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & Указатель на первый вектор \\
+\hline
+{\em v2} & Адрес указателя на второй вектор \\
+\hline
+{\em k} & Число, которому должно быть равно произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]} \\
+\hline
+{\em inner\+\_\+product} & Аналитическое значение скалярного произведения \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код успешности\+: 1 -\/ ОК; 0 -\/ ERROR 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a5af5d497abca16e44c1013ee7f398e0f}\label{vector1d_8c_a5af5d497abca16e44c1013ee7f398e0f} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_vectors\_for\_inner\_product\_testing@{vector1d\_init\_vectors\_for\_inner\_product\_testing}}
+\index{vector1d\_init\_vectors\_for\_inner\_product\_testing@{vector1d\_init\_vectors\_for\_inner\_product\_testing}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_vectors\_for\_inner\_product\_testing()}{vector1d\_init\_vectors\_for\_inner\_product\_testing()}}
+{\footnotesize\ttfamily int vector1d\+\_\+init\+\_\+vectors\+\_\+for\+\_\+inner\+\_\+product\+\_\+testing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{double}]{min,  }\item[{double}]{max,  }\item[{double}]{k,  }\item[{long double \texorpdfstring{$\ast$}{*}}]{inner\+\_\+product }\end{DoxyParamCaption})}
+
+
+
+Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]}=k. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & Указатель на первый вектор \\
+\hline
+{\em v2} & Указатель на второй вектор \\
+\hline
+{\em min} & Минимальное значение элементов вектора v1 \\
+\hline
+{\em max} & Максимальное значение элементов вектора v1 \\
+\hline
+{\em k} & Число, которому должно быть равно произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]} \\
+\hline
+{\em inner\+\_\+product} & Аналитическое значение скалярного произведения \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код успешности\+: 1 -\/ ОК; 0 -\/ ERROR 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a493a56824c84c68b632925af0f3ccc69}\label{vector1d_8c_a493a56824c84c68b632925af0f3ccc69} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_vectors\_for\_inner\_product\_testing\_range@{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range}}
+\index{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range@{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range()}{vector1d\_init\_vectors\_for\_inner\_product\_testing\_range()}}
+{\footnotesize\ttfamily int vector1d\+\_\+init\+\_\+vectors\+\_\+for\+\_\+inner\+\_\+product\+\_\+testing\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{size\+\_\+t}]{ind\+\_\+start,  }\item[{size\+\_\+t}]{length,  }\item[{double}]{min,  }\item[{double}]{max,  }\item[{double}]{k,  }\item[{long double \texorpdfstring{$\ast$}{*}}]{inner\+\_\+product }\end{DoxyParamCaption})}
+
+
+
+Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]}=k. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & Указатель на первый вектор \\
+\hline
+{\em v2} & Указатель на второй вектор \\
+\hline
+{\em ind\+\_\+start} & Индекс, с которого начинается инициализация \\
+\hline
+{\em length} & Длина области инциализации -\/ количество элементов \\
+\hline
+{\em min} & Минимальное значение элементов вектора v1 \\
+\hline
+{\em max} & Максимальное значение элементов вектора v1 \\
+\hline
+{\em k} & Число, которому должно быть равно произведение v1\mbox{[}i\mbox{]}\texorpdfstring{$\ast$}{*}v2\mbox{[}i\mbox{]} \\
+\hline
+{\em inner\+\_\+product} & Аналитическое значение скалярного произведения \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код успешности\+: 1 -\/ ОК; 0 -\/ ERROR 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a3daa3242e9593a4489fb6a21f6afc360}\label{vector1d_8c_a3daa3242e9593a4489fb6a21f6afc360} 
+\index{vector1d.c@{vector1d.c}!vector1d\_init\_zeroes@{vector1d\_init\_zeroes}}
+\index{vector1d\_init\_zeroes@{vector1d\_init\_zeroes}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_init\_zeroes()}{vector1d\_init\_zeroes()}}
+{\footnotesize\ttfamily void vector1d\+\_\+init\+\_\+zeroes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Инициализирует все элементы вектора v значением 0. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & указатель на инициализируемый вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a8862204cc248465f5fb0ead1b80f5c36}\label{vector1d_8c_a8862204cc248465f5fb0ead1b80f5c36} 
+\index{vector1d.c@{vector1d.c}!vector1d\_is\_equals@{vector1d\_is\_equals}}
+\index{vector1d\_is\_equals@{vector1d\_is\_equals}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_is\_equals()}{vector1d\_is\_equals()}}
+{\footnotesize\ttfamily int vector1d\+\_\+is\+\_\+equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Сравнивает два вектора 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v1} & указатель на первый вектор \\
+\hline
+{\em v2} & указатель на второй вектор \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+1 -\/ равны, 0 -\/ не равны 
+\end{DoxyReturn}
+\Hypertarget{vector1d_8c_a4c695e4f5ed27d8ac5079821ecb0cdb9}\label{vector1d_8c_a4c695e4f5ed27d8ac5079821ecb0cdb9} 
+\index{vector1d.c@{vector1d.c}!vector1d\_print@{vector1d\_print}}
+\index{vector1d\_print@{vector1d\_print}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_print()}{vector1d\_print()}}
+{\footnotesize\ttfamily void vector1d\+\_\+print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+
+
+Выводит в консоль сообщение message и затем все элементы вектора через пробел 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & Указатель на структуру \doxylink{structvector1d}{vector1d} \\
+\hline
+{\em message} & Сообщение \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a03bacd0853094ba4d0132fb17abdacc8}\label{vector1d_8c_a03bacd0853094ba4d0132fb17abdacc8} 
+\index{vector1d.c@{vector1d.c}!vector1d\_print\_details@{vector1d\_print\_details}}
+\index{vector1d\_print\_details@{vector1d\_print\_details}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_print\_details()}{vector1d\_print\_details()}}
+{\footnotesize\ttfamily void vector1d\+\_\+print\+\_\+details (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+
+
+Выводит в консоль детализированную информацио о векторе 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em v} & указатель на вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em message} & сообщение, выводимое перед детализированным выводом \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vector1d_8c_a4d316f9b2bdec03f0b9523cc7cba59cb}\label{vector1d_8c_a4d316f9b2bdec03f0b9523cc7cba59cb} 
+\index{vector1d.c@{vector1d.c}!vector1d\_print\_range@{vector1d\_print\_range}}
+\index{vector1d\_print\_range@{vector1d\_print\_range}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_print\_range()}{vector1d\_print\_range()}}
+{\footnotesize\ttfamily void vector1d\+\_\+print\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{message,  }\item[{size\+\_\+t}]{ind\+Start,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\Hypertarget{vector1d_8c_ac189b6be6a3797640f48a655d2fcf7f3}\label{vector1d_8c_ac189b6be6a3797640f48a655d2fcf7f3} 
+\index{vector1d.c@{vector1d.c}!vector1d\_save\_to\_file\_bin@{vector1d\_save\_to\_file\_bin}}
+\index{vector1d\_save\_to\_file\_bin@{vector1d\_save\_to\_file\_bin}!vector1d.c@{vector1d.c}}
+\doxysubsubsection{\texorpdfstring{vector1d\_save\_to\_file\_bin()}{vector1d\_save\_to\_file\_bin()}}
+{\footnotesize\ttfamily void vector1d\+\_\+save\+\_\+to\+\_\+file\+\_\+bin (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+name,  }\item[{\mbox{\hyperlink{structvector1d}{vector1d}} \texorpdfstring{$\ast$}{*}}]{v }\end{DoxyParamCaption})}
+
+
+
+Записывает вектор v в файл file\+\_\+name. 
+
+Файловые операции ////////////////// 
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+name} & имя файла \\
+\hline
+{\em v} & указатель на вектор типа vector1d\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
