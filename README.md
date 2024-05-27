@@ -1,6 +1,8 @@
 # IterMethods
 Репозиторий для изучения итерационных методов решения сеточных уравнений
 
+## [https://litvinovvn.github.io/IterMethods/](https://litvinovvn.github.io/IterMethods/)
+
 ## Формирование документации с помощью doxygen
 
 1. Cоздаем шаблонный файл Doxyfile командой:
