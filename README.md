@@ -7,11 +7,11 @@
 
 doxygen -g
 
-2. Для генерации и просмотра документации
+2. Для генерации документации
 
 doxygen
 
-firefox doxygen/html/index.html
+3. [Документация](doxygen/html/index.html)
 
 ## Описание библиотеки функций
 ### vector1d.c
