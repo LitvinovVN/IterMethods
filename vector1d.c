@@ -159,7 +159,9 @@ void vector1d_init_scalar(vector1d *v1, vector1d *v2, double k, int min, int max
 /////////////////////////////////////////////////////////
 
 
-
+/// @brief Выводит в консоль сообщение message и затем все элементы вектора через пробел
+/// @param v Указатель на структуру vector1d
+/// @param message Сообщение
 void vector1d_print(vector1d *v, const char* message)
 {
     printf("%s", message);

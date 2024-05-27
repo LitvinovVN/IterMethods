@@ -1,0 +1,85 @@
+\doxysection{comp\+\_\+system.\+c}
+\hypertarget{comp__system_8c_source}{}\label{comp__system_8c_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMP\_SYSTEM\_C}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ COMP\_SYSTEM\_C}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \textcolor{comment}{//\ malloc}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <time.h>}\ \textcolor{comment}{//\ rand,\ srand}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ vram\_size\_gb;\textcolor{comment}{//\ Объём\ доступной\ видеопамяти,\ Гб}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ gpu\_sm\_max;\textcolor{comment}{//\ Количество\ потоковых\ мультипроцессоров\ графического\ ускорителя,\ ед.}}
+\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ ram\_size\_gb;\textcolor{comment}{//\ Объём\ доступной\ оперативной\ памяти,\ Гб}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ cpu\_threads\_max;\textcolor{comment}{//\ Максимальное\ количество\ потоков,\ исполняемых\ на\ центральном\ процессоре\ (потоков\ CPU),\ ед.}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ gpu\_num;\textcolor{comment}{//\ Количество\ графических\ ускорителей}}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**\ gpus;\textcolor{comment}{//\ Массив\ указателей\ на\ структуру\ comp\_system\_gpu}}
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*\ comp\_system\_gpu\_create(\textcolor{keywordtype}{double}\ vram\_size\_gb,\ \textcolor{keywordtype}{int}\ gpu\_sm\_max)}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*\ gpu\ =\ (\mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}));}
+\DoxyCodeLine{00037\ \ \ \ \ gpu-\/>vram\_size\_gb\ =\ vram\_size\_gb;}
+\DoxyCodeLine{00038\ \ \ \ \ gpu-\/>gpu\_sm\_max\ =\ gpu\_sm\_max;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{return}\ gpu;}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**\ comp\_system\_gpu\_array\_create(\textcolor{keywordtype}{int}\ gpu\_num)}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**\ comp\_system\_gpu\_array\ =\ (\mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**)malloc(gpu\_num\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*));}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ comp\_system\_gpu\_array;}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ comp\_system\_node\_create(\textcolor{keywordtype}{double}\ ram\_size\_gb,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ cpu\_threads\_max,\ \textcolor{keywordtype}{int}\ gpu\_num,\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**\ gpus)}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ node\ =\ (\mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}));}
+\DoxyCodeLine{00061\ \ \ \ \ node-\/>ram\_size\_gb\ =\ ram\_size\_gb;}
+\DoxyCodeLine{00062\ \ \ \ \ node-\/>cpu\_threads\_max\ =\ cpu\_threads\_max;}
+\DoxyCodeLine{00063\ \ \ \ \ node-\/>gpu\_num\ =\ gpu\_num;}
+\DoxyCodeLine{00064\ \ \ \ \ node-\/>gpus\ =\ (\mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**)malloc(node-\/>gpu\_num\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*));}
+\DoxyCodeLine{00065\ \ \ \ \ node-\/>gpus\ =\ gpus;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ comp\_system\_node\_create\_1GPU(\textcolor{keywordtype}{double}\ ram\_size\_gb,\ \textcolor{keywordtype}{int}\ cpu\_threads\_max,}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ vram\_size\_gb,\ \textcolor{keywordtype}{int}\ gpu\_sm\_max)}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*\ gpu\ =\ comp\_system\_gpu\_create(vram\_size\_gb,\ gpu\_sm\_max);}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}**\ comp\_system\_gpu\_array\ =\ comp\_system\_gpu\_array\_create(1);}
+\DoxyCodeLine{00080\ \ \ \ \ comp\_system\_gpu\_array[0]\ =\ gpu;}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ node\ =\ comp\_system\_node\_create(ram\_size\_gb,\ cpu\_threads\_max,\ 1,\ comp\_system\_gpu\_array);}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ comp\_system\_gpu\_print(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*\ gpu)}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{00090\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ Gb;\ "{}},\ gpu-\/>vram\_size\_gb);}
+\DoxyCodeLine{00091\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ SMs;\ "{}},\ gpu-\/>gpu\_sm\_max);}
+\DoxyCodeLine{00092\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ comp\_system\_node\_print(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ node)}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{00098\ \ \ \ \ printf(\textcolor{stringliteral}{"{}RAM:\ \%lf\ Gb;\ "{}},\ node-\/>ram\_size\_gb);}
+\DoxyCodeLine{00099\ \ \ \ \ printf(\textcolor{stringliteral}{"{}CPU\ threads\ max:\ \%d;\ "{}},\ node-\/>cpu\_threads\_max);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i\ <\ node-\/>gpu\_num;\ i++)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ comp\_system\_gpu\_print(\textcolor{stringliteral}{"{}\(\backslash\)tGPU:\ "{}},\ node-\/>gpus[i]);}
+\DoxyCodeLine{00102\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

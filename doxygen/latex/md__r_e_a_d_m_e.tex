@@ -1,0 +1,54 @@
+\chapter{Iter\+Methods}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{IterMethods@{IterMethods}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+Репозиторий для изучения итерационных методов решения сеточных уравнений\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Формирование документации с помощью doxygen}{Формирование документации с помощью doxygen}}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item Cоздаем шаблонный файл Doxyfile командой\+:
+\end{DoxyEnumerate}
+
+doxygen -\/g
+
+
+\begin{DoxyEnumerate}
+\item Для генерации и просмотра документации
+\end{DoxyEnumerate}
+
+doxygen
+
+firefox doxygen/html/index.\+html\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Описание библиотеки функций}{Описание библиотеки функций}}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{vector1d.\+c}{vector1d.c}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Структура {\bfseries{\doxylink{structvector1d}{vector1d}}}. Описывает вектор в пространстве \$R\texorpdfstring{$^\wedge$}{\string^}n\$. Поле {\bfseries{length}} содержит количество элементов массива, доступного по указателю {\bfseries{data}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ length;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ *data;}
+\DoxyCodeLine{\}\ \mbox{\hyperlink{structvector1d}{vector1d}};}
+
+\end{DoxyCode}
+
+\item Функция {\bfseries{vector1d\+\_\+create}} -\/ создаёт в динамической памяти структуру {\bfseries{\doxylink{structvector1d}{vector1d}}}, задаёт значение поля {\bfseries{length}} равным параметру {\bfseries{size}} и создаёт динамический массив элементов типа {\bfseries{double}}. Возвращает указатель {\bfseries{vector1d\texorpdfstring{$\ast$}{*}}} на созданную структуру. ~\newline
+
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{structvector1d}{vector1d}}*\ vector1d\_create(\textcolor{keywordtype}{int}\ size)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}\ *vec1d\ =\ (\mbox{\hyperlink{structvector1d}{vector1d}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structvector1d}{vector1d}}));}
+\DoxyCodeLine{\ \ \ \ vec1d-\/>length\ =\ size;\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ vec1d-\/>data\ =\ (\textcolor{keywordtype}{double}*)malloc(vec1d-\/>length\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ vec1d;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+2.реализовать метод зейделя 

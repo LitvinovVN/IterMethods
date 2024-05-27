@@ -1,0 +1,183 @@
+\doxysection{algorithms\+\_\+inner\+\_\+product.\+cpp}
+\hypertarget{algorithms__inner__product_8cpp_source}{}\label{algorithms__inner__product_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}vector1d.c"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ std::mutex\ mutex;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}*\ v1;\textcolor{comment}{//\ указатель\ на\ первый\ массив}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}*\ v2;\textcolor{comment}{//\ указатель\ на\ второй\ массив}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n;\ \textcolor{comment}{//\ размерность\ векторов\ }}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nt\_cpu;\textcolor{comment}{//\ количество\ потоков\ CPU,\ задействуемых\ в\ процессе\ вычислений}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nt\_gpu;\ \textcolor{comment}{//\ количество\ потоковых\ мультипроцессоров,\ задействуемых\ в\ процессе\ вычислений}}
+\DoxyCodeLine{00019\ \}\ \mbox{\hyperlink{structinner__product__params}{inner\_product\_params}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_success;\textcolor{comment}{//\ флаг\ успешности\ вычислений}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ result;\textcolor{comment}{//\ результат\ вычисления}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ time;\ \textcolor{comment}{//\ время\ вычислений}}
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ inner\_product\_result\_print(\mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ ipr,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message)}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}(!ipr.is\_success)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ERROR!\(\backslash\)n"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ printf(\textcolor{stringliteral}{"{}OK\ |\ res=\%lf\ |\ \%lf\ sec.\(\backslash\)n"{}},\ ipr.result,\ ipr.time);}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ inner\_product\_cpu\_1(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ params.n;\ i++)}
+\DoxyCodeLine{00057\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ res\ +=\ params.v1[i]\ *\ params.v2[i];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ i\ <<\ "{}:\ res\ =\ "{}\ <<\ res\ <<\ "{}\ |\ params.v1[i]\ =\ "{}\ <<\ params.v1[i]\ <<\ "{}\ |\ params.v2[i]\ =\ "{}\ <<\ params.v2[i]\ <<\ std::endl;\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ return\_res;}
+\DoxyCodeLine{00065\ \ \ \ \ return\_res.is\_success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ return\_res.result\ =\ res;}
+\DoxyCodeLine{00067\ \ \ \ \ return\_res.time\ =\ dur.count();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ return\_res;}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ Функция\ вычисления\ скалярного\ произведения}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ *v1\ -\/\ указатель\ на\ вектор\ 1}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ *v2\ -\/\ указатель\ на\ вектор\ 2}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ startInd\ -\/\ индекс\ элемента,\ с\ которого\ будет\ рассчитывать\ свой\ фрагмент\ текущий\ поток}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ length\ -\/\ количество\ элементов\ (размер\ фрагмента),\ которое\ будет\ рассчитывать\ текущий\ поток}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ result\ -\/\ ссылка\ на\ переменную,\ куда\ будет\ записан\ результат\ вычисления\ скалярного\ произведения}}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ scalar\_mult\_cpu\_thread(\textcolor{keywordtype}{double}\ *v1,\ \textcolor{keywordtype}{double}\ *v2,\ \textcolor{keywordtype}{size\_t}\ startInd,\ \textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keywordtype}{double}\&\ result)}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//printf("{}scalar\_mult\_cpu\_thread\(\backslash\)n"{});}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{double}\ temp\ =\ 0;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ startInd;\ i\ <\ startInd+length;\ i++)}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ temp\ +=\ v1[i]\ *\ v2[i];}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ mutex.lock();}
+\DoxyCodeLine{00091\ \ \ \ \ result\ +=\ temp;}
+\DoxyCodeLine{00092\ \ \ \ \ mutex.unlock();}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ inner\_product\_cpu\_n\_threads(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00101\ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ params.n;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ params.v1;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ v2\ =\ params.v2;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ NumCpuThreads\ =\ params.nt\_cpu;}
+\DoxyCodeLine{00107\ \ \ \ \ std::vector<std::thread>\ threads;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}(n\ \%\ NumCpuThreads\ ==\ 0)\textcolor{comment}{//Если\ количество\ узлов\ делится\ на\ количество\ потоков\ нацело,\ размеры\ данных\ для\ каждого\ потока\ будут\ одинаковы}}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NbyThread\ =\ n\ /\ NumCpuThreads;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}NbyThread\ =\ \%d\(\backslash\)n"{},\ NbyThread);}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ NumCpuThreads;\ i++)}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(scalar\_mult\_cpu\_thread,\ v1,\ v2,\ i*NbyThread,\ NbyThread,\ std::ref(res)));}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NbyThread\ =\ n\ /\ (NumCpuThreads-\/1);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NbyThreadLast\ =\ n\ \%\ (NumCpuThreads-\/1);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}NbyThread\ =\ \%d,\ NbyThreadLast\ =\ \%d\(\backslash\)n"{},\ NbyThread,\ NbyThreadLast);}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ NumCpuThreads-\/1;\ i++)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(scalar\_mult\_cpu\_thread,\ v1,\ v2,\ i*NbyThread,\ NbyThread,\ std::ref(res)));}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ threads.push\_back(std::thread(scalar\_mult\_cpu\_thread,\ v1,\ v2,\ (NumCpuThreads-\/1)*NbyThread,\ NbyThreadLast,\ std::ref(res)));}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ thread\ :\ threads)}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(thread.joinable())}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ thread.join();}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}
+\DoxyCodeLine{00135\ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ return\_res;}
+\DoxyCodeLine{00137\ \ \ \ \ return\_res.is\_success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00138\ \ \ \ \ return\_res.result\ =\ res;}
+\DoxyCodeLine{00139\ \ \ \ \ return\_res.time\ =\ dur.count();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ return\_res;}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#include\ <omp.h>}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ inner\_product\_cpu\_OpenMP(\mbox{\hyperlink{structinner__product__params}{inner\_product\_params}}\ params)}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 0.;}
+\DoxyCodeLine{00155\ \ \ \ \ omp\_set\_num\_threads(params.nt\_cpu);}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#pragma\ omp\ parallel\ for\ reduction(+:res)}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ params.n;\ ++i)}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\#pragma\ omp\ atomic}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ res\ +=\ (params.v1[i]\ *\ params.v2[i]);}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}
+\DoxyCodeLine{00164\ \ \ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{structinner__product__result}{inner\_product\_result}}\ return\_res;}
+\DoxyCodeLine{00166\ \ \ \ \ return\_res.is\_success\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00167\ \ \ \ \ return\_res.result\ =\ res;}
+\DoxyCodeLine{00168\ \ \ \ \ return\_res.time\ =\ dur.count();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ return\_res;}
+\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \textcolor{comment}{/*extern\ int\ inner\_product\_cuda(double*\ v1,\ double*\ v2,\ const\ int\ n,\ double*\ result,\ double*\ time);}}
+\DoxyCodeLine{00177\ \textcolor{comment}{}}
+\DoxyCodeLine{00182\ \textcolor{comment}{inner\_product\_result\ inner\_product\_gpu\_1(inner\_product\_params\ params)}}
+\DoxyCodeLine{00183\ \textcolor{comment}{\{}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ \ \ \ auto\ start\ =\ std::chrono::system\_clock::now();}}
+\DoxyCodeLine{00185\ \textcolor{comment}{}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ \ \ \ double\ res\ =\ 0;}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ \ \ \ double\ time\_gpu\ =\ 0;}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ \ \ \ inner\_product\_cuda(params.v1,\ params.v2,\ params.n,\ \&res,\ \&time\_gpu);}}
+\DoxyCodeLine{00189\ \textcolor{comment}{}}
+\DoxyCodeLine{00190\ \textcolor{comment}{\ \ \ \ std::chrono::duration<double>\ dur\ =\ std::chrono::system\_clock::now()\ -\/\ start;}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{comment}{\ \ \ \ inner\_product\_result\ return\_res;}}
+\DoxyCodeLine{00193\ \textcolor{comment}{\ \ \ \ return\_res.is\_success\ =\ true;}}
+\DoxyCodeLine{00194\ \textcolor{comment}{\ \ \ \ return\_res.result\ =\ res;}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ \ \ \ return\_res.time\ =\ dur.count();}}
+\DoxyCodeLine{00196\ \textcolor{comment}{}}
+\DoxyCodeLine{00197\ \textcolor{comment}{\ \ \ \ return\ return\_res;}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\}*/}}
+\DoxyCodeLine{00199\ }
+
+\end{DoxyCode}

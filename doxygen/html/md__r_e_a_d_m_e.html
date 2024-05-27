@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Iter Methods: IterMethods</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Iter Methods<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Библиотека итерационных методов решения сеточных уравнений</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">IterMethods</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a>Репозиторий для изучения итерационных методов решения сеточных уравнений</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Формирование документации с помощью doxygen</h1>
+<ol type="1">
+<li>Cоздаем шаблонный файл Doxyfile командой:</li>
+</ol>
+<p>doxygen -g</p>
+<ol type="1">
+<li>Для генерации и просмотра документации</li>
+</ol>
+<p>doxygen</p>
+<p>firefox doxygen/html/index.html</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Описание библиотеки функций</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+vector1d.c</h2>
+<ol type="1">
+<li>Структура <b><a class="el" href="structvector1d.html">vector1d</a></b>. Описывает вектор в пространстве $R^n$. Поле <b>length</b> содержит количество элементов массива, доступного по указателю <b>data</b>. <div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">int</span> length;</div>
+<div class="line">    <span class="keywordtype">double</span> *data;</div>
+<div class="line">} <a class="code hl_struct" href="structvector1d.html">vector1d</a>;</div>
+<div class="ttc" id="astructvector1d_html"><div class="ttname"><a href="structvector1d.html">vector1d</a></div><div class="ttdef"><b>Definition</b> vector1d.c:11</div></div>
+</div><!-- fragment --></li>
+<li>Функция <b>vector1d_create</b> - создаёт в динамической памяти структуру <b><a class="el" href="structvector1d.html">vector1d</a></b>, задаёт значение поля <b>length</b> равным параметру <b>size</b> и создаёт динамический массив элементов типа <b>double</b>. Возвращает указатель <b>vector1d*</b> на созданную структуру. <br  />
+</li>
+</ol>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_struct" href="structvector1d.html">vector1d</a>* vector1d_create(<span class="keywordtype">int</span> size)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_struct" href="structvector1d.html">vector1d</a> *vec1d = (<a class="code hl_struct" href="structvector1d.html">vector1d</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>));</div>
+<div class="line">    vec1d-&gt;length = size;    </div>
+<div class="line">    vec1d-&gt;data = (<span class="keywordtype">double</span>*)malloc(vec1d-&gt;length * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> vec1d;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>2.реализовать метод зейделя </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>
