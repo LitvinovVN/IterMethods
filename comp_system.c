@@ -84,6 +84,10 @@ comp_system_node* comp_system_node_create_1GPU(double ram_size_gb, int cpu_threa
 //////////////////////////////////////////////////////////////
 
 ////////////// Вывод сведений в консоль  /////////////////////
+
+/// @brief Выводит в консоль параметры видеокарты
+/// @param message Сообщение
+/// @param gpu Указатель на структуру "Технические характеристики gpu" (comp_system_gpu)
 void comp_system_gpu_print(const char* message, comp_system_gpu* gpu)
 {
     printf("%s", message);

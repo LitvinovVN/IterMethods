@@ -62,24 +62,25 @@
 \DoxyCodeLine{00082\ \}}
 \DoxyCodeLine{00083\ }
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ comp\_system\_gpu\_print(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*\ gpu)}
-\DoxyCodeLine{00088\ \{}
-\DoxyCodeLine{00089\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
-\DoxyCodeLine{00090\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ Gb;\ "{}},\ gpu-\/>vram\_size\_gb);}
-\DoxyCodeLine{00091\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ SMs;\ "{}},\ gpu-\/>gpu\_sm\_max);}
-\DoxyCodeLine{00092\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00093\ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ comp\_system\_node\_print(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ node)}
-\DoxyCodeLine{00096\ \{}
-\DoxyCodeLine{00097\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
-\DoxyCodeLine{00098\ \ \ \ \ printf(\textcolor{stringliteral}{"{}RAM:\ \%lf\ Gb;\ "{}},\ node-\/>ram\_size\_gb);}
-\DoxyCodeLine{00099\ \ \ \ \ printf(\textcolor{stringliteral}{"{}CPU\ threads\ max:\ \%d;\ "{}},\ node-\/>cpu\_threads\_max);}
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i\ <\ node-\/>gpu\_num;\ i++)}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ comp\_system\_gpu\_print(\textcolor{stringliteral}{"{}\(\backslash\)tGPU:\ "{}},\ node-\/>gpus[i]);}
-\DoxyCodeLine{00102\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00103\ \}}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ comp\_system\_gpu\_print(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{structcomp__system__gpu}{comp\_system\_gpu}}*\ gpu)}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{00094\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%lf\ Gb;\ "{}},\ gpu-\/>vram\_size\_gb);}
+\DoxyCodeLine{00095\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ SMs;\ "{}},\ gpu-\/>gpu\_sm\_max);}
+\DoxyCodeLine{00096\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ comp\_system\_node\_print(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message,\ \mbox{\hyperlink{structcomp__system__node}{comp\_system\_node}}*\ node)}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ message);}
+\DoxyCodeLine{00102\ \ \ \ \ printf(\textcolor{stringliteral}{"{}RAM:\ \%lf\ Gb;\ "{}},\ node-\/>ram\_size\_gb);}
+\DoxyCodeLine{00103\ \ \ \ \ printf(\textcolor{stringliteral}{"{}CPU\ threads\ max:\ \%d;\ "{}},\ node-\/>cpu\_threads\_max);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i\ <\ node-\/>gpu\_num;\ i++)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ comp\_system\_gpu\_print(\textcolor{stringliteral}{"{}\(\backslash\)tGPU:\ "{}},\ node-\/>gpus[i]);}
+\DoxyCodeLine{00106\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
