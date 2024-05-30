@@ -7,13 +7,18 @@
 #include <time.h> // rand, srand
 #include <math.h>
 
+/// @brief Структура "Вектор в одномерном пространстве"
 typedef struct
 {
-    unsigned long long length;
-    double *data;
+    unsigned long long length;// Размер вектора
+    double *data; // Указатель на массив элементов вектора
 } vector1d;
 
 //////////////////////// Создание  //////////////////////////////////
+
+/// @brief Создаёт одномерный вектор vector1d в динамической памяти 
+/// @param size Количество элементов вектора
+/// @return Указатель на созданную структуру (vector1d*) 
 vector1d* vector1d_create(int size)
 {
     vector1d *vec1d = (vector1d*)malloc(sizeof(vector1d));
@@ -141,7 +146,12 @@ void vector1d_add_random_0_1_3digit(vector1d* v)
     }  
 }
 
-
+/// @brief Инициализирует два вектора таким образом, чтобы результат вычисления скалярного произведения был равен
+/// @param v1 Указатель на первый инициализируемый вектор
+/// @param v2 Указатель на второй инициализируемый вектор
+/// @param k Число, которому будет равно произведение двух i-х элементов
+/// @param min Минимальное значение
+/// @param max Максимальное значение
 void vector1d_init_scalar(vector1d *v1, vector1d *v2, double k, int min, int max)
 {
     int rnd;
@@ -172,6 +182,11 @@ void vector1d_print(vector1d *v, const char* message)
     printf("\n");
 }
 
+/// @brief Выводит в консоль сообщение message с указанием диапазона в формате "message [indStart...indStart+length-1]: " и затем все элементы вектора из указанного диапазона через пробел
+/// @param v Указатель на структуру vector1d
+/// @param message Сообщение
+/// @param indStart Индекс первого выводимого элемента
+/// @param length Количество выводимых элементов
 void vector1d_print_range(vector1d *v, const char* message, size_t indStart, size_t length)
 {
     printf("%s [%ld...%ld]: ", message, indStart, indStart+length-1);
@@ -194,7 +209,7 @@ void vector1d_print_details(vector1d *v, const char* message)
 }
 
 
-/// @brief Сравнивает два вектора
+/// @brief Сравнивает поэлементно два вектора с точностью 10е-8
 /// @param v1 указатель на первый вектор
 /// @param v2 указатель на второй вектор
 /// @return 1 - равны, 0 - не равны
@@ -394,6 +409,12 @@ int vector1d_create_from_file_pos(FILE *f, unsigned long long index_start,
 	return 1;
 }
 
+/// @brief Инициализирует вектор v указанным диапазоном элементов из файла
+/// @param f Указатель на двоичный файл, открытый в режиме чтения
+/// @param index_start Индекс первого считываемого элемента
+/// @param length Количество элементов
+/// @param v Указатель на вектор типа vector1d
+/// @return Код успешности: 1 - ОК; 0 - ERROR
 int vector1d_init_from_file_pos(FILE *f, unsigned long long index_start,
     unsigned long long length, vector1d* v)
 {

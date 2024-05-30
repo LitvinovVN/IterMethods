@@ -62,6 +62,7 @@
         "semaphore": "cpp",
         "sstream": "cpp",
         "time.h": "c",
-        "barrier": "cpp"
+        "barrier": "cpp",
+        "stdio.h": "c"
     }
 }
