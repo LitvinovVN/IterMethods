@@ -14,46 +14,34 @@
  * 0000000000
 */
 
-
-
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include "geometry2d.cpp"
 
 using namespace std;
 
 int main()
-{
-    cout << "Opening txt file..." << endl;    
-    std::ifstream in("rectangle.txt"); // окрываем файл для чтения
-    if (!in.is_open())
-    {
-        cout << "ERROR! File not opened!" << endl;
-        return -1;
-    }
+{    
+    //Geometry2d g2d(3,5,10,20);
+    //g2d.Print();
 
-    string fileFormat;
-    in >> fileFormat;
-    cout << "fileFormat = " << fileFormat << endl;
-
-    Geometry2d g2d(3,5,10,20);
-    g2d.Print();
+    Geometry2d g2df("rectangle.txt");
+    g2df.Print();
 
     // Массив для хранения строк, описывающих расчетную область
-    vector<string> lines;
+    /*vector<string> lines;
     string line;
     while (getline(in, line))
     {
         lines.push_back(line);
-    }
+    }*/
     
-    in.close();     // закрываем файл
+    
 
-    for(auto line : lines)
+    /*for(auto line : lines)
     {
         cout << line << endl;
-    }
+    }*/
 
     return 0;
 }
