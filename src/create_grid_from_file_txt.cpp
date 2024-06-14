@@ -16,7 +16,8 @@
 
 #include <iostream>
 #include <vector>
-#include "geometry2d.cpp"
+#include "Geometry2d.cpp"
+#include "Cluster.cpp"
 
 using namespace std;
 
@@ -28,6 +29,8 @@ int main()
     Geometry2d g2df("rectangle.txt");
     g2df.Print();
 
+    Cluster cluster("cluster.txt");
+    cluster.Print();
     // Массив для хранения строк, описывающих расчетную область
     /*vector<string> lines;
     string line;

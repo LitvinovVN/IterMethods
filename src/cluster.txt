@@ -1,0 +1,5 @@
+# Формат файла cluster - описание конфигурации вычислительного кластера
+cluster
+# Конфигурирование вычислительных узлов
+# Тип(node) id(int) name(string) file-name
+node 0 n0cpu4gpu12-8 cluster_node_1.txt
