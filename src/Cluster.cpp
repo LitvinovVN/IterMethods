@@ -5,10 +5,13 @@
 #include <fstream>
 #include <vector>
 #include "string_helpers.cpp"
+#include "ClusterNode.cpp"
 
 class Cluster
 {
     unsigned nodeNumber = 0;
+    std::string name;
+    std::vector<ClusterNode> clusterNodes;
 
 public:
     Cluster(std::string fileName)
@@ -41,7 +44,7 @@ public:
         std::cout << "File format checking: " << lines[0] << std::endl;
         if(lines[0] != "cluster")
         {
-            std::cout << "ERROR! File format is not 2D!" << std::endl;
+            std::cout << "ERROR! File format is not cluster!" << std::endl;
             exit(-1);
         }
 
@@ -63,11 +66,15 @@ public:
                 int id = atoi(vecOfSubStr[1].c_str());
                 std::cout << "id = " << id << "; ";
 
-                std::string name = vecOfSubStr[2];
-                std::cout << "name = " << name << "; ";
+                std::string nodeName = vecOfSubStr[2];
+                std::cout << "nodeName = " << nodeName << "; ";
 
                 std::string fileName = vecOfSubStr[3];
                 std::cout << "fileName = " << fileName << std::endl;
+
+                ClusterNode clusterNode(nodeName, fileName);
+                //clusterNode.Print();
+                clusterNodes.push_back(clusterNode);
             }
 
             // Print the vector of substrings 
@@ -80,13 +87,18 @@ public:
 
     ~Cluster()
     {
-        std::cout << "Cluster::~Cluster()" << std::endl;
+        //std::cout << "Cluster::~Cluster()" << std::endl;
     }
 
     void Print()
     {
         std::cout << "Cluster::Print()" << std::endl;
         std::cout << "  | nodeNumber = " << nodeNumber << std::endl;
+        std::cout << "  | name = " << name << std::endl;
+        for(auto clusterNode : clusterNodes)
+        {
+            clusterNode.Print();
+        }
     }
 };
 
