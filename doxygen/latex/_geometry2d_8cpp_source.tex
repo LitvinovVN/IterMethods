@@ -1,0 +1,130 @@
+\doxysection{Geometry2d.\+cpp}
+\hypertarget{_geometry2d_8cpp_source}{}\label{_geometry2d_8cpp_source}\index{src/Geometry2d.cpp@{src/Geometry2d.cpp}}
+\mbox{\hyperlink{_geometry2d_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_Geometry2d}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_Geometry2d}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_geometry2d}{Geometry2d}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ nx\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Количество\ подобластей\ расчетной\ области\ по\ Oy}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ ny\ =\ 0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ Lx\ =\ 0.0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Длина\ подобласти\ расчетной\ области\ по\ Oy}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ Ly\ =\ 0.0;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Двумерный\ массив\ с\ данными,\ описывающими\ расчетную\ область}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{unsigned}**\ data;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_geometry2d_ae528d2a1b2e8192d21fbb6c06234ccc8}{Geometry2d}}(\textcolor{keywordtype}{unsigned}\ nx,\ \textcolor{keywordtype}{unsigned}\ ny,\ \textcolor{keywordtype}{unsigned}\ Lx,\ \textcolor{keywordtype}{unsigned}\ Ly)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this-\/>nx\ =\ nx;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this-\/>ny\ =\ ny;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this-\/>Lx\ =\ Lx;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ this-\/>Ly\ =\ Ly;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ data\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}*[nx]\{\};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\{\};\ i\ <\ nx;\ i++)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ data[i]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}[ny]\{\};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_geometry2d_a1cd2ca127b11148356f2c6d1c063a84b}{Geometry2d}}(std::string\ fileName)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Geometry2d(std::string\ fileName):\ Opening\ txt\ file..."{}}\ <<\ std::endl;\ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::ifstream\ in(fileName);\ \textcolor{comment}{//\ окрываем\ файл\ для\ чтения}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in.is\_open())}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR!\ File\ not\ opened!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ exit(-\/1);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::string\ fileFormat;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ in\ >>\ fileFormat;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}File\ format\ checking:\ "{}}\ <<\ fileFormat\ <<\ std::endl;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(fileFormat\ !=\ \textcolor{stringliteral}{"{}2D"{}})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR!\ File\ format\ is\ not\ 2D!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ exit(-\/1);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ in\ >>\ nx\ >>\ ny\ >>\ Lx\ >>\ Ly;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}nx\ =\ "{}}\ <<\ nx\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ny\ =\ "{}}\ <<\ ny\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Lx\ =\ "{}}\ <<\ Lx\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ly\ =\ "{}}\ <<\ Ly\ <<\ std::endl;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Выделяем\ память\ под\ хранение\ данных}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ data\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}*[ny]\{\};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ j\{\};\ j\ <\ ny;\ j++)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ data[j]\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}[nx]\{\};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Считываем\ данные\ из\ файла}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ j\{\};\ j\ <\ ny;\ j++)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ getline(in,\ line);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}line\ =\ "{}}\ <<\ line\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}line\ size\ =\ "{}}\ <<\ line.size()\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(line.size()\ <\ nx)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j-\/-\/;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ i\{\};\ i\ <\ nx;\ i++)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ sym[1];}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sym[0]\ =\ line[i];}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}sym\ =\ "{}\ <<\ (int)sym[0]\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ num\ =\ atoi(sym);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}num\ =\ "{}\ <<\ num\ <<\ std::endl;}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[j][i]\ =\ num;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ in.close();\ \ \ \ \ \textcolor{comment}{//\ закрываем\ файл}}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_geometry2d_ab6ca46096da1fdb6b78ab92aab27ae18}{\string~Geometry2d}}()}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}\string~Geometry2d()"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ j\{\};\ j\ <\ ny;\ j++)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data[j];}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_geometry2d_aafaed07b0baa0e716c982a7ee87505e7}{Print}}()}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nx\ ==\ 0\ ||\ ny\ ==\ 0)}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Geometry2d::Print():\ Object\ not\ initialized!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ j\{\};\ j\ <\ ny;\ j++)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ выводим\ данные\ столбцов\ j-\/й\ строки}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\{\};\ i\ <\ nx;\ i++)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ data[j][i]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

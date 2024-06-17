@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Iter Methods: Класс Cluster</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -19,8 +19,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">Iter Methods<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Библиотека итерационных методов решения сеточных уравнений</div>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Создано системой Doxygen 1.9.2 -->
+<!-- Создано системой Doxygen 1.9.7 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -56,9 +56,16 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
 </div>
 
 </div><!-- top -->
@@ -72,16 +79,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:ab76a25597b6ed41fbd574d2af1b82c0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#ab76a25597b6ed41fbd574d2af1b82c0a">Cluster</a> (std::string fileName)</td></tr>
-<tr class="separator:ab76a25597b6ed41fbd574d2af1b82c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4910565f92bcf7705a0aa5a289f2a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a0d4910565f92bcf7705a0aa5a289f2a6">Cluster</a> (std::string dirName, std::string fileName)</td></tr>
+<tr class="separator:a0d4910565f92bcf7705a0aa5a289f2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bddfc88ac859610acab15dd12851b58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a4bddfc88ac859610acab15dd12851b58">~Cluster</a> ()</td></tr>
 <tr class="separator:a4bddfc88ac859610acab15dd12851b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affa1117fb5284ec178f0a42fe888a2cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#affa1117fb5284ec178f0a42fe888a2cf">Print</a> ()</td></tr>
 <tr class="separator:affa1117fb5284ec178f0a42fe888a2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Конструктор(ы)</h2>
-<a id="ab76a25597b6ed41fbd574d2af1b82c0a" name="ab76a25597b6ed41fbd574d2af1b82c0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab76a25597b6ed41fbd574d2af1b82c0a">&#9670;&nbsp;</a></span>Cluster()</h2>
+<a id="a0d4910565f92bcf7705a0aa5a289f2a6" name="a0d4910565f92bcf7705a0aa5a289f2a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d4910565f92bcf7705a0aa5a289f2a6">&#9670;&#160;</a></span>Cluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -93,8 +100,18 @@ $(function() {
           <td class="memname">Cluster::Cluster </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td class="paramname"><em>dirName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -107,7 +124,7 @@ $(function() {
 </div>
 </div>
 <a id="a4bddfc88ac859610acab15dd12851b58" name="a4bddfc88ac859610acab15dd12851b58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bddfc88ac859610acab15dd12851b58">&#9670;&nbsp;</a></span>~Cluster()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bddfc88ac859610acab15dd12851b58">&#9670;&#160;</a></span>~Cluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +150,7 @@ $(function() {
 </div>
 <h2 class="groupheader">Методы</h2>
 <a id="affa1117fb5284ec178f0a42fe888a2cf" name="affa1117fb5284ec178f0a42fe888a2cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affa1117fb5284ec178f0a42fe888a2cf">&#9670;&nbsp;</a></span>Print()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#affa1117fb5284ec178f0a42fe888a2cf">&#9670;&#160;</a></span>Print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,12 +175,12 @@ $(function() {
 </div>
 </div>
 <hr/>Объявления и описания членов класса находятся в файле:<ul>
-<li>src/<a class="el" href="_cluster_8cpp.html">Cluster.cpp</a></li>
+<li>src/<a class="el" href="_cluster_8cpp_source.html">Cluster.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

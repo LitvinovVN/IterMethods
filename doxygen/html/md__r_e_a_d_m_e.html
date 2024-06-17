@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Iter Methods: IterMethods</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -19,8 +19,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+ <tr id="projectrow">
+  <td id="projectalign">
    <div id="projectname">Iter Methods<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Библиотека итерационных методов решения сеточных уравнений</div>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Создано системой Doxygen 1.9.2 -->
+<!-- Создано системой Doxygen 1.9.7 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -56,17 +56,24 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
 </div>
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">IterMethods </div></div>
+  <div class="headertitle"><div class="title">IterMethods</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >Репозиторий для изучения итерационных методов решения сеточных уравнений</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a>Репозиторий для изучения итерационных методов решения сеточных уравнений</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 &lt;a href="https://litvinovvn.github.io/IterMethods/" &gt;https://litvinovvn.github.io/IterMethods/&lt;/a&gt;</h1>
 <h1><a class="anchor" id="autotoc_md2"></a>
@@ -74,11 +81,11 @@ $(function() {
 <ol type="1">
 <li>Cоздаем шаблонный файл Doxyfile командой:</li>
 </ol>
-<p >doxygen -g</p>
+<p>doxygen -g</p>
 <ol type="1">
 <li>Для генерации документации</li>
 </ol>
-<p >doxygen</p>
+<p>doxygen</p>
 <ol type="1">
 <li><a href="doxygen/html/index.html">Документация</a></li>
 </ol>
@@ -87,31 +94,35 @@ $(function() {
 <h2><a class="anchor" id="autotoc_md4"></a>
 vector1d.c</h2>
 <ol type="1">
-<li>Структура <b><a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a></b>. Описывает вектор в пространстве $R^n$. Поле <b>length</b> содержит количество элементов массива, доступного по указателю <b>data</b>. <div class="fragment"><div class="line"> {c++}</div>
-<div class="line">typedef struct</div>
+<li>Структура <b><a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a></b>. Описывает вектор в пространстве $R^n$. Поле <b>length</b> содержит количество элементов массива, доступного по указателю <b>data</b>. <div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line">{</div>
-<div class="line">    int length;</div>
-<div class="line">    double *data;</div>
-<div class="line">} vector1d;</div>
+<div class="line">    <span class="keywordtype">int</span> length;</div>
+<div class="line">    <span class="keywordtype">double</span> *data;</div>
+<div class="line">} <a class="code hl_struct" href="structvector1d.html">vector1d</a>;</div>
+<div class="ttc" id="astructvector1d_html"><div class="ttname"><a href="structvector1d.html">vector1d</a></div><div class="ttdoc">Структура &quot;Вектор в одномерном пространстве&quot;.</div><div class="ttdef"><b>Definition</b> vector1d.c:12</div></div>
 </div><!-- fragment --></li>
 <li>Функция <b>vector1d_create</b> - создаёт в динамической памяти структуру <b><a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a></b>, задаёт значение поля <b>length</b> равным параметру <b>size</b> и создаёт динамический массив элементов типа <b>double</b>. Возвращает указатель <b>vector1d*</b> на созданную структуру. <br  />
 </li>
 </ol>
-<div class="fragment"><div class="line"> {c++}</div>
-<div class="line">vector1d* vector1d_create(int size)</div>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_struct" href="structvector1d.html">vector1d</a>* <a class="code hl_function" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a>(<span class="keywordtype">int</span> size)</div>
 <div class="line">{</div>
-<div class="line">    vector1d *vec1d = (vector1d*)malloc(sizeof(vector1d));</div>
-<div class="line">    vec1d-&gt;length = size;    </div>
-<div class="line">    vec1d-&gt;data = (double*)malloc(vec1d-&gt;length * sizeof(double));</div>
+<div class="line">    <a class="code hl_struct" href="structvector1d.html">vector1d</a> *vec1d = (<a class="code hl_struct" href="structvector1d.html">vector1d</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structvector1d.html">vector1d</a>));</div>
+<div class="line">    vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> = size;    </div>
+<div class="line">    vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">data</a> = (<span class="keywordtype">double</span>*)malloc(vec1d-&gt;<a class="code hl_variable" href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">length</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
 <div class="line"> </div>
-<div class="line">    return vec1d;</div>
+<div class="line">    <span class="keywordflow">return</span> vec1d;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p >2.реализовать метод зейделя </p>
+<div class="ttc" id="astructvector1d_html_a6b6b5cd2f9a8f295341e4a66c3010a0f"><div class="ttname"><a href="structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f">vector1d::data</a></div><div class="ttdeci">double * data</div><div class="ttdef"><b>Definition</b> vector1d.c:14</div></div>
+<div class="ttc" id="astructvector1d_html_abac9c2730833259c6cb59fc0ce6022e5"><div class="ttname"><a href="structvector1d.html#abac9c2730833259c6cb59fc0ce6022e5">vector1d::length</a></div><div class="ttdeci">unsigned long long length</div><div class="ttdef"><b>Definition</b> vector1d.c:13</div></div>
+<div class="ttc" id="avector1d_8c_html_a05aa7dfae1874d55c451df79ae5099a0"><div class="ttname"><a href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a></div><div class="ttdeci">vector1d * vector1d_create(int size)</div><div class="ttdoc">Создаёт одномерный вектор vector1d в динамической памяти</div><div class="ttdef"><b>Definition</b> vector1d.c:22</div></div>
+</div><!-- fragment --><p>2.реализовать метод зейделя </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
 </small></address>
 </body>
 </html>

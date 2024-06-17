@@ -1,37 +1,104 @@
-\hypertarget{class_cluster_node}{}\doxysection{Класс Cluster\+Node}
-\label{class_cluster_node}\index{ClusterNode@{ClusterNode}}
-\doxysubsection*{Открытые члены}
+\doxysection{Класс Cluster\+Node}
+\hypertarget{class_cluster_node}{}\label{class_cluster_node}\index{ClusterNode@{ClusterNode}}
+\doxysubsubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_cluster_node_afaf0c5cb4099ab6814fdce3d62dfa1aa}{Cluster\+Node}} (std\+::string node\+Name, std\+::string file\+Name)
-\item 
-\mbox{\hyperlink{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d}{$\sim$\+Cluster\+Node}} ()
+\mbox{\hyperlink{class_cluster_node_aff93de809e6f84431d54bdc1d966a767}{Cluster\+Node}} (std\+::string \mbox{\hyperlink{class_cluster_node_af72f0d3667799548043e510046be6642}{node\+Name}}, std\+::string dir\+Name, std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Конструктор, создающий объект \doxylink{class_cluster_node}{Cluster\+Node} из файла \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d}{\texorpdfstring{$\sim$}{\string~}\+Cluster\+Node}} ()
 \item 
 void \mbox{\hyperlink{class_cluster_node_af3ad4ad029f6cb10114c24d6017de61e}{Print}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_cluster_node_af72f0d3667799548043e510046be6642}{node\+Name}}
+\item 
+unsigned \mbox{\hyperlink{class_cluster_node_a23d287664f33c8613d50cde269d42814}{node\+Id}} = 0
+\item 
+double \mbox{\hyperlink{class_cluster_node_a8e51adb936cb4caa1a9f0cdf68639797}{ram\+Size}}
+\item 
+int \mbox{\hyperlink{class_cluster_node_a9782edd0d022abb3d003bb80a77bfff3}{device\+Id\+Cpu}}
+\item 
+unsigned \mbox{\hyperlink{class_cluster_node_a5037d03b0b51367cfdb51cf8b9ecd8e7}{cpu\+Threads}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_gpu_spec}{Gpu\+Spec}} $>$ \mbox{\hyperlink{class_cluster_node_a790b63d6552cb50b14a3714abe534913}{gpus}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Конструктор(ы)}
-\mbox{\Hypertarget{class_cluster_node_afaf0c5cb4099ab6814fdce3d62dfa1aa}\label{class_cluster_node_afaf0c5cb4099ab6814fdce3d62dfa1aa}} 
+\Hypertarget{class_cluster_node_aff93de809e6f84431d54bdc1d966a767}\label{class_cluster_node_aff93de809e6f84431d54bdc1d966a767} 
 \index{ClusterNode@{ClusterNode}!ClusterNode@{ClusterNode}}
 \index{ClusterNode@{ClusterNode}!ClusterNode@{ClusterNode}}
 \doxysubsubsection{\texorpdfstring{ClusterNode()}{ClusterNode()}}
-{\footnotesize\ttfamily Cluster\+Node\+::\+Cluster\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Cluster\+Node\+::\+Cluster\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name,  }\item[{std\+::string}]{dir\+Name,  }\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d}\label{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d}} 
-\index{ClusterNode@{ClusterNode}!````~ClusterNode@{$\sim$ClusterNode}}
-\index{````~ClusterNode@{$\sim$ClusterNode}!ClusterNode@{ClusterNode}}
-\doxysubsubsection{\texorpdfstring{$\sim$ClusterNode()}{~ClusterNode()}}
-{\footnotesize\ttfamily Cluster\+Node\+::$\sim$\+Cluster\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+Конструктор, создающий объект \doxylink{class_cluster_node}{Cluster\+Node} из файла 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em node\+Name} & Наименование узла \\
+\hline
+{\em dir\+Name} & Путь к каталогу с файлом \\
+\hline
+{\em file\+Name} & Наименование файла \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d}\label{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d} 
+\index{ClusterNode@{ClusterNode}!````~ClusterNode@{\texorpdfstring{$\sim$}{\string~}ClusterNode}}
+\index{````~ClusterNode@{\texorpdfstring{$\sim$}{\string~}ClusterNode}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ClusterNode()}{\string~ClusterNode()}}
+{\footnotesize\ttfamily Cluster\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Cluster\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Методы}
-\mbox{\Hypertarget{class_cluster_node_af3ad4ad029f6cb10114c24d6017de61e}\label{class_cluster_node_af3ad4ad029f6cb10114c24d6017de61e}} 
+\Hypertarget{class_cluster_node_af3ad4ad029f6cb10114c24d6017de61e}\label{class_cluster_node_af3ad4ad029f6cb10114c24d6017de61e} 
 \index{ClusterNode@{ClusterNode}!Print@{Print}}
 \index{Print@{Print}!ClusterNode@{ClusterNode}}
 \doxysubsubsection{\texorpdfstring{Print()}{Print()}}
 {\footnotesize\ttfamily void Cluster\+Node\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{class_cluster_node_a5037d03b0b51367cfdb51cf8b9ecd8e7}\label{class_cluster_node_a5037d03b0b51367cfdb51cf8b9ecd8e7} 
+\index{ClusterNode@{ClusterNode}!cpuThreads@{cpuThreads}}
+\index{cpuThreads@{cpuThreads}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{cpuThreads}{cpuThreads}}
+{\footnotesize\ttfamily unsigned Cluster\+Node\+::cpu\+Threads}
+
+\Hypertarget{class_cluster_node_a9782edd0d022abb3d003bb80a77bfff3}\label{class_cluster_node_a9782edd0d022abb3d003bb80a77bfff3} 
+\index{ClusterNode@{ClusterNode}!deviceIdCpu@{deviceIdCpu}}
+\index{deviceIdCpu@{deviceIdCpu}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{deviceIdCpu}{deviceIdCpu}}
+{\footnotesize\ttfamily int Cluster\+Node\+::device\+Id\+Cpu}
+
+\Hypertarget{class_cluster_node_a790b63d6552cb50b14a3714abe534913}\label{class_cluster_node_a790b63d6552cb50b14a3714abe534913} 
+\index{ClusterNode@{ClusterNode}!gpus@{gpus}}
+\index{gpus@{gpus}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{gpus}{gpus}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_gpu_spec}{Gpu\+Spec}}$>$ Cluster\+Node\+::gpus}
+
+\Hypertarget{class_cluster_node_a23d287664f33c8613d50cde269d42814}\label{class_cluster_node_a23d287664f33c8613d50cde269d42814} 
+\index{ClusterNode@{ClusterNode}!nodeId@{nodeId}}
+\index{nodeId@{nodeId}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{nodeId}{nodeId}}
+{\footnotesize\ttfamily unsigned Cluster\+Node\+::node\+Id = 0}
+
+\Hypertarget{class_cluster_node_af72f0d3667799548043e510046be6642}\label{class_cluster_node_af72f0d3667799548043e510046be6642} 
+\index{ClusterNode@{ClusterNode}!nodeName@{nodeName}}
+\index{nodeName@{nodeName}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{nodeName}{nodeName}}
+{\footnotesize\ttfamily std\+::string Cluster\+Node\+::node\+Name}
+
+\Hypertarget{class_cluster_node_a8e51adb936cb4caa1a9f0cdf68639797}\label{class_cluster_node_a8e51adb936cb4caa1a9f0cdf68639797} 
+\index{ClusterNode@{ClusterNode}!ramSize@{ramSize}}
+\index{ramSize@{ramSize}!ClusterNode@{ClusterNode}}
+\doxysubsubsection{\texorpdfstring{ramSize}{ramSize}}
+{\footnotesize\ttfamily double Cluster\+Node\+::ram\+Size}
 
 
 

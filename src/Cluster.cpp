@@ -14,11 +14,11 @@ class Cluster
     std::vector<ClusterNode> clusterNodes;
 
 public:
-    Cluster(std::string fileName)
+    Cluster(std::string dirName, std::string fileName)
     {
-        std::cout << "Cluster::Cluster(): " << fileName << std::endl;
+        std::cout << "Cluster::Cluster(): " << dirName << fileName << std::endl;
 
-        std::ifstream in(fileName); // окрываем файл для чтения
+        std::ifstream in(dirName + fileName); // окрываем файл для чтения
         if (!in.is_open())
         {
             std::cout << "ERROR! File not opened!" << std::endl;
@@ -72,7 +72,7 @@ public:
                 std::string fileName = vecOfSubStr[3];
                 std::cout << "fileName = " << fileName << std::endl;
 
-                ClusterNode clusterNode(nodeName, fileName);
+                ClusterNode clusterNode(nodeName, dirName, fileName);
                 //clusterNode.Print();
                 clusterNodes.push_back(clusterNode);
             }

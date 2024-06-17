@@ -9,6 +9,7 @@
 
 class ClusterNode
 {
+public:
     std::string nodeName;
     unsigned nodeId = 0;
     double ramSize;
@@ -17,14 +18,17 @@ class ClusterNode
 
     std::vector<GpuSpec> gpus;
 
-public:
-    ClusterNode(std::string nodeName, std::string fileName)
+    /// @brief Конструктор, создающий объект ClusterNode из файла
+    /// @param nodeName Наименование узла
+    /// @param dirName Путь к каталогу с файлом
+    /// @param fileName Наименование файла
+    ClusterNode(std::string nodeName, std::string dirName, std::string fileName)
     {
         this->nodeName = nodeName;
 
-        std::cout << "ClusterNode::ClusterNode(): " << fileName << std::endl;
+        std::cout << "ClusterNode::ClusterNode(): " << dirName << fileName << std::endl;
 
-        std::ifstream in(fileName); // окрываем файл для чтения
+        std::ifstream in(dirName + fileName); // окрываем файл для чтения
         if (!in.is_open())
         {
             std::cout << "ERROR! File not opened!" << std::endl;

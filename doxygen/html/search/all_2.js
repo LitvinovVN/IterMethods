@@ -2,9 +2,9 @@ var searchData=
 [
   ['calcthreadfunc_0',['calcThreadFunc',['../master_workers_barriers_8cpp.html#a94b12758a85374df8ca83c3e6881d700',1,'masterWorkersBarriers.cpp']]],
   ['calculationfunc_1',['calculationFunc',['../master_workers_8cpp.html#ab0912c763ec3586a0794b31bda53457a',1,'masterWorkers.cpp']]],
-  ['cluster_2',['Cluster',['../class_cluster.html',1,'Cluster'],['../class_cluster.html#ab76a25597b6ed41fbd574d2af1b82c0a',1,'Cluster::Cluster()']]],
+  ['cluster_2',['Cluster',['../class_cluster.html',1,'Cluster'],['../class_cluster.html#a0d4910565f92bcf7705a0aa5a289f2a6',1,'Cluster::Cluster()']]],
   ['cluster_2ecpp_3',['Cluster.cpp',['../_cluster_8cpp.html',1,'']]],
-  ['clusternode_4',['ClusterNode',['../class_cluster_node.html',1,'ClusterNode'],['../class_cluster_node.html#afaf0c5cb4099ab6814fdce3d62dfa1aa',1,'ClusterNode::ClusterNode()']]],
+  ['clusternode_4',['ClusterNode',['../class_cluster_node.html',1,'ClusterNode'],['../class_cluster_node.html#aff93de809e6f84431d54bdc1d966a767',1,'ClusterNode::ClusterNode()']]],
   ['clusternode_2ecpp_5',['ClusterNode.cpp',['../_cluster_node_8cpp.html',1,'']]],
   ['comp_5fsystem_2ec_6',['comp_system.c',['../comp__system_8c.html',1,'']]],
   ['comp_5fsystem_5fc_7',['COMP_SYSTEM_C',['../comp__system_8c.html#aa99768ea4905126750dde26d1018d317',1,'comp_system.c']]],
@@ -19,6 +19,7 @@ var searchData=
   ['comp_5fsystem_5ftests_2ec_16',['comp_system_tests.c',['../comp__system__tests_8c.html',1,'']]],
   ['conv_2ecpp_17',['conv.cpp',['../conv_8cpp.html',1,'']]],
   ['cpu_5fthreads_5fmax_18',['cpu_threads_max',['../structcomp__system__node.html#a2e07ad59aaa0c2174d1c76b14454daa4',1,'comp_system_node']]],
-  ['create_5fgrid_5ffrom_5ffile_5ftxt_2ecpp_19',['create_grid_from_file_txt.cpp',['../create__grid__from__file__txt_8cpp.html',1,'']]],
-  ['cudatest_2ecu_20',['cudaTest.cu',['../cuda_test_8cu.html',1,'']]]
+  ['cputhreads_19',['cpuThreads',['../class_cluster_node.html#a5037d03b0b51367cfdb51cf8b9ecd8e7',1,'ClusterNode']]],
+  ['create_5fgrid_5ffrom_5ffile_5ftxt_2ecpp_20',['create_grid_from_file_txt.cpp',['../create__grid__from__file__txt_8cpp.html',1,'']]],
+  ['cudatest_2ecu_21',['cudaTest.cu',['../cuda_test_8cu.html',1,'']]]
 ];

@@ -1,0 +1,46 @@
+\doxysection{Gpu\+Spec.\+cpp}
+\hypertarget{_gpu_spec_8cpp_source}{}\label{_gpu_spec_8cpp_source}\index{src/GpuSpec.cpp@{src/GpuSpec.cpp}}
+\mbox{\hyperlink{_gpu_spec_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_GpuSpec}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_GpuSpec}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gpu_spec}{GpuSpec}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Идентификатор\ видеоадаптера}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ gpuId\ =\ 0;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Название}}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Объём\ видеопамяти,\ Гб}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ vramSize;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Количество\ потоковых\ мультипроцессоров}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ smNum;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_gpu_spec_a2c49332f09477e10dfeb4099946c0024}{GpuSpec}}(\textcolor{keywordtype}{unsigned}\ gpuId,\ std::string\ name,\ \textcolor{keywordtype}{double}\ vramSize,\ \textcolor{keywordtype}{unsigned}\ smNum)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}GpuSpec::GpuSpec():\ "{}\ <<\ name\ <<\ std::endl;}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>gpuId\ =\ gpuId;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this-\/>name\ =\ name;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this-\/>vramSize\ =\ vramSize;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this-\/>smNum\ =\ smNum;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_gpu_spec_ab85238d8db52ab17e2421b1c58906f72}{\string~GpuSpec}}()}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}GpuSpec::\string~GpuSpec():\ "{}\ <<\ name\ <<\ std::endl;}}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gpu_spec_a34aa3270928b34098686a9da2f3bfa90}{Print}}()}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ gpuId\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ name\ <<\ \textcolor{stringliteral}{"{};\ "{}}\ <<\ vramSize\ <<\ \textcolor{stringliteral}{"{}\ Gb;\ "{}}\ <<\ smNum\ <<\ \textcolor{stringliteral}{"{}\ SMs"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

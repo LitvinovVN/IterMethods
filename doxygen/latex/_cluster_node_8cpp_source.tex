@@ -1,0 +1,138 @@
+\doxysection{Cluster\+Node.\+cpp}
+\hypertarget{_cluster_node_8cpp_source}{}\label{_cluster_node_8cpp_source}\index{src/ClusterNode.cpp@{src/ClusterNode.cpp}}
+\mbox{\hyperlink{_cluster_node_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_ClusterNode}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_ClusterNode}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{string__helpers_8cpp}{string\_helpers.cpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_gpu_spec_8cpp}{GpuSpec.cpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cluster_node}{ClusterNode}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{class_cluster_node_af72f0d3667799548043e510046be6642}{nodeName}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_cluster_node_a23d287664f33c8613d50cde269d42814}{nodeId}}\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_cluster_node_a8e51adb936cb4caa1a9f0cdf68639797}{ramSize}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cluster_node_a9782edd0d022abb3d003bb80a77bfff3}{deviceIdCpu}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_cluster_node_a5037d03b0b51367cfdb51cf8b9ecd8e7}{cpuThreads}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<GpuSpec>\ \mbox{\hyperlink{class_cluster_node_a790b63d6552cb50b14a3714abe534913}{gpus}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_cluster_node_aff93de809e6f84431d54bdc1d966a767}{ClusterNode}}(std::string\ \mbox{\hyperlink{class_cluster_node_af72f0d3667799548043e510046be6642}{nodeName}},\ std::string\ dirName,\ std::string\ fileName)}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this-\/>nodeName\ =\ \mbox{\hyperlink{class_cluster_node_af72f0d3667799548043e510046be6642}{nodeName}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ClusterNode::ClusterNode():\ "{}}\ <<\ dirName\ <<\ fileName\ <<\ std::endl;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::ifstream\ in(dirName\ +\ fileName);\ \textcolor{comment}{//\ окрываем\ файл\ для\ чтения}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in.is\_open())}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR!\ File\ not\ opened!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ exit(-\/1);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Массив\ для\ хранения\ строк\ конфигурационного\ файла}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::vector<std::string>\ lines;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(in,\ line))}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(line[0]\ ==\ \textcolor{charliteral}{'\#'})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ lines.push\_back(line);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ in.close();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*for(auto\ line\ :\ lines)}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ line\ <<\ std::endl;}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}File\ format\ checking:\ "{}}\ <<\ lines[0]\ <<\ std::endl;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lines[0]\ !=\ \textcolor{stringliteral}{"{}cluster\_node"{}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR!\ File\ format\ is\ not\ cluster\_node!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ exit(-\/1);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\{1\};\ i<lines.size();i++)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ vecOfSubStr\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{string__helpers_8cpp_a592d1bf113aa33dc7aeed7d6d5815ee6}{splitString}}(lines[i],\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(vecOfSubStr.size()\ ==\ 0)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Формат\ описания\ вычислительных\ узлов}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Тип(node)\ id(int)\ name(string)\ file-\/name}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ node\ 0\ n0cpu4gpu12-\/8\ cluster\_node\_1.txt}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ vecOfSubStr[0]\ <<\ "{}:\ "{};}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vecOfSubStr[0]\ ==\ \textcolor{stringliteral}{"{}RAM"{}})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cluster_node_a8e51adb936cb4caa1a9f0cdf68639797}{ramSize}}\ =\ atoi(vecOfSubStr[1].c\_str());}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}ramSize\ =\ "{}\ <<\ ramSize\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (vecOfSubStr[0]\ ==\ \textcolor{stringliteral}{"{}CPU"{}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cluster_node_a9782edd0d022abb3d003bb80a77bfff3}{deviceIdCpu}}\ =\ atoi(vecOfSubStr[1].c\_str());}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}deviceIdCpu\ =\ "{}\ <<\ deviceIdCpu\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cluster_node_a5037d03b0b51367cfdb51cf8b9ecd8e7}{cpuThreads}}\ =\ atoi(vecOfSubStr[2].c\_str());}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}cpuThreads\ =\ "{}\ <<\ cpuThreads\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (vecOfSubStr[0]\ ==\ \textcolor{stringliteral}{"{}GPU"{}})}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ deviceIdGpu\ =\ atoi(vecOfSubStr[1].c\_str());}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}deviceIdGpu\ =\ "{}\ <<\ deviceIdGpu\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ gpuName\ =\ vecOfSubStr[2];}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}gpuName\ =\ "{}\ <<\ gpuName\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vramSize\ =\ atoi(vecOfSubStr[3].c\_str());}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}vramSize\ =\ "{}\ <<\ vramSize\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ smNum\ =\ atoi(vecOfSubStr[4].c\_str());}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}smNum\ =\ "{}\ <<\ smNum\ <<\ "{};\ "{};}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gpu_spec}{GpuSpec}}\ gpu(deviceIdGpu,\ gpuName,\ vramSize,\ smNum);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cluster_node_a790b63d6552cb50b14a3714abe534913}{gpus}}.push\_back(gpu);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{class_cluster_node_a1286fc03b8c21fc2d97d4a704acc8c8d}{\string~ClusterNode}}()}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}ClusterNode::\string~ClusterNode()"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cluster_node_af3ad4ad029f6cb10114c24d6017de61e}{Print}}()}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ClusterNode::Print()"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ |\ nodeName\ =\ "{}}\ <<\ \mbox{\hyperlink{class_cluster_node_af72f0d3667799548043e510046be6642}{nodeName}}\ <<\ std::endl;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ |\ nodeId\ =\ "{}}\ <<\ \mbox{\hyperlink{class_cluster_node_a23d287664f33c8613d50cde269d42814}{nodeId}}\ <<\ std::endl;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ |\ ramSize\ =\ "{}}\ <<\ \mbox{\hyperlink{class_cluster_node_a8e51adb936cb4caa1a9f0cdf68639797}{ramSize}}\ <<\ \textcolor{stringliteral}{"{}\ Gb"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ |\ deviceIdCpu\ =\ "{}}\ <<\ \mbox{\hyperlink{class_cluster_node_a9782edd0d022abb3d003bb80a77bfff3}{deviceIdCpu}}\ <<\ std::endl;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ |\ cpuThreads\ =\ "{}}\ <<\ \mbox{\hyperlink{class_cluster_node_a5037d03b0b51367cfdb51cf8b9ecd8e7}{cpuThreads}}\ <<\ std::endl;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ |\ gpus:\ "{}}\ <<\ \mbox{\hyperlink{class_cluster_node_a790b63d6552cb50b14a3714abe534913}{gpus}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ gpu\ :\ \mbox{\hyperlink{class_cluster_node_a790b63d6552cb50b14a3714abe534913}{gpus}})}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ |\ "{}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ gpu.Print();}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

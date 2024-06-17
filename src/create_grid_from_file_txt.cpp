@@ -25,11 +25,12 @@ int main()
 {    
     //Geometry2d g2d(3,5,10,20);
     //g2d.Print();
+    std::string data_in_path = "data_in/";
 
-    Geometry2d g2df("data_in/rectangle.txt");
+    Geometry2d g2df(data_in_path + "rectangle.txt");
     g2df.Print();
 
-    Cluster cluster("data_in/cluster.txt");
+    Cluster cluster(data_in_path, "cluster.txt");
     cluster.Print();
     // Массив для хранения строк, описывающих расчетную область
     /*vector<string> lines;

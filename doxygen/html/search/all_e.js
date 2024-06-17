@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_0',['s',['../master_workers_8cpp.html#a75f2d757b3db6c35722a379a556abdd9',1,'s():&#160;masterWorkers.cpp'],['../master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384',1,'s():&#160;masterWorkersBarriers.cpp']]],
+  ['s_0',['s',['../master_workers_8cpp.html#a75f2d757b3db6c35722a379a556abdd9',1,'s:&#160;masterWorkers.cpp'],['../master_workers_barriers_8cpp.html#ace1021f8f87ca3d4bd2aa07855d36384',1,'s:&#160;masterWorkersBarriers.cpp']]],
   ['s_5fmax_1',['s_max',['../master_workers_barriers_8cpp.html#a41b7466d2b63598d9fad797010fef659',1,'masterWorkersBarriers.cpp']]],
   ['scalar_5fmult_2',['scalar_mult',['../vector1d_8c.html#ae8661f64f3b933cdc113267d6bfdd89e',1,'vector1d.c']]],
   ['scalar_5fmult_5fblock_3',['scalar_mult_block',['../vector1d_8c.html#a548f0e57b06a5f8b7d025256beedb542',1,'vector1d.c']]],

@@ -1,0 +1,41 @@
+\doxysection{string\+\_\+helpers.\+cpp}
+\hypertarget{string__helpers_8cpp_source}{}\label{string__helpers_8cpp_source}\index{src/string\_helpers.cpp@{src/string\_helpers.cpp}}
+\mbox{\hyperlink{string__helpers_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_string\_helpers}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_string\_helpers}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iterator>}\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Function\ to\ split\ a\ string\ into\ tokens\ based\ on\ a\ }}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ delimiter\ }}
+\DoxyCodeLine{00012\ std::vector<std::string>\ \mbox{\hyperlink{string__helpers_8cpp_a592d1bf113aa33dc7aeed7d6d5815ee6}{splitString}}(std::string\&\ input,\ \textcolor{keywordtype}{char}\ delimiter)\ }
+\DoxyCodeLine{00013\ \{\ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Creating\ an\ input\ string\ stream\ from\ the\ input\ string\ }}
+\DoxyCodeLine{00015\ \ \ \ \ std::istringstream\ stream(input);\ }
+\DoxyCodeLine{00016\ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Vector\ to\ store\ the\ tokens\ }}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<std::string>\ tokens;\ }
+\DoxyCodeLine{00019\ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Temporary\ string\ to\ store\ each\ token\ }}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ token;\ }
+\DoxyCodeLine{00022\ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Read\ tokens\ from\ the\ string\ stream\ separated\ by\ the\ }}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ delimiter\ }}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(stream,\ token,\ delimiter))}
+\DoxyCodeLine{00026\ \ \ \ \ \{\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ the\ token\ to\ the\ vector\ of\ tokens\ }}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ tokens.push\_back(token);\ }
+\DoxyCodeLine{00029\ \ \ \ \ \}\ }
+\DoxyCodeLine{00030\ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Return\ the\ vector\ of\ tokens\ }}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens;\ }
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
