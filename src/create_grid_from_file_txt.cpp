@@ -26,10 +26,10 @@ int main()
     //Geometry2d g2d(3,5,10,20);
     //g2d.Print();
 
-    Geometry2d g2df("rectangle.txt");
+    Geometry2d g2df("data_in/rectangle.txt");
     g2df.Print();
 
-    Cluster cluster("cluster.txt");
+    Cluster cluster("data_in/cluster.txt");
     cluster.Print();
     // Массив для хранения строк, описывающих расчетную область
     /*vector<string> lines;
