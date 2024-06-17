@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['n_0',['n',['../structinner__product__params.html#a8fc009dd3e9400c23b266ff831d8a0de',1,'inner_product_params']]],
-  ['nbx_1',['Nbx',['../conv_8cpp.html#a497f38d55469514d66d3c66bdf4f4638',1,'conv.cpp']]],
-  ['nt_5fcpu_2',['nt_cpu',['../structinner__product__params.html#a801f1d37baf38e067ad346c3b068f622',1,'inner_product_params']]],
-  ['nt_5fgpu_3',['nt_gpu',['../structinner__product__params.html#a9d00404fdbe9ba7e75533b6f3e6d1de7',1,'inner_product_params']]],
-  ['num_5fthreads_4',['num_threads',['../master_workers_barriers_8cpp.html#a8024d7bfb038f1bb0ee12477238e6d6a',1,'masterWorkersBarriers.cpp']]],
-  ['numsteps_5',['numSteps',['../conv_8cpp.html#a088203dfc69537625544fc3187e1d18d',1,'numSteps:&#160;conv.cpp'],['../master_workers_8cpp.html#a088203dfc69537625544fc3187e1d18d',1,'numSteps:&#160;masterWorkers.cpp']]],
-  ['numthreads_6',['numThreads',['../conv_8cpp.html#afc4abe097905ab7317695968a4a9ebd8',1,'conv.cpp']]],
-  ['numworkerthreads_7',['numWorkerThreads',['../master_workers_8cpp.html#a5c39c8490925780e0683a20869b2c8c2',1,'masterWorkers.cpp']]]
+  ['main_0',['main',['../algorithms__inner__product__tests_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;algorithms_inner_product_tests.cpp'],['../comp__system__tests_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;comp_system_tests.c'],['../conv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;conv.cpp'],['../inner__product__files__bin_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;inner_product_files_bin.cpp'],['../inner__product__files__bin__generation_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;inner_product_files_bin_generation.c'],['../master_workers_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;masterWorkers.cpp'],['../master_workers_barriers_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;masterWorkersBarriers.cpp'],['../create__grid__from__file__txt_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;create_grid_from_file_txt.cpp'],['../vec_mult_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;vecMult.c'],['../vec_mult_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;vecMult.cpp'],['../vector1d__files__tests_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;vector1d_files_tests.c'],['../vector1d__tests_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;vector1d_tests.c']]],
+  ['mainthreadfunc_1',['mainThreadFunc',['../master_workers_barriers_8cpp.html#acf967c6baf68c6f7ea4c462b1c3629a3',1,'masterWorkersBarriers.cpp']]],
+  ['managerfunc_2',['managerFunc',['../master_workers_8cpp.html#ad58b6f22056770465fd25703fd935eb1',1,'masterWorkers.cpp']]],
+  ['masterworkers_2ecpp_3',['masterWorkers.cpp',['../master_workers_8cpp.html',1,'']]],
+  ['masterworkersbarriers_2ecpp_4',['masterWorkersBarriers.cpp',['../master_workers_barriers_8cpp.html',1,'']]],
+  ['mt_5fflag_5',['mt_flag',['../master_workers_barriers_8cpp.html#acd5f59bba4342b1ce058878ebe12b9f4',1,'masterWorkersBarriers.cpp']]],
+  ['mutex_6',['mutex',['../algorithms__inner__product_8cpp.html#a1be3f7fa26e4521098de5f1ec0f865f3',1,'mutex():&#160;algorithms_inner_product.cpp'],['../master_workers_8cpp.html#a1be3f7fa26e4521098de5f1ec0f865f3',1,'mutex():&#160;masterWorkers.cpp'],['../vec_mult_8cpp.html#a1be3f7fa26e4521098de5f1ec0f865f3',1,'mutex():&#160;vecMult.cpp']]]
 ];

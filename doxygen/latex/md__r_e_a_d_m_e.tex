@@ -1,9 +1,5 @@
-\chapter{Iter\+Methods}
-\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{IterMethods@{IterMethods}}
-\label{md__r_e_a_d_m_e_autotoc_md0}%
-\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
-Репозиторий для изучения итерационных методов решения сеточных уравнений\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{$<$a href=\"{}https\+://litvinovvn.\+github.\+io/\+Iter\+Methods/\"{} $>$https\+://litvinovvn.\+github.\+io/\+Iter\+Methods/$<$/a$>$}{<a href="https://litvinovvn.github.io/IterMethods/" >https://litvinovvn.github.io/IterMethods/</a>}}\label{md__r_e_a_d_m_e_autotoc_md1}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Формирование документации с помощью doxygen}{Формирование документации с помощью doxygen}}\label{md__r_e_a_d_m_e_autotoc_md2}
+Репозиторий для изучения итерационных методов решения сеточных уравнений\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{$<$a href=\char`\"{}https\+://litvinovvn.\+github.\+io/\+Iter\+Methods/\char`\"{} $>$https\+://litvinovvn.\+github.\+io/\+Iter\+Methods/$<$/a$>$}\label{md__r_e_a_d_m_e_autotoc_md1}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Формирование документации с помощью doxygen}\label{md__r_e_a_d_m_e_autotoc_md2}
 
 \begin{DoxyEnumerate}
 \item Cоздаем шаблонный файл Doxyfile командой\+:
@@ -21,35 +17,35 @@ doxygen
 
 \begin{DoxyEnumerate}
 \item \href{doxygen/html/index.html}{\texttt{ Документация}}
-\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Описание библиотеки функций}{Описание библиотеки функций}}\label{md__r_e_a_d_m_e_autotoc_md3}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{vector1d.\+c}{vector1d.c}}\label{md__r_e_a_d_m_e_autotoc_md4}
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Описание библиотеки функций}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{vector1d.\+c}\label{md__r_e_a_d_m_e_autotoc_md4}
 
 \begin{DoxyEnumerate}
-\item Структура {\bfseries{\doxylink{structvector1d}{vector1d}}}. Описывает вектор в пространстве \$R\texorpdfstring{$^\wedge$}{\string^}n\$. Поле {\bfseries{length}} содержит количество элементов массива, доступного по указателю {\bfseries{data}}. 
+\item Структура {\bfseries{\mbox{\hyperlink{structvector1d}{vector1d}}}}. Описывает вектор в пространстве \$R$^\wedge$n\$. Поле {\bfseries{length}} содержит количество элементов массива, доступного по указателю {\bfseries{data}}. 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ ++}
-\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{typedef struct}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ length;}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ *data;}
-\DoxyCodeLine{\}\ \mbox{\hyperlink{structvector1d}{vector1d}};}
+\DoxyCodeLine{    int length;}
+\DoxyCodeLine{    double *data;}
+\DoxyCodeLine{\} vector1d;}
 
 \end{DoxyCode}
 
-\item Функция {\bfseries{vector1d\+\_\+create}} -\/ создаёт в динамической памяти структуру {\bfseries{\doxylink{structvector1d}{vector1d}}}, задаёт значение поля {\bfseries{length}} равным параметру {\bfseries{size}} и создаёт динамический массив элементов типа {\bfseries{double}}. Возвращает указатель {\bfseries{vector1d\texorpdfstring{$\ast$}{*}}} на созданную структуру. ~\newline
+\item Функция {\bfseries{vector1d\+\_\+create}} -\/ создаёт в динамической памяти структуру {\bfseries{\mbox{\hyperlink{structvector1d}{vector1d}}}}, задаёт значение поля {\bfseries{length}} равным параметру {\bfseries{size}} и создаёт динамический массив элементов типа {\bfseries{double}}. Возвращает указатель {\bfseries{vector1d$\ast$}} на созданную структуру. ~\newline
 
 \end{DoxyEnumerate}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ ++}
-\DoxyCodeLine{\mbox{\hyperlink{structvector1d}{vector1d}}*\ \mbox{\hyperlink{vector1d_8c_a05aa7dfae1874d55c451df79ae5099a0}{vector1d\_create}}(\textcolor{keywordtype}{int}\ size)}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{vector1d* vector1d\_create(int size)}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structvector1d}{vector1d}}\ *vec1d\ =\ (\mbox{\hyperlink{structvector1d}{vector1d}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structvector1d}{vector1d}}));}
-\DoxyCodeLine{\ \ \ \ vec1d-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ =\ size;\ \ \ \ }
-\DoxyCodeLine{\ \ \ \ vec1d-\/>\mbox{\hyperlink{structvector1d_a6b6b5cd2f9a8f295341e4a66c3010a0f}{data}}\ =\ (\textcolor{keywordtype}{double}*)malloc(vec1d-\/>\mbox{\hyperlink{structvector1d_abac9c2730833259c6cb59fc0ce6022e5}{length}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{    vector1d *vec1d = (vector1d*)malloc(sizeof(vector1d));}
+\DoxyCodeLine{    vec1d-\/>length = size;    }
+\DoxyCodeLine{    vec1d-\/>data = (double*)malloc(vec1d-\/>length * sizeof(double));}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ vec1d;}
+\DoxyCodeLine{    return vec1d;}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}

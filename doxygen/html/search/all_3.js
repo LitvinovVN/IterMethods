@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['end_5fcalculation_0',['end_calculation',['../master_workers_barriers_8cpp.html#a0bddea091cfc059310502c2bfd43f9b2',1,'masterWorkersBarriers.cpp']]]
+  ['data_0',['data',['../structvector1d.html#a6b6b5cd2f9a8f295341e4a66c3010a0f',1,'vector1d']]]
 ];

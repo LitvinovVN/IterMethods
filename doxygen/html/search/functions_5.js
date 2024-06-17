@@ -6,5 +6,6 @@ var searchData=
   ['setisworkerready_3',['setIsWorkerReady',['../master_workers_8cpp.html#ab3dc742fde567fc7eeedcd0dbfe3ffc9',1,'masterWorkers.cpp']]],
   ['setisworkerreadyall_4',['setIsWorkerReadyAll',['../master_workers_8cpp.html#a6eaa2543685fe0a799c611c398120cf3',1,'masterWorkers.cpp']]],
   ['setstartworking_5',['setStartWorking',['../master_workers_8cpp.html#a0268d23a860059900941727148dee584',1,'masterWorkers.cpp']]],
-  ['signaltoworkers_6',['signalToWorkers',['../conv_8cpp.html#af5e228c03a98392ffd389eb69c910607',1,'conv.cpp']]]
+  ['signaltoworkers_6',['signalToWorkers',['../conv_8cpp.html#af5e228c03a98392ffd389eb69c910607',1,'conv.cpp']]],
+  ['splitstring_7',['splitString',['../string__helpers_8cpp.html#a592d1bf113aa33dc7aeed7d6d5815ee6',1,'string_helpers.cpp']]]
 ];

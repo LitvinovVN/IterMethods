@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['calcthreadfunc_0',['calcThreadFunc',['../master_workers_barriers_8cpp.html#a94b12758a85374df8ca83c3e6881d700',1,'masterWorkersBarriers.cpp']]],
-  ['calculationfunc_1',['calculationFunc',['../master_workers_8cpp.html#ab0912c763ec3586a0794b31bda53457a',1,'masterWorkers.cpp']]],
-  ['comp_5fsystem_2ec_2',['comp_system.c',['../comp__system_8c.html',1,'']]],
-  ['comp_5fsystem_5fc_3',['COMP_SYSTEM_C',['../comp__system_8c.html#aa99768ea4905126750dde26d1018d317',1,'comp_system.c']]],
-  ['comp_5fsystem_5fgpu_4',['comp_system_gpu',['../structcomp__system__gpu.html',1,'']]],
-  ['comp_5fsystem_5fgpu_5farray_5fcreate_5',['comp_system_gpu_array_create',['../comp__system_8c.html#a82e9c2b0e980a26f9823ff6933a2f97d',1,'comp_system.c']]],
-  ['comp_5fsystem_5fgpu_5fcreate_6',['comp_system_gpu_create',['../comp__system_8c.html#a63eac616eaf5aa3341e7a389a6ec6b0e',1,'comp_system.c']]],
-  ['comp_5fsystem_5fgpu_5fprint_7',['comp_system_gpu_print',['../comp__system_8c.html#a884e8c13e471027d6a1c7d0cec8aea61',1,'comp_system.c']]],
-  ['comp_5fsystem_5fnode_8',['comp_system_node',['../structcomp__system__node.html',1,'']]],
-  ['comp_5fsystem_5fnode_5fcreate_9',['comp_system_node_create',['../comp__system_8c.html#abd99aa544dd6bd746330d2ef65b15dc6',1,'comp_system.c']]],
-  ['comp_5fsystem_5fnode_5fcreate_5f1gpu_10',['comp_system_node_create_1GPU',['../comp__system_8c.html#ae8648a753c0a3533758ccb30cc523804',1,'comp_system.c']]],
-  ['comp_5fsystem_5fnode_5fprint_11',['comp_system_node_print',['../comp__system_8c.html#a10bac7f7b911da161f272348fb31c5ad',1,'comp_system.c']]],
-  ['comp_5fsystem_5ftests_2ec_12',['comp_system_tests.c',['../comp__system__tests_8c.html',1,'']]],
-  ['conv_2ecpp_13',['conv.cpp',['../conv_8cpp.html',1,'']]],
-  ['cpu_5fthreads_5fmax_14',['cpu_threads_max',['../structcomp__system__node.html#a2e07ad59aaa0c2174d1c76b14454daa4',1,'comp_system_node']]],
-  ['create_5fgrid_5ffrom_5ffile_5ftxt_2ecpp_15',['create_grid_from_file_txt.cpp',['../create__grid__from__file__txt_8cpp.html',1,'']]],
-  ['cudatest_2ecu_16',['cudaTest.cu',['../cuda_test_8cu.html',1,'']]]
+  ['algorithms_5finner_5fproduct_2ecpp_0',['algorithms_inner_product.cpp',['../algorithms__inner__product_8cpp.html',1,'']]],
+  ['algorithms_5finner_5fproduct_5ftests_2ecpp_1',['algorithms_inner_product_tests.cpp',['../algorithms__inner__product__tests_8cpp.html',1,'']]]
 ];

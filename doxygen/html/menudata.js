@@ -36,6 +36,7 @@ var menudata={children:[
 {text:"Файлы",url:"files.html"},
 {text:"Список членов всех файлов",url:"globals.html",children:[
 {text:"Указатель",url:"globals.html",children:[
+{text:"_",url:"globals.html#index__5F"},
 {text:"c",url:"globals.html#index_c"},
 {text:"e",url:"globals.html#index_e"},
 {text:"i",url:"globals.html#index_i"},

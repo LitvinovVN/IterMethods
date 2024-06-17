@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Iter Methods: Файл vector1d.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -19,8 +19,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
-  <td id="projectalign">
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Iter Methods<span id="projectnumber">&#160;0.1</span>
    </div>
    <div id="projectbrief">Библиотека итерационных методов решения сеточных уравнений</div>
@@ -30,10 +30,10 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Создано системой Doxygen 1.9.7 -->
+<!-- Создано системой Doxygen 1.9.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search/",'.html');
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -56,16 +56,9 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Загрузка...</div>
-<div class="SRStatus" id="Searching">Поиск...</div>
-<div class="SRStatus" id="NoMatches">Не найдено</div>
-</div>
-</div>
-</div>
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
 
 </div><!-- top -->
@@ -81,9 +74,7 @@ $(function() {
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
-</div>
-<p><a href="vector1d_8c_source.html">См. исходные тексты.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Классы</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvector1d.html">vector1d</a></td></tr>
@@ -98,78 +89,78 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Функции</h2></td></tr>
 <tr class="memitem:a05aa7dfae1874d55c451df79ae5099a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvector1d.html">vector1d</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">vector1d_create</a> (int size)</td></tr>
-<tr class="memdesc:a05aa7dfae1874d55c451df79ae5099a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт одномерный вектор <a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a> в динамической памяти  <br /></td></tr>
+<tr class="memdesc:a05aa7dfae1874d55c451df79ae5099a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт одномерный вектор <a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a> в динамической памяти  <a href="vector1d_8c.html#a05aa7dfae1874d55c451df79ae5099a0">Подробнее...</a><br /></td></tr>
 <tr class="separator:a05aa7dfae1874d55c451df79ae5099a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa7da9c7e29d0eaf7a5e1af90226100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">vector1d_free</a> (<a class="el" href="structvector1d.html">vector1d</a> **v1)</td></tr>
-<tr class="memdesc:a4aa7da9c7e29d0eaf7a5e1af90226100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Освобождает память, занятую структурой <a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a>.  <br /></td></tr>
+<tr class="memdesc:a4aa7da9c7e29d0eaf7a5e1af90226100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Освобождает память, занятую структурой <a class="el" href="structvector1d.html" title="Структура &quot;Вектор в одномерном пространстве&quot;.">vector1d</a>.  <a href="vector1d_8c.html#a4aa7da9c7e29d0eaf7a5e1af90226100">Подробнее...</a><br /></td></tr>
 <tr class="separator:a4aa7da9c7e29d0eaf7a5e1af90226100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a381236421b8b8d6967162d9d340adbd2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a381236421b8b8d6967162d9d340adbd2">vector1d_clone</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> **v2)</td></tr>
-<tr class="memdesc:a381236421b8b8d6967162d9d340adbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Клонирует вектор v1 в вектор v2.  <br /></td></tr>
+<tr class="memdesc:a381236421b8b8d6967162d9d340adbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Клонирует вектор v1 в вектор v2.  <a href="vector1d_8c.html#a381236421b8b8d6967162d9d340adbd2">Подробнее...</a><br /></td></tr>
 <tr class="separator:a381236421b8b8d6967162d9d340adbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f44b860bb9763b894e703a827538ea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">vector1d_init_int</a> (<a class="el" href="structvector1d.html">vector1d</a> *v, int value)</td></tr>
-<tr class="memdesc:a2f44b860bb9763b894e703a827538ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v значением value.  <br /></td></tr>
+<tr class="memdesc:a2f44b860bb9763b894e703a827538ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v значением value.  <a href="vector1d_8c.html#a2f44b860bb9763b894e703a827538ea4">Подробнее...</a><br /></td></tr>
 <tr class="separator:a2f44b860bb9763b894e703a827538ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3daa3242e9593a4489fb6a21f6afc360"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a3daa3242e9593a4489fb6a21f6afc360">vector1d_init_zeroes</a> (<a class="el" href="structvector1d.html">vector1d</a> *v)</td></tr>
-<tr class="memdesc:a3daa3242e9593a4489fb6a21f6afc360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v значением 0.  <br /></td></tr>
+<tr class="memdesc:a3daa3242e9593a4489fb6a21f6afc360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v значением 0.  <a href="vector1d_8c.html#a3daa3242e9593a4489fb6a21f6afc360">Подробнее...</a><br /></td></tr>
 <tr class="separator:a3daa3242e9593a4489fb6a21f6afc360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb12114301e577c083a30674e75db869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#aeb12114301e577c083a30674e75db869">vector1d_init_random</a> (<a class="el" href="structvector1d.html">vector1d</a> *v, int min, int max)</td></tr>
-<tr class="memdesc:aeb12114301e577c083a30674e75db869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v случайными целыми числами в диапазоне от min до max.  <br /></td></tr>
+<tr class="memdesc:aeb12114301e577c083a30674e75db869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v случайными целыми числами в диапазоне от min до max.  <a href="vector1d_8c.html#aeb12114301e577c083a30674e75db869">Подробнее...</a><br /></td></tr>
 <tr class="separator:aeb12114301e577c083a30674e75db869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0074a35045a54f02d131e487b0a71cf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">vector1d_init_random_double</a> (<a class="el" href="structvector1d.html">vector1d</a> *v, int min, int max)</td></tr>
-<tr class="memdesc:a0074a35045a54f02d131e487b0a71cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v случайными вещественными числами в диапазоне от min до max.  <br /></td></tr>
+<tr class="memdesc:a0074a35045a54f02d131e487b0a71cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует все элементы вектора v случайными вещественными числами в диапазоне от min до max.  <a href="vector1d_8c.html#a0074a35045a54f02d131e487b0a71cf2">Подробнее...</a><br /></td></tr>
 <tr class="separator:a0074a35045a54f02d131e487b0a71cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a3163cc9b20c95f2f7e39882d1ac26d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a0a3163cc9b20c95f2f7e39882d1ac26d">vector1d_add_random_0_1_3digit</a> (<a class="el" href="structvector1d.html">vector1d</a> *v)</td></tr>
-<tr class="memdesc:a0a3163cc9b20c95f2f7e39882d1ac26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет к текущему значению каждого элемента вектора v случайное число в диапазоне от 0.000 до 0.999.  <br /></td></tr>
+<tr class="memdesc:a0a3163cc9b20c95f2f7e39882d1ac26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет к текущему значению каждого элемента вектора v случайное число в диапазоне от 0.000 до 0.999.  <a href="vector1d_8c.html#a0a3163cc9b20c95f2f7e39882d1ac26d">Подробнее...</a><br /></td></tr>
 <tr class="separator:a0a3163cc9b20c95f2f7e39882d1ac26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04519364eae575ca49f17ebe0f45432e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a04519364eae575ca49f17ebe0f45432e">vector1d_init_scalar</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> *v2, double k, int min, int max)</td></tr>
-<tr class="memdesc:a04519364eae575ca49f17ebe0f45432e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует два вектора таким образом, чтобы результат вычисления скалярного произведения был равен  <br /></td></tr>
+<tr class="memdesc:a04519364eae575ca49f17ebe0f45432e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует два вектора таким образом, чтобы результат вычисления скалярного произведения был равен  <a href="vector1d_8c.html#a04519364eae575ca49f17ebe0f45432e">Подробнее...</a><br /></td></tr>
 <tr class="separator:a04519364eae575ca49f17ebe0f45432e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c695e4f5ed27d8ac5079821ecb0cdb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a4c695e4f5ed27d8ac5079821ecb0cdb9">vector1d_print</a> (<a class="el" href="structvector1d.html">vector1d</a> *v, const char *message)</td></tr>
-<tr class="memdesc:a4c695e4f5ed27d8ac5079821ecb0cdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль сообщение message и затем все элементы вектора через пробел  <br /></td></tr>
+<tr class="memdesc:a4c695e4f5ed27d8ac5079821ecb0cdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль сообщение message и затем все элементы вектора через пробел  <a href="vector1d_8c.html#a4c695e4f5ed27d8ac5079821ecb0cdb9">Подробнее...</a><br /></td></tr>
 <tr class="separator:a4c695e4f5ed27d8ac5079821ecb0cdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d316f9b2bdec03f0b9523cc7cba59cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a4d316f9b2bdec03f0b9523cc7cba59cb">vector1d_print_range</a> (<a class="el" href="structvector1d.html">vector1d</a> *v, const char *message, size_t indStart, size_t length)</td></tr>
-<tr class="memdesc:a4d316f9b2bdec03f0b9523cc7cba59cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль сообщение message с указанием диапазона в формате "message [indStart...indStart+length-1]: " и затем все элементы вектора из указанного диапазона через пробел  <br /></td></tr>
+<tr class="memdesc:a4d316f9b2bdec03f0b9523cc7cba59cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль сообщение message с указанием диапазона в формате "message [indStart...indStart+length-1]: " и затем все элементы вектора из указанного диапазона через пробел  <a href="vector1d_8c.html#a4d316f9b2bdec03f0b9523cc7cba59cb">Подробнее...</a><br /></td></tr>
 <tr class="separator:a4d316f9b2bdec03f0b9523cc7cba59cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03bacd0853094ba4d0132fb17abdacc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a03bacd0853094ba4d0132fb17abdacc8">vector1d_print_details</a> (<a class="el" href="structvector1d.html">vector1d</a> *v, const char *message)</td></tr>
-<tr class="memdesc:a03bacd0853094ba4d0132fb17abdacc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль детализированную информацио о векторе  <br /></td></tr>
+<tr class="memdesc:a03bacd0853094ba4d0132fb17abdacc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль детализированную информацио о векторе  <a href="vector1d_8c.html#a03bacd0853094ba4d0132fb17abdacc8">Подробнее...</a><br /></td></tr>
 <tr class="separator:a03bacd0853094ba4d0132fb17abdacc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8862204cc248465f5fb0ead1b80f5c36"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a8862204cc248465f5fb0ead1b80f5c36">vector1d_is_equals</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> *v2)</td></tr>
-<tr class="memdesc:a8862204cc248465f5fb0ead1b80f5c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнивает поэлементно два вектора с точностью 10е-8.  <br /></td></tr>
+<tr class="memdesc:a8862204cc248465f5fb0ead1b80f5c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнивает поэлементно два вектора с точностью 10е-8.  <a href="vector1d_8c.html#a8862204cc248465f5fb0ead1b80f5c36">Подробнее...</a><br /></td></tr>
 <tr class="separator:a8862204cc248465f5fb0ead1b80f5c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad145b24841854993e61ee5b7261dffe0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#ad145b24841854993e61ee5b7261dffe0">vector1d_init_v2_for_inner_product_testing</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> **v2, double k, double *inner_product)</td></tr>
-<tr class="memdesc:ad145b24841854993e61ee5b7261dffe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует вектор v2 таким образом, чтобы произведение v1[i]*v2[i]=k.  <br /></td></tr>
+<tr class="memdesc:ad145b24841854993e61ee5b7261dffe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует вектор v2 таким образом, чтобы произведение v1[i]*v2[i]=k.  <a href="vector1d_8c.html#ad145b24841854993e61ee5b7261dffe0">Подробнее...</a><br /></td></tr>
 <tr class="separator:ad145b24841854993e61ee5b7261dffe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a493a56824c84c68b632925af0f3ccc69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a493a56824c84c68b632925af0f3ccc69">vector1d_init_vectors_for_inner_product_testing_range</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> *v2, size_t ind_start, size_t length, double min, double max, double k, long double *inner_product)</td></tr>
-<tr class="memdesc:a493a56824c84c68b632925af0f3ccc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k.  <br /></td></tr>
+<tr class="memdesc:a493a56824c84c68b632925af0f3ccc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k.  <a href="vector1d_8c.html#a493a56824c84c68b632925af0f3ccc69">Подробнее...</a><br /></td></tr>
 <tr class="separator:a493a56824c84c68b632925af0f3ccc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5af5d497abca16e44c1013ee7f398e0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">vector1d_init_vectors_for_inner_product_testing</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> *v2, double min, double max, double k, long double *inner_product)</td></tr>
-<tr class="memdesc:a5af5d497abca16e44c1013ee7f398e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k.  <br /></td></tr>
+<tr class="memdesc:a5af5d497abca16e44c1013ee7f398e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует векторы v1 и v2 таким образом, чтобы произведение v1[i]*v2[i]=k.  <a href="vector1d_8c.html#a5af5d497abca16e44c1013ee7f398e0f">Подробнее...</a><br /></td></tr>
 <tr class="separator:a5af5d497abca16e44c1013ee7f398e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8661f64f3b933cdc113267d6bfdd89e"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#ae8661f64f3b933cdc113267d6bfdd89e">scalar_mult</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> *v2)</td></tr>
-<tr class="memdesc:ae8661f64f3b933cdc113267d6bfdd89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное произведение векторов  <br /></td></tr>
+<tr class="memdesc:ae8661f64f3b933cdc113267d6bfdd89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное произведение векторов  <a href="vector1d_8c.html#ae8661f64f3b933cdc113267d6bfdd89e">Подробнее...</a><br /></td></tr>
 <tr class="separator:ae8661f64f3b933cdc113267d6bfdd89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a548f0e57b06a5f8b7d025256beedb542"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a548f0e57b06a5f8b7d025256beedb542">scalar_mult_block</a> (<a class="el" href="structvector1d.html">vector1d</a> *v1, <a class="el" href="structvector1d.html">vector1d</a> *v2, unsigned long long ind_start, unsigned long long length)</td></tr>
-<tr class="memdesc:a548f0e57b06a5f8b7d025256beedb542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное произведение непрерывного диапазона элементов векторов  <br /></td></tr>
+<tr class="memdesc:a548f0e57b06a5f8b7d025256beedb542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет скалярное произведение непрерывного диапазона элементов векторов  <a href="vector1d_8c.html#a548f0e57b06a5f8b7d025256beedb542">Подробнее...</a><br /></td></tr>
 <tr class="separator:a548f0e57b06a5f8b7d025256beedb542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac189b6be6a3797640f48a655d2fcf7f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#ac189b6be6a3797640f48a655d2fcf7f3">vector1d_save_to_file_bin</a> (const char *file_name, <a class="el" href="structvector1d.html">vector1d</a> *v)</td></tr>
-<tr class="memdesc:ac189b6be6a3797640f48a655d2fcf7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает вектор v в файл file_name.  <br /></td></tr>
+<tr class="memdesc:ac189b6be6a3797640f48a655d2fcf7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает вектор v в файл file_name.  <a href="vector1d_8c.html#ac189b6be6a3797640f48a655d2fcf7f3">Подробнее...</a><br /></td></tr>
 <tr class="separator:ac189b6be6a3797640f48a655d2fcf7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97984c5babf7f90cace65df60692a5be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a97984c5babf7f90cace65df60692a5be">vector1d_create_from_file</a> (const char *file_name, <a class="el" href="structvector1d.html">vector1d</a> **v)</td></tr>
-<tr class="memdesc:a97984c5babf7f90cace65df60692a5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт вектор, считывая данные из двоичного файла  <br /></td></tr>
+<tr class="memdesc:a97984c5babf7f90cace65df60692a5be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт вектор, считывая данные из двоичного файла  <a href="vector1d_8c.html#a97984c5babf7f90cace65df60692a5be">Подробнее...</a><br /></td></tr>
 <tr class="separator:a97984c5babf7f90cace65df60692a5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8be7cd1ea3afedd6e7000257eb1f923e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a8be7cd1ea3afedd6e7000257eb1f923e">vector1d_create_from_file_pos</a> (FILE *f, unsigned long long index_start, unsigned long long length, <a class="el" href="structvector1d.html">vector1d</a> **v)</td></tr>
-<tr class="memdesc:a8be7cd1ea3afedd6e7000257eb1f923e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт вектор указанного размера, считывая данные из двоичного файла с указанной позиции  <br /></td></tr>
+<tr class="memdesc:a8be7cd1ea3afedd6e7000257eb1f923e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт вектор указанного размера, считывая данные из двоичного файла с указанной позиции  <a href="vector1d_8c.html#a8be7cd1ea3afedd6e7000257eb1f923e">Подробнее...</a><br /></td></tr>
 <tr class="separator:a8be7cd1ea3afedd6e7000257eb1f923e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02c28a6dda8a9e65868884805a97d6b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a02c28a6dda8a9e65868884805a97d6b6">vector1d_init_from_file_pos</a> (FILE *f, unsigned long long index_start, unsigned long long length, <a class="el" href="structvector1d.html">vector1d</a> *v)</td></tr>
-<tr class="memdesc:a02c28a6dda8a9e65868884805a97d6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует вектор v указанным диапазоном элементов из файла  <br /></td></tr>
+<tr class="memdesc:a02c28a6dda8a9e65868884805a97d6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует вектор v указанным диапазоном элементов из файла  <a href="vector1d_8c.html#a02c28a6dda8a9e65868884805a97d6b6">Подробнее...</a><br /></td></tr>
 <tr class="separator:a02c28a6dda8a9e65868884805a97d6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9998e6a159d3c163800a562e960ba048"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector1d_8c.html#a9998e6a159d3c163800a562e960ba048">inner_product_files_bin_generate</a> (const char *file_name_v1, const char *file_name_v2, unsigned long long N, unsigned long long Nb, int min, int max, double k, double *inner_product)</td></tr>
-<tr class="memdesc:a9998e6a159d3c163800a562e960ba048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт два файла двоичного формата, первым значением является количество элементов, далее - элементы  <br /></td></tr>
+<tr class="memdesc:a9998e6a159d3c163800a562e960ba048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт два файла двоичного формата, первым значением является количество элементов, далее - элементы  <a href="vector1d_8c.html#a9998e6a159d3c163800a562e960ba048">Подробнее...</a><br /></td></tr>
 <tr class="separator:a9998e6a159d3c163800a562e960ba048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Макросы</h2>
 <a id="a246a93c213381a01c072e693a18ec86f" name="a246a93c213381a01c072e693a18ec86f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a246a93c213381a01c072e693a18ec86f">&#9670;&#160;</a></span>VECTOR1D_C</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a246a93c213381a01c072e693a18ec86f">&#9670;&nbsp;</a></span>VECTOR1D_C</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +175,7 @@ $(function() {
 </div>
 <h2 class="groupheader">Функции</h2>
 <a id="a9998e6a159d3c163800a562e960ba048" name="a9998e6a159d3c163800a562e960ba048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9998e6a159d3c163800a562e960ba048">&#9670;&#160;</a></span>inner_product_files_bin_generate()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9998e6a159d3c163800a562e960ba048">&#9670;&nbsp;</a></span>inner_product_files_bin_generate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +255,7 @@ $(function() {
 </div>
 </div>
 <a id="ae8661f64f3b933cdc113267d6bfdd89e" name="ae8661f64f3b933cdc113267d6bfdd89e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8661f64f3b933cdc113267d6bfdd89e">&#9670;&#160;</a></span>scalar_mult()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8661f64f3b933cdc113267d6bfdd89e">&#9670;&nbsp;</a></span>scalar_mult()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -302,7 +293,7 @@ $(function() {
 </div>
 </div>
 <a id="a548f0e57b06a5f8b7d025256beedb542" name="a548f0e57b06a5f8b7d025256beedb542"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a548f0e57b06a5f8b7d025256beedb542">&#9670;&#160;</a></span>scalar_mult_block()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a548f0e57b06a5f8b7d025256beedb542">&#9670;&nbsp;</a></span>scalar_mult_block()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,7 +345,7 @@ $(function() {
 </div>
 </div>
 <a id="a0a3163cc9b20c95f2f7e39882d1ac26d" name="a0a3163cc9b20c95f2f7e39882d1ac26d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a3163cc9b20c95f2f7e39882d1ac26d">&#9670;&#160;</a></span>vector1d_add_random_0_1_3digit()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a3163cc9b20c95f2f7e39882d1ac26d">&#9670;&nbsp;</a></span>vector1d_add_random_0_1_3digit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +371,7 @@ $(function() {
 </div>
 </div>
 <a id="a381236421b8b8d6967162d9d340adbd2" name="a381236421b8b8d6967162d9d340adbd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a381236421b8b8d6967162d9d340adbd2">&#9670;&#160;</a></span>vector1d_clone()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a381236421b8b8d6967162d9d340adbd2">&#9670;&nbsp;</a></span>vector1d_clone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +409,7 @@ $(function() {
 </div>
 </div>
 <a id="a05aa7dfae1874d55c451df79ae5099a0" name="a05aa7dfae1874d55c451df79ae5099a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05aa7dfae1874d55c451df79ae5099a0">&#9670;&#160;</a></span>vector1d_create()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a05aa7dfae1874d55c451df79ae5099a0">&#9670;&nbsp;</a></span>vector1d_create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +437,7 @@ $(function() {
 </div>
 </div>
 <a id="a97984c5babf7f90cace65df60692a5be" name="a97984c5babf7f90cace65df60692a5be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97984c5babf7f90cace65df60692a5be">&#9670;&#160;</a></span>vector1d_create_from_file()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a97984c5babf7f90cace65df60692a5be">&#9670;&nbsp;</a></span>vector1d_create_from_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,7 +475,7 @@ $(function() {
 </div>
 </div>
 <a id="a8be7cd1ea3afedd6e7000257eb1f923e" name="a8be7cd1ea3afedd6e7000257eb1f923e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8be7cd1ea3afedd6e7000257eb1f923e">&#9670;&#160;</a></span>vector1d_create_from_file_pos()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be7cd1ea3afedd6e7000257eb1f923e">&#9670;&nbsp;</a></span>vector1d_create_from_file_pos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,7 +527,7 @@ $(function() {
 </div>
 </div>
 <a id="a4aa7da9c7e29d0eaf7a5e1af90226100" name="a4aa7da9c7e29d0eaf7a5e1af90226100"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4aa7da9c7e29d0eaf7a5e1af90226100">&#9670;&#160;</a></span>vector1d_free()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa7da9c7e29d0eaf7a5e1af90226100">&#9670;&nbsp;</a></span>vector1d_free()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -562,7 +553,7 @@ $(function() {
 </div>
 </div>
 <a id="a02c28a6dda8a9e65868884805a97d6b6" name="a02c28a6dda8a9e65868884805a97d6b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02c28a6dda8a9e65868884805a97d6b6">&#9670;&#160;</a></span>vector1d_init_from_file_pos()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c28a6dda8a9e65868884805a97d6b6">&#9670;&nbsp;</a></span>vector1d_init_from_file_pos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -614,7 +605,7 @@ $(function() {
 </div>
 </div>
 <a id="a2f44b860bb9763b894e703a827538ea4" name="a2f44b860bb9763b894e703a827538ea4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f44b860bb9763b894e703a827538ea4">&#9670;&#160;</a></span>vector1d_init_int()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f44b860bb9763b894e703a827538ea4">&#9670;&nbsp;</a></span>vector1d_init_int()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,7 +642,7 @@ $(function() {
 </div>
 </div>
 <a id="aeb12114301e577c083a30674e75db869" name="aeb12114301e577c083a30674e75db869"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb12114301e577c083a30674e75db869">&#9670;&#160;</a></span>vector1d_init_random()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb12114301e577c083a30674e75db869">&#9670;&nbsp;</a></span>vector1d_init_random()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -695,7 +686,7 @@ $(function() {
 </div>
 </div>
 <a id="a0074a35045a54f02d131e487b0a71cf2" name="a0074a35045a54f02d131e487b0a71cf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0074a35045a54f02d131e487b0a71cf2">&#9670;&#160;</a></span>vector1d_init_random_double()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0074a35045a54f02d131e487b0a71cf2">&#9670;&nbsp;</a></span>vector1d_init_random_double()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -739,7 +730,7 @@ $(function() {
 </div>
 </div>
 <a id="a04519364eae575ca49f17ebe0f45432e" name="a04519364eae575ca49f17ebe0f45432e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04519364eae575ca49f17ebe0f45432e">&#9670;&#160;</a></span>vector1d_init_scalar()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a04519364eae575ca49f17ebe0f45432e">&#9670;&nbsp;</a></span>vector1d_init_scalar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -797,7 +788,7 @@ $(function() {
 </div>
 </div>
 <a id="ad145b24841854993e61ee5b7261dffe0" name="ad145b24841854993e61ee5b7261dffe0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad145b24841854993e61ee5b7261dffe0">&#9670;&#160;</a></span>vector1d_init_v2_for_inner_product_testing()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad145b24841854993e61ee5b7261dffe0">&#9670;&nbsp;</a></span>vector1d_init_v2_for_inner_product_testing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -849,7 +840,7 @@ $(function() {
 </div>
 </div>
 <a id="a5af5d497abca16e44c1013ee7f398e0f" name="a5af5d497abca16e44c1013ee7f398e0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5af5d497abca16e44c1013ee7f398e0f">&#9670;&#160;</a></span>vector1d_init_vectors_for_inner_product_testing()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af5d497abca16e44c1013ee7f398e0f">&#9670;&nbsp;</a></span>vector1d_init_vectors_for_inner_product_testing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -915,7 +906,7 @@ $(function() {
 </div>
 </div>
 <a id="a493a56824c84c68b632925af0f3ccc69" name="a493a56824c84c68b632925af0f3ccc69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a493a56824c84c68b632925af0f3ccc69">&#9670;&#160;</a></span>vector1d_init_vectors_for_inner_product_testing_range()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a493a56824c84c68b632925af0f3ccc69">&#9670;&nbsp;</a></span>vector1d_init_vectors_for_inner_product_testing_range()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -995,7 +986,7 @@ $(function() {
 </div>
 </div>
 <a id="a3daa3242e9593a4489fb6a21f6afc360" name="a3daa3242e9593a4489fb6a21f6afc360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3daa3242e9593a4489fb6a21f6afc360">&#9670;&#160;</a></span>vector1d_init_zeroes()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3daa3242e9593a4489fb6a21f6afc360">&#9670;&nbsp;</a></span>vector1d_init_zeroes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1021,7 +1012,7 @@ $(function() {
 </div>
 </div>
 <a id="a8862204cc248465f5fb0ead1b80f5c36" name="a8862204cc248465f5fb0ead1b80f5c36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8862204cc248465f5fb0ead1b80f5c36">&#9670;&#160;</a></span>vector1d_is_equals()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8862204cc248465f5fb0ead1b80f5c36">&#9670;&nbsp;</a></span>vector1d_is_equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1059,7 +1050,7 @@ $(function() {
 </div>
 </div>
 <a id="a4c695e4f5ed27d8ac5079821ecb0cdb9" name="a4c695e4f5ed27d8ac5079821ecb0cdb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c695e4f5ed27d8ac5079821ecb0cdb9">&#9670;&#160;</a></span>vector1d_print()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c695e4f5ed27d8ac5079821ecb0cdb9">&#9670;&nbsp;</a></span>vector1d_print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1096,7 +1087,7 @@ $(function() {
 </div>
 </div>
 <a id="a03bacd0853094ba4d0132fb17abdacc8" name="a03bacd0853094ba4d0132fb17abdacc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03bacd0853094ba4d0132fb17abdacc8">&#9670;&#160;</a></span>vector1d_print_details()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bacd0853094ba4d0132fb17abdacc8">&#9670;&nbsp;</a></span>vector1d_print_details()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1133,7 +1124,7 @@ $(function() {
 </div>
 </div>
 <a id="a4d316f9b2bdec03f0b9523cc7cba59cb" name="a4d316f9b2bdec03f0b9523cc7cba59cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d316f9b2bdec03f0b9523cc7cba59cb">&#9670;&#160;</a></span>vector1d_print_range()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d316f9b2bdec03f0b9523cc7cba59cb">&#9670;&nbsp;</a></span>vector1d_print_range()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1184,7 +1175,7 @@ $(function() {
 </div>
 </div>
 <a id="ac189b6be6a3797640f48a655d2fcf7f3" name="ac189b6be6a3797640f48a655d2fcf7f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac189b6be6a3797640f48a655d2fcf7f3">&#9670;&#160;</a></span>vector1d_save_to_file_bin()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac189b6be6a3797640f48a655d2fcf7f3">&#9670;&nbsp;</a></span>vector1d_save_to_file_bin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1210,7 +1201,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>Записывает вектор v в файл file_name. </p>
-<p>Файловые операции ////////////////// </p><dl class="params"><dt>Аргументы</dt><dd>
+<p >Файловые операции ////////////////// </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>имя файла </td></tr>
     <tr><td class="paramname">v</td><td>указатель на вектор типа vector1d* </td></tr>
@@ -1223,7 +1214,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
 </small></address>
 </body>
 </html>
