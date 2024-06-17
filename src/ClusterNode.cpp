@@ -10,12 +10,17 @@
 class ClusterNode
 {
 public:
+    /// @brief Наименование узла
     std::string nodeName;
+    /// @brief Идентификатор узла
     unsigned nodeId = 0;
+    /// @brief Объём оперативной памяти, Гб
     double ramSize;
+    /// @brief Идентификатор вычислителя CPU
     int deviceIdCpu;
+    /// @brief Количество потоков CPU
     unsigned cpuThreads;
-
+    /// @brief Вектор сведений об установленных видеоадаптерах
     std::vector<GpuSpec> gpus;
 
     /// @brief Конструктор, создающий объект ClusterNode из файла
@@ -116,6 +121,7 @@ public:
         //std::cout << "ClusterNode::~ClusterNode()" << std::endl;
     }
 
+    /// @brief Выводит в стандартный поток вывода сведения о вычислительном узле
     void Print()
     {
         std::cout << "ClusterNode::Print()" << std::endl;
