@@ -27,8 +27,9 @@ public:
     /// @param nodeName Наименование узла
     /// @param dirName Путь к каталогу с файлом
     /// @param fileName Наименование файла
-    ClusterNode(std::string nodeName, std::string dirName, std::string fileName)
+    ClusterNode(int nodeId, std::string nodeName, std::string dirName, std::string fileName)
     {
+        this->nodeId = nodeId;
         this->nodeName = nodeName;
 
         std::cout << "ClusterNode::ClusterNode(): " << dirName << fileName << std::endl;

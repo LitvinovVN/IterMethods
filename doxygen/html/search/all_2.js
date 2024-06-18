@@ -4,7 +4,7 @@ var searchData=
   ['calculationfunc_1',['calculationFunc',['../master_workers_8cpp.html#ab0912c763ec3586a0794b31bda53457a',1,'masterWorkers.cpp']]],
   ['cluster_2',['Cluster',['../class_cluster.html',1,'Cluster'],['../class_cluster.html#a0d4910565f92bcf7705a0aa5a289f2a6',1,'Cluster::Cluster()']]],
   ['cluster_2ecpp_3',['Cluster.cpp',['../_cluster_8cpp.html',1,'']]],
-  ['clusternode_4',['ClusterNode',['../class_cluster_node.html',1,'ClusterNode'],['../class_cluster_node.html#aff93de809e6f84431d54bdc1d966a767',1,'ClusterNode::ClusterNode()']]],
+  ['clusternode_4',['ClusterNode',['../class_cluster_node.html',1,'ClusterNode'],['../class_cluster_node.html#a6175282f8a4db908267844000b6aba5a',1,'ClusterNode::ClusterNode()']]],
   ['clusternode_2ecpp_5',['ClusterNode.cpp',['../_cluster_node_8cpp.html',1,'']]],
   ['comp_5fsystem_2ec_6',['comp_system.c',['../comp__system_8c.html',1,'']]],
   ['comp_5fsystem_5fc_7',['COMP_SYSTEM_C',['../comp__system_8c.html#aa99768ea4905126750dde26d1018d317',1,'comp_system.c']]],

@@ -67,8 +67,8 @@
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ vecOfSubStr[0]\ <<\ \textcolor{stringliteral}{"{}:\ "{}};}
 \DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ atoi(vecOfSubStr[1].c\_str());}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}id\ =\ "{}}\ <<\ \textcolor{keywordtype}{id}\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nodeId\ =\ atoi(vecOfSubStr[1].c\_str());}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}nodeId\ =\ "{}}\ <<\ nodeId\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
 \DoxyCodeLine{00068\ }
 \DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ nodeName\ =\ vecOfSubStr[2];}
 \DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}nodeName\ =\ "{}}\ <<\ nodeName\ <<\ \textcolor{stringliteral}{"{};\ "{}};}
@@ -76,7 +76,7 @@
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ fileName\ =\ vecOfSubStr[3];}
 \DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}fileName\ =\ "{}}\ <<\ fileName\ <<\ std::endl;}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cluster_node}{ClusterNode}}\ clusterNode(nodeName,\ dirName,\ fileName);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cluster_node}{ClusterNode}}\ clusterNode(nodeId,\ nodeName,\ dirName,\ fileName);}
 \DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//clusterNode.Print();}}
 \DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clusterNodes.push\_back(clusterNode);}
 \DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}

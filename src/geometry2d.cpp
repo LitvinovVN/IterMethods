@@ -37,10 +37,10 @@ public:
 
     /// @brief Создаёт объект из файла
     /// @param fileName Путь к файлу с описанием геометрии
-    Geometry2d(std::string fileName)
+    Geometry2d(std::string dirName, std::string fileName)
     {
         std::cout << "Geometry2d(std::string fileName): Opening txt file..." << std::endl;    
-        std::ifstream in(fileName); // окрываем файл для чтения
+        std::ifstream in(dirName + fileName); // окрываем файл для чтения
         if (!in.is_open())
         {
             std::cout << "ERROR! File not opened!" << std::endl;

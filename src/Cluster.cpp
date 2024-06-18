@@ -63,8 +63,8 @@ public:
             {
                 std::cout << vecOfSubStr[0] << ": ";
 
-                int id = atoi(vecOfSubStr[1].c_str());
-                std::cout << "id = " << id << "; ";
+                int nodeId = atoi(vecOfSubStr[1].c_str());
+                std::cout << "nodeId = " << nodeId << "; ";
 
                 std::string nodeName = vecOfSubStr[2];
                 std::cout << "nodeName = " << nodeName << "; ";
@@ -72,7 +72,7 @@ public:
                 std::string fileName = vecOfSubStr[3];
                 std::cout << "fileName = " << fileName << std::endl;
 
-                ClusterNode clusterNode(nodeName, dirName, fileName);
+                ClusterNode clusterNode(nodeId, nodeName, dirName, fileName);
                 //clusterNode.Print();
                 clusterNodes.push_back(clusterNode);
             }

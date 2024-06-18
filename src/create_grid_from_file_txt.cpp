@@ -18,6 +18,7 @@
 #include <vector>
 #include "Geometry2d.cpp"
 #include "Cluster.cpp"
+#include "Geometry2dClusterDec.cpp"
 
 using namespace std;
 
@@ -27,11 +28,14 @@ int main()
     //g2d.Print();
     std::string data_in_path = "data_in/";
 
-    Geometry2d g2df(data_in_path + "rectangle.txt");
+    Geometry2d g2df(data_in_path, "rectangle.txt");
     g2df.Print();
 
     Cluster cluster(data_in_path, "cluster.txt");
     cluster.Print();
+
+    Geometry2dClusterDec geom2dClusterDec(data_in_path, "rectangle_cluster_dec_conf.txt");
+    geom2dClusterDec.Print();
     // Массив для хранения строк, описывающих расчетную область
     /*vector<string> lines;
     string line;

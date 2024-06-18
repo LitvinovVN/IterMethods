@@ -36,10 +36,10 @@
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00036\ \ \ \ \ \}}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_geometry2d_a1cd2ca127b11148356f2c6d1c063a84b}{Geometry2d}}(std::string\ fileName)}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_geometry2d_a24165e385046ed8677b54f3ddfcf01aa}{Geometry2d}}(std::string\ dirName,\ std::string\ fileName)}
 \DoxyCodeLine{00041\ \ \ \ \ \{}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Geometry2d(std::string\ fileName):\ Opening\ txt\ file..."{}}\ <<\ std::endl;\ \ \ \ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::ifstream\ in(fileName);\ \textcolor{comment}{//\ окрываем\ файл\ для\ чтения}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::ifstream\ in(dirName\ +\ fileName);\ \textcolor{comment}{//\ окрываем\ файл\ для\ чтения}}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in.is\_open())}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR!\ File\ not\ opened!"{}}\ <<\ std::endl;}

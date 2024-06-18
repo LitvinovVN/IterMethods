@@ -111,10 +111,10 @@ $(function() {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_geometry2d.html#a1cd2ca127b11148356f2c6d1c063a84b">   40</a></span>    <a class="code hl_function" href="class_geometry2d.html#a1cd2ca127b11148356f2c6d1c063a84b">Geometry2d</a>(std::string fileName)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_geometry2d.html#a24165e385046ed8677b54f3ddfcf01aa">   40</a></span>    <a class="code hl_function" href="class_geometry2d.html#a24165e385046ed8677b54f3ddfcf01aa">Geometry2d</a>(std::string dirName, std::string fileName)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Geometry2d(std::string fileName): Opening txt file...&quot;</span> &lt;&lt; std::endl;    </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::ifstream in(fileName); <span class="comment">// окрываем файл для чтения</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::ifstream in(dirName + fileName); <span class="comment">// окрываем файл для чтения</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (!in.is_open())</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;ERROR! File not opened!&quot;</span> &lt;&lt; std::endl;</div>
@@ -202,7 +202,7 @@ $(function() {
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_geometry2d_html"><div class="ttname"><a href="class_geometry2d.html">Geometry2d</a></div><div class="ttdoc">Класс для описания геометрии расчетной области в двумерном формате</div><div class="ttdef"><b>Definition</b> Geometry2d.cpp:9</div></div>
-<div class="ttc" id="aclass_geometry2d_html_a1cd2ca127b11148356f2c6d1c063a84b"><div class="ttname"><a href="class_geometry2d.html#a1cd2ca127b11148356f2c6d1c063a84b">Geometry2d::Geometry2d</a></div><div class="ttdeci">Geometry2d(std::string fileName)</div><div class="ttdoc">Создаёт объект из файла</div><div class="ttdef"><b>Definition</b> Geometry2d.cpp:40</div></div>
+<div class="ttc" id="aclass_geometry2d_html_a24165e385046ed8677b54f3ddfcf01aa"><div class="ttname"><a href="class_geometry2d.html#a24165e385046ed8677b54f3ddfcf01aa">Geometry2d::Geometry2d</a></div><div class="ttdeci">Geometry2d(std::string dirName, std::string fileName)</div><div class="ttdoc">Создаёт объект из файла</div><div class="ttdef"><b>Definition</b> Geometry2d.cpp:40</div></div>
 <div class="ttc" id="aclass_geometry2d_html_aafaed07b0baa0e716c982a7ee87505e7"><div class="ttname"><a href="class_geometry2d.html#aafaed07b0baa0e716c982a7ee87505e7">Geometry2d::Print</a></div><div class="ttdeci">void Print()</div><div class="ttdef"><b>Definition</b> Geometry2d.cpp:109</div></div>
 <div class="ttc" id="aclass_geometry2d_html_ab6ca46096da1fdb6b78ab92aab27ae18"><div class="ttname"><a href="class_geometry2d.html#ab6ca46096da1fdb6b78ab92aab27ae18">Geometry2d::~Geometry2d</a></div><div class="ttdeci">~Geometry2d()</div><div class="ttdef"><b>Definition</b> Geometry2d.cpp:99</div></div>
 <div class="ttc" id="aclass_geometry2d_html_ae528d2a1b2e8192d21fbb6c06234ccc8"><div class="ttname"><a href="class_geometry2d.html#ae528d2a1b2e8192d21fbb6c06234ccc8">Geometry2d::Geometry2d</a></div><div class="ttdeci">Geometry2d(unsigned nx, unsigned ny, unsigned Lx, unsigned Ly)</div><div class="ttdef"><b>Definition</b> Geometry2d.cpp:24</div></div>
