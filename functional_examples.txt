@@ -1,0 +1,41 @@
+#include <iostream>
+#include <functional>   // для std::function
+ 
+class Sum
+{
+public:
+    int operator()(int a, int b){ return a + b;}
+};
+ 
+int subtract(int a, int b){return a - b;}
+
+std::function<int(int,int)> sum2f(std::function<int(int,int)> f1, std::function<int(int,int)> f2)
+{
+    return [=](int i, int j) { return f1(i,j) + f2(i,j); };
+}
+
+std::function<int(int,int)> multkf(int k, std::function<int(int,int)> f)
+{
+    return [=](int i, int j) { return k * f(i,j); };
+}
+ 
+int main()
+{
+    std::function<int(int,int)> operation;
+ 
+    operation = Sum{};  // operation представляет объект-функцию Sum
+    std::cout << operation(10, 6) << std::endl;     // 16
+ 
+    operation = subtract;  // operation представляет функцию subtract
+    std::cout << operation(10, 6) << std::endl;     // 4
+ 
+    auto multiply = [](int a, int b){return a * b;};
+    operation = multiply;  // operation представляет лямбда-выражение multiply
+    std::cout << operation(10, 6) << std::endl;     // 60
+    
+    std::function<int(int,int)> f3 = sum2f(subtract, multiply);
+    std::cout << f3(5, 10) << std::endl;// 45
+    
+    auto f4 = multkf(-2, f3);
+    std::cout << f4(5, 10) << std::endl;// -90
+}
