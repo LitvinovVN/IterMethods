@@ -1,6 +1,7 @@
-// Метод правой монотонной прогонки
-// g++ progonka_prav.cpp -o progonka_prav
-// ./progonka_prav 1000
+// Метод правой монотонной прогонки.
+// Решение m систем из n уравнений
+// g++ progonka_prav_threads.cpp -o progonka_prav_threads
+// ./progonka_prav_threads 10 1000
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -81,22 +82,24 @@ double arrays_double_abs_error_max(size_t n, const double* y_izv, const double* 
 
 int main(int argc, char* argv[])
 {    
-    if (argc < 2)
+    if (argc < 3)
     {
-        std::cout << "You need enter command line argument n!" << std::endl;
+        std::cout << "You need enter command line arguments m and n!" << std::endl;
         exit(-1);
     }
-    std::cout << "Method pravoy monotonnoy progonki" << std::endl;
-    size_t n = std::stoull(argv[1]);
-    std::cout << "n = " << n << std::endl;    
+    std::cout << "Method pravoy monotonnoy progonki. Threads" << std::endl;
+    size_t m = std::stoull(argv[1]);
+    size_t n = std::stoull(argv[2]);
+    std::cout << "m = " << m << std::endl;
+    std::cout << "n = " << n << std::endl;  
     
     // Выделение памяти под массивы
-    double* a = new double[n];
-    double* b = new double[n];
-    double* c = new double[n];
-    double* y = new double[n];
-    double* y_izv = new double[n];
-    double* f = new double[n];
+    double* a = new double[m*n];
+    double* b = new double[m*n];
+    double* c = new double[m*n];
+    double* y = new double[m*n];
+    double* y_izv = new double[m*n];
+    double* f = new double[m*n];
 
     // Инициализируем массивы     
     a[0] = 0;

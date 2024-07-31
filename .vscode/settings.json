@@ -80,6 +80,11 @@
         "fstream": "cpp",
         "numbers": "cpp",
         "span": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "xhash": "cpp",
+        "xstddef": "cpp",
+        "xtree": "cpp"
     }
 }
