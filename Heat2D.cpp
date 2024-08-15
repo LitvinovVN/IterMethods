@@ -29,8 +29,8 @@ int main(int argc, char* argv[])
     //   1   2   3
     // .---.---.---. <- Nx = 3; Nx_nodes = 4
     // 0   1   2   3
-    size_t Nx = 10;
-    size_t Ny = 10;
+    size_t Nx = 100;
+    size_t Ny = 100;
     size_t Nx_nodes = Nx+1;
     size_t Ny_nodes = Ny+1;
     // Количество узлов расчетной сетки
